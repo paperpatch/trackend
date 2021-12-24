@@ -62,7 +62,7 @@ User is able to:
 - Edit, comment and delete their own posts.
 - Comment other posted tickets.
 
-If you cloned or copied the repository, ensure that you create an .env file in your local repository with similar text below:
+If you cloned or copied the repository, ensure that you `npm install` to download the packages and create an `.env` file in your local repository with similar text below:
 ```js
 DB_NAME='trackend_db'
 DB_USER='your-username' // typically root
