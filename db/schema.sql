@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS trackend_db;
+
+CREATE DATABASE trackend_db;
