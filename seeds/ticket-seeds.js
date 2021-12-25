@@ -2,18 +2,24 @@ const { Ticket } = require('../models');
 
 const ticketdata = [
   {
-    title: 'Why MVC is so important',
-    ticket_text: 'MVC allows developers to maintain a true separation of concerns, devising their code between the Model layer for data, the View layer for design, and the Controller layer for application logic.',
+    title: 'Need an MVC for this project',
+    ticket_text: 'Presentation is due soon*',
+    status: 'Open',
+    priority: 'High',
     user_id: 1
   },
   {
-    title: 'Authentication vs. Authorization',
-    ticket_text: 'There is a difference between authentication and authorization. Authentication means confirming your own identity, whereas authorization means being allowed access to the system.',
+    title: 'Bug in navigation',
+    ticket_text: 'Links are not working at the moment. Please fix.',
+    status: 'Closed',
+    priority: 'Critical',
     user_id: 2
   },
   {
-    title: 'Object-Relational Mapping',
-    ticket_text: "I have really loved learning about ORMs. It's really simplified the way I create queries in SQL!",
+    title: 'Help with CSS',
+    ticket_text: "Used bootstrap 5 and bootstrap icon. Need to make user interface nicer",
+    status: 'Open',
+    priority: 'Low',
     user_id: 3
   },
 ];

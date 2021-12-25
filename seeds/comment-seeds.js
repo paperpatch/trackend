@@ -2,37 +2,37 @@ const { Comment } = require('../models');
 
 const commentdata = [
   {
-    comment_text: 'First!',
+    comment_text: "I'll help you when I'm done",
     user_id: 2,
     ticket_id: 1
   },
   {
-    comment_text: 'I agree! MVC is really important! It helped organize some of my projects.',
+    comment_text: 'Working on it.',
     user_id: 4,
     ticket_id: 1
   },
   {
-    comment_text: 'Your car warranty is about to be expired. Please call XXX-XXX-XXXX to renew your warranty.',
+    comment_text: 'Please note that the bug can be found in the view handlebar section.',
     user_id: 5,
     ticket_id: 2
   },
   {
-    comment_text: 'How do I delete the above comment?',
+    comment_text: 'Please check my pull request.',
     user_id: 2,
     ticket_id: 2
   },
   {
-    comment_text: 'Oops! Made a typo error',
+    comment_text: 'I accidently made a pull request. Please disregard.',
     user_id: 3,
     ticket_id: 3
   },
   {
-    comment_text: 'Great! It is really nice to hear other people voice out their love for ORMs.',
+    comment_text: 'I can work on it.',
     user_id: 1,
     ticket_id: 3
   },
   {
-    comment_text: 'I hate ORMs.',
+    comment_text: '.',
     user_id: 6,
     ticket_id: 3
   },
