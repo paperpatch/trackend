@@ -1,7 +1,26 @@
-<ol class="ticket-list">
-  {{#each tickets as |ticket|}}
-  <li>
-    {{> ticket-info ticket }}
-  </li>
-  {{/each}}
-</ol>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <span>Recent Updates:</span>
+      <ol class="ticket-list">
+        {{#each tickets as |ticket|}}
+        <li>
+          {{> ticket-info ticket }}
+        </li>
+        {{/each}}
+      </ol>
+    </div>
+    
+    <div class="col">
+    <span>Summary:</span>
+    <ol class="summary-list">
+      <i class="bi bi-pie-chart"> Placeholder</i>
+      <li>Number of {} critical priority tickets</li>
+      <li>Number of {} high priority tickets</li>
+      <li>Number of {} moderate priority tickets</li>
+      <li>Number of {} low priority tickets</li>
+    </ol>
+    </div>
+  </div>
+</div>
+
