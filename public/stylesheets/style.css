@@ -138,10 +138,10 @@ main {
   line-height: 150%;
 }
 
-.ticket .title span {
+/* .ticket .title span {
   font-style: italic;
   font-size: 90%;
-}
+} */
 
 .edit-link {
   display: block;

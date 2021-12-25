@@ -1,0 +1,11 @@
+<article class="ticket article">
+  <div class="title">
+    <span>{{user.username}} created/update <a href="/ticket/{{id}}">{{title}}</a></span>
+  </div>
+  <span class="ticket-text">{{ticket_text}}</span>
+  <div class="meta">
+    Created by  on {{format_date created_at}}
+    |
+    <a href="/ticket/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+  </div>
+</article>
