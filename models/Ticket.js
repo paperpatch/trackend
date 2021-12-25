@@ -22,6 +22,22 @@ Ticket.init(
         len: [1]
       }
     },
+    status: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+    },
+    priority: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    status_change: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    ticket_date: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
