@@ -10,26 +10,20 @@
 
 <body>
   <div class="wrapper">
+    {{#if loggedIn}}
     <header>
       <h1>
         <a href="/">Trackend</a>
       </h1>
       <nav>
-        {{#if loggedIn}}
         <a href="/dashboard">Dashboard</a>
-        <button id="logout" class="btn-no-style">Logout</button>
-        {{else}}
-        <a href="/login">Login</a>
-        <a href="/signup">Register</a>
-        {{/if}}
+        <button id="logout" class="btn-no-style">Logout</button>    
       </nav>
     </header>
+    {{/if}}
     <main>
       {{{ body }}}
     </main>
-    <footer>
-      Thanks for visiting!
-    </footer>
   </div>
   
   {{#if loggedIn}}
