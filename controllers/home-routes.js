@@ -1,15 +1,15 @@
 const router = require('express').Router();
 // const sequelize = require('../config/connection');
-const { Post, User, Comment} = require('../models');
+const { Ticket, User, Comment} = require('../models');
 const withAuth = require('../utils/auth');
 
-// get all posts for homepage
+// get all tickets for homepage
 router.get('/', withAuth, (req, res) => {
   console.log('======================');
-  Post.findAll({
+  Ticket.findAll({
     attributes: [
       'id',
-      'post_text',
+      'ticket_text',
       'title',
       'created_at',
     ],
@@ -17,7 +17,7 @@ router.get('/', withAuth, (req, res) => {
     include: [
       {
         model: Comment,
-        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        attributes: ['id', 'comment_text', 'ticket_id', 'user_id', 'created_at'],
         include: {
           model: User,
           attributes: ['username']
@@ -29,11 +29,11 @@ router.get('/', withAuth, (req, res) => {
       }
     ]
   })
-    .then(dbPostData => {
-      const posts = dbPostData.map(post => post.get({ plain: true }));
+    .then(dbTicketData => {
+      const tickets = dbTicketData.map(ticket => ticket.get({ plain: true }));
 
       res.render('homepage', {
-        posts,
+        tickets,
         loggedIn: req.session.loggedIn
       });
     })
@@ -43,22 +43,22 @@ router.get('/', withAuth, (req, res) => {
     });
 });
 
-// get single post
-router.get('/post/:id', withAuth, (req, res) => {
-  Post.findOne({
+// get single ticket
+router.get('/ticket/:id', withAuth, (req, res) => {
+  Ticket.findOne({
     where: {
       id: req.params.id
     },
     attributes: [
       'id',
-      'post_text',
+      'ticket_text',
       'title',
       'created_at',
     ],
     include: [
       {
         model: Comment,
-        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        attributes: ['id', 'comment_text', 'ticket_id', 'user_id', 'created_at'],
         include: {
           model: User,
           attributes: ['username']
@@ -70,16 +70,16 @@ router.get('/post/:id', withAuth, (req, res) => {
       }
     ]
   })
-    .then(dbPostData => {
-      if (!dbPostData) {
-        res.status(404).json({ message: 'No post found with this id' });
+    .then(dbTicketData => {
+      if (!dbTicketData) {
+        res.status(404).json({ message: 'No ticket found with this id' });
         return;
       }
 
-      const post = dbPostData.get({ plain: true });
+      const ticket = dbTicketData.get({ plain: true });
 
-      res.render('single-post', {
-        post,
+      res.render('single-ticket', {
+        ticket,
         loggedIn: req.session.loggedIn
       });
     })

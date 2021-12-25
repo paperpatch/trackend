@@ -36,13 +36,13 @@ button:hover {
   background-color: #3486eb;
 }
 
-.post-list, .dashboard ol {
+.ticket-list, .dashboard ol {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.post-list li, .dashboard li {
+.ticket-list li, .dashboard li {
 /*   margin: 1%;
   padding: 1%;
   background-color: white;
@@ -126,19 +126,19 @@ main {
   color: #3486eb;
 }
 
-.delete-post-btn {
+.delete-ticket-btn {
   background-color: #d41414;
 }
 
-.delete-post-btn:hover {
+.delete-ticket-btn:hover {
   background-color: #ff643d;
 }
 
-.post {
+.ticket {
   line-height: 150%;
 }
 
-.post .title span {
+.ticket .title span {
   font-style: italic;
   font-size: 90%;
 }
@@ -186,11 +186,11 @@ main {
   opacity: .6;
 }
 
-.new-post-form input {
+.new-ticket-form input {
   width: 300px;
 }
 
-.edit-post-form {
+.edit-ticket-form {
   margin-bottom: 5%;
 }
 

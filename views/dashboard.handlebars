@@ -1,32 +1,32 @@
 <section class="dashboard-create">
-  <h2>Create New Blog Post</h2>
+  <h2>Create New Ticket</h2>
 
-  <form class="new-post-form">
+  <form class="new-ticket-form">
     <div>
-      <label for="post-title">Title</label>
-      <input type="text" id="post-title" name="post-title" />
+      <label for="ticket-title">Title</label>
+      <input type="text" id="ticket-title" name="ticket-title" />
     </div>
     <div>
-      <label for="post-text">Text</label>
-      <textarea id="post-text" name="post-text"></textarea>
+      <label for="ticket-text">Text</label>
+      <textarea id="ticket-text" name="ticket-text"></textarea>
     </div>
     <button type="submit" class="btn">Create</button>
   </form>
 </section>
 
-{{#if posts.length}}
+{{#if tickets.length}}
 <section class="dashboard">
-  <h2>Your Blog Posts</h2>
+  <h2>Your Tickets</h2>
   <ol>
-    {{#each posts as |post|}}
+    {{#each tickets as |ticket|}}
     
     <li>
-      {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit Post</a>
+      {{> ticket-info ticket}}
+      <a href="/dashboard/edit/{{ticket.id}}" class="edit-link">Edit ticket</a>
     </li>
     {{/each}}
   </ol>
 </section>
 {{/if}}
 
-<script src="/javascript/add-post.js"></script>
+<script src="/javascript/add-ticket.js"></script>

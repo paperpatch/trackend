@@ -1,0 +1,37 @@
+<article>
+  <a href="/dashboard"> &larr; Back to dashboard</a>
+  <h2>
+    Edit Ticket
+  </h2>
+  <form class="edit-ticket-form">
+    <div>
+      <input name="ticket-title" type="text" value="{{ticket.title}}" />
+    </div>
+    <div>
+      <textarea name="ticket-text">{{ticket.ticket_text}}</textarea>
+    </div>
+    <div>
+      Created by you on {{format_date ticket.created_at}}
+      |
+      <a href="/ticket/{{ticket.id}}">{{ticket.comments.length}} {{format_plural "comment" ticket.comments.length}}</a>
+    </div>
+    <button type="submit">Save Ticket</button>
+    <button type="button" class="delete-ticket-btn">Delete ticket</button>
+  </form>
+</article>
+
+<form class="comment-form">
+  <div>
+    <textarea name="comment-body"></textarea>
+  </div>
+
+  <div>
+    <button type="submit">Add Comment</button>
+  </div>
+</form>
+
+{{> comments ticket.comments}}
+
+<script src="/javascript/edit-ticket.js"></script>
+<script src="/javascript/delete-ticket.js"></script>
+<script src="/javascript/comment.js"></script>

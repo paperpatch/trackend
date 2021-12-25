@@ -1,18 +1,18 @@
 async function editFormHandler(event) {
   event.preventDefault();
 
-  const title = document.querySelector('input[name="post-title"]').value.trim();
-  const post_text = document.querySelector('textarea[name="post-text"]').value;
+  const title = document.querySelector('input[name="ticket-title"]').value.trim();
+  const ticket_text = document.querySelector('textarea[name="ticket-text"]').value;
   
   const id = window.location.toString().split('/')[
     window.location.toString().split('/').length - 1
   ];
   
-  const response = await fetch(`/api/posts/${id}`, {
+  const response = await fetch(`/api/tickets/${id}`, {
     method: 'PUT',
     body: JSON.stringify({
       title,
-      post_text
+      ticket_text
     }),
     headers: {
       'Content-Type': 'application/json'
@@ -26,4 +26,4 @@ async function editFormHandler(event) {
   }
 }
 
-document.querySelector('.edit-post-form').addEventListener('submit', editFormHandler);
+document.querySelector('.edit-ticket-form').addEventListener('submit', editFormHandler);
