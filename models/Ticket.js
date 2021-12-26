@@ -26,25 +26,25 @@ Ticket.init(
       type: DataTypes.BOOLEAN,
       allowNull: false,
     },
-    priority_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'priority',
-        key: 'id'
-      }
-    },
-    status_change_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'statuschange',
-        key: 'id'
-      }
-    },
+    // priority_id: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    //   references: {
+    //     model: 'priority',
+    //     key: 'id'
+    //   }
+    // },
+    // status_change_id: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    //   references: {
+    //     model: 'statuschange',
+    //     key: 'id'
+    //   }
+    // },
     ticket_date: {
       type: DataTypes.DATE,
-      allowNull: false,
+      defaultValue: DataTypes.NOW,
     },
     user_id: {
       type: DataTypes.INTEGER,

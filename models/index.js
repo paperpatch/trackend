@@ -36,7 +36,7 @@ Ticket.hasMany(Comment, {
 });
 
 Ticket.hasMany(Priority, {
-  foreignKey: 'priority_id',
+  foreignKey: 'ticket_id',
   onDelete: 'CASCADE',
 });
 
@@ -46,7 +46,7 @@ Priority.belongsTo(Ticket, {
 });
 
 Ticket.hasMany(StatusChange, {
-  foreignKey: 'status_change_id',
+  foreignKey: 'ticket_id',
   onDelete: 'CASCADE'
 });
 
