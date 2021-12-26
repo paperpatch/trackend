@@ -1,6 +1,6 @@
 const router = require('express').Router();
-// const sequelize = require('../config/connection');
-const { Ticket, User, Comment} = require('../models');
+const sequelize = require('../config/connection');
+const { Ticket, User, Comment, Priority, StatusChange} = require('../models');
 const withAuth = require('../utils/auth');
 
 // get all Tickets for dashboard

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Ticket, Comment} = require('../../models');
+const { User, Ticket, Comment, Priority, StatusChange} = require('../../models');
 
 // get all users
 router.get('/', (req, res) => {
@@ -69,7 +69,6 @@ router.post('/', (req, res) => {
 });
 
 router.post('/login', (req, res) => {
-  // expects {username: 'lernantino', password: 'password123'}
   User.findOne({
     where: {
       username: req.body.username
