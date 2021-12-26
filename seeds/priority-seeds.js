@@ -2,13 +2,16 @@ const { Priority } = require('../models');
 
 const prioritydata = [
   {
-    ticket_id: 1
+    level: 'Critical',
   },
   {
-    ticket_id: 2
+    level: 'High',
   },
   {
-    ticket_id: 3
+    level: 'Moderate',
+  },
+  {
+    level: 'Low',
   }
 ];
 

@@ -26,13 +26,21 @@ Ticket.init(
       type: DataTypes.BOOLEAN,
       allowNull: false,
     },
-    priority: {
+    priority_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: 'priority',
+        key: 'id'
+      }
     },
-    status_change: {
+    status_change_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        mode: 'statuschange',
+        key: 'id'
+      }
     },
     ticket_date: {
       type: DataTypes.DATE,

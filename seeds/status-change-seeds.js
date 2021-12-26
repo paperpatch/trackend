@@ -2,14 +2,11 @@ const { StatusChange } = require('../models');
 
 const statuschangedata = [
   {
-    ticket_id: 1
+    status: 'Created',
   },
   {
-    ticket_id: 2
+    status: 'Edited'
   },
-  {
-    ticket_id: 3
-  }
 ];
 
 const seedStatusChange = () => StatusChange.bulkCreate(statuschangedata);
