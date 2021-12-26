@@ -38,7 +38,7 @@ Ticket.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        mode: 'statuschange',
+        model: 'statuschange',
         key: 'id'
       }
     },

@@ -15,6 +15,13 @@ Priority.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    ticket_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'ticket',
+        key: 'id'
+      }
+    },
   },
   {
     sequelize,
