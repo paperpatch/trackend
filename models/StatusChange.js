@@ -10,7 +10,7 @@ StatusChange.init(
       primaryKey: true,
       autoIncrement: true
     },
-    status: {
+    statusChange: {
       type: DataTypes.STRING,
       allowNull: false,
     },

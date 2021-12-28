@@ -28,7 +28,6 @@ Ticket.init(
     },
     // priority_id: {
     //   type: DataTypes.INTEGER,
-    //   allowNull: false,
     //   references: {
     //     model: 'priority',
     //     key: 'id'
@@ -36,7 +35,6 @@ Ticket.init(
     // },
     // status_change_id: {
     //   type: DataTypes.INTEGER,
-    //   allowNull: false,
     //   references: {
     //     model: 'statuschange',
     //     key: 'id'

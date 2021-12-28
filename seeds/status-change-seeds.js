@@ -2,10 +2,10 @@ const { StatusChange } = require('../models');
 
 const statuschangedata = [
   {
-    status: 'Created',
+    statusChange: 'Created',
   },
   {
-    status: 'Edited'
+    statusChange: 'Edited'
   },
 ];
 

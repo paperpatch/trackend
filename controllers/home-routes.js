@@ -11,6 +11,7 @@ router.get('/', withAuth, (req, res) => {
       'id',
       'ticket_text',
       'title',
+      'status',
       'created_at',
     ],
     order: [['created_at', 'DESC']],
@@ -26,7 +27,15 @@ router.get('/', withAuth, (req, res) => {
       {
         model: User,
         attributes: ['username']
-      }
+      },
+      {
+        model: Priority,
+        attributes: ['level']
+      },
+      {
+        model: StatusChange,
+        attributes: ['statusChange']
+      },
     ]
   })
     .then(dbTicketData => {
@@ -67,7 +76,15 @@ router.get('/ticket/:id', withAuth, (req, res) => {
       {
         model: User,
         attributes: ['username']
-      }
+      },
+      {
+        model: Priority,
+        attributes: ['level']
+      },
+      {
+        model: StatusChange,
+        attributes: ['statusChange']
+      },
     ]
   })
     .then(dbTicketData => {

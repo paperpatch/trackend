@@ -29,7 +29,15 @@ router.get('/', withAuth, (req, res) => {
       {
         model: User,
         attributes: ['username']
-      }
+      },
+      {
+        model: Priority,
+        attributes: ['level']
+      },
+      {
+        model: StatusChange,
+        attributes: ['statusChange']
+      },
     ]
   })
     .then(dbTicketData => {
@@ -62,7 +70,15 @@ router.get('/edit/:id', withAuth, (req, res) => {
       {
         model: User,
         attributes: ['username']
-      }
+      },
+      {
+        model: Priority,
+        attributes: ['level']
+      },
+      {
+        model: StatusChange,
+        attributes: ['statusChange']
+      },
     ]
   })
     .then(dbTicketData => {
