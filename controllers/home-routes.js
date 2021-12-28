@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 const { Ticket, User, Comment, Priority, StatusChange} = require('../models');
 const withAuth = require('../utils/auth');
 
-// get all tickets for homepage
+// get all Tickets for homepage
 router.get('/', withAuth, (req, res) => {
   console.log('======================');
   Ticket.findAll({
@@ -12,13 +12,14 @@ router.get('/', withAuth, (req, res) => {
       'ticket_text',
       'title',
       'status',
+      'ticket_date',
       'created_at',
     ],
     order: [['created_at', 'DESC']],
     include: [
       {
         model: Comment,
-        attributes: ['id', 'comment_text', 'ticket_id', 'user_id', 'created_at'],
+        attributes: ['id', 'comment_text', 'ticket_id', 'user_id', 'created_at', 'comment_date'],
         include: {
           model: User,
           attributes: ['username']

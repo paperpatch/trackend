@@ -15,6 +15,7 @@ router.get('/', withAuth, (req, res) => {
       'id',
       'ticket_text',
       'title',
+      'status',
       'created_at',
     ],
     include: [
