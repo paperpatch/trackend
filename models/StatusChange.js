@@ -12,7 +12,6 @@ StatusChange.init(
     },
     statusChange: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
   },
   {
