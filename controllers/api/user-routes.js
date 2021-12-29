@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Ticket, Comment, Priority, StatusChange} = require('../../models');
+const { User, Ticket, Comment, /* Priority, StatusChange */} = require('../../models');
 
 // get all users
 router.get('/', (req, res) => {
@@ -31,7 +31,15 @@ router.get('/:id', (req, res) => {
           model: Ticket,
           attributes: ['title']
         }
-      }
+      },
+      // {
+      //   mode: Priority,
+      //   attributes: ['level']
+      // },
+      // {
+      //   mode: StatusChange,
+      //   attributes: ['statusChange']
+      // },
     ]
   })
     .then(dbUserData => {

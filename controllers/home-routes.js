@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Ticket, User, Comment, Priority, StatusChange} = require('../models');
+const { Ticket, User, Comment, /* Priority, StatusChange */} = require('../models');
 const withAuth = require('../utils/auth');
 
 // get all Tickets for homepage
@@ -12,14 +12,14 @@ router.get('/', withAuth, (req, res) => {
       'ticket_text',
       'title',
       'status',
-      'ticket_date',
+      // 'ticket_date',
       'created_at',
     ],
     order: [['created_at', 'DESC']],
     include: [
       {
         model: Comment,
-        attributes: ['id', 'comment_text', 'ticket_id', 'user_id', 'created_at', 'comment_date'],
+        attributes: ['id', 'comment_text', 'ticket_id', 'user_id', 'created_at'],
         include: {
           model: User,
           attributes: ['username']
@@ -29,14 +29,14 @@ router.get('/', withAuth, (req, res) => {
         model: User,
         attributes: ['username']
       },
-      {
-        model: Priority,
-        attributes: ['level']
-      },
-      {
-        model: StatusChange,
-        attributes: ['statusChange']
-      },
+      // {
+      //   model: Priority,
+      //   attributes: ['level']
+      // },
+      // {
+      //   model: StatusChange,
+      //   attributes: ['statusChange']
+      // },
     ]
   })
     .then(dbTicketData => {
@@ -78,14 +78,14 @@ router.get('/ticket/:id', withAuth, (req, res) => {
         model: User,
         attributes: ['username']
       },
-      {
-        model: Priority,
-        attributes: ['level']
-      },
-      {
-        model: StatusChange,
-        attributes: ['statusChange']
-      },
+      // {
+      //   model: Priority,
+      //   attributes: ['level']
+      // },
+      // {
+      //   model: StatusChange,
+      //   attributes: ['statusChange']
+      // },
     ]
   })
     .then(dbTicketData => {
