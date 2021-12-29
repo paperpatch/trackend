@@ -9,5 +9,5 @@ const statuschangedata = [
   },
 ];
 
-const seedStatusChange = () => StatusChange.bulkCreate(statuschangedata, { individualHooks: true });
+const seedStatusChange = () => StatusChange.bulkCreate(statuschangedata);
 module.exports = seedStatusChange;

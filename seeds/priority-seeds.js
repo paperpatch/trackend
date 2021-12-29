@@ -12,9 +12,9 @@ const prioritydata = [
   },
   {
     level: 'Low',
-  }
+  },
 ];
 
-const seedPriority = () => Priority.bulkCreate(prioritydata, {individualHooks: true });
+const seedPriority = () => Priority.bulkCreate(prioritydata);
 
 module.exports = seedPriority;
