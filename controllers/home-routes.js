@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Ticket, User, Comment, /* Priority, StatusChange */} = require('../models');
+const { Ticket, User, Comment, Priority, StatusChange} = require('../models');
 const withAuth = require('../utils/auth');
 
 // get all Tickets for homepage
@@ -14,6 +14,7 @@ router.get('/', withAuth, (req, res) => {
       'status',
       // 'ticket_date',
       'created_at',
+      [sequelize.literal('(SELECT COUNT(*) FROM ticket WHERE priority_id = 1)'), 'critical_count']
     ],
     order: [['created_at', 'DESC']],
     include: [
@@ -29,14 +30,14 @@ router.get('/', withAuth, (req, res) => {
         model: User,
         attributes: ['username']
       },
-      // {
-      //   model: Priority,
-      //   attributes: ['level']
-      // },
-      // {
-      //   model: StatusChange,
-      //   attributes: ['statusChange']
-      // },
+      {
+        model: Priority,
+        attributes: ['level']
+      },
+      {
+        model: StatusChange,
+        attributes: ['statusChange']
+      },
     ]
   })
     .then(dbTicketData => {
@@ -78,14 +79,14 @@ router.get('/ticket/:id', withAuth, (req, res) => {
         model: User,
         attributes: ['username']
       },
-      // {
-      //   model: Priority,
-      //   attributes: ['level']
-      // },
-      // {
-      //   model: StatusChange,
-      //   attributes: ['statusChange']
-      // },
+      {
+        model: Priority,
+        attributes: ['level']
+      },
+      {
+        model: StatusChange,
+        attributes: ['statusChange']
+      },
     ]
   })
     .then(dbTicketData => {

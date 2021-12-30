@@ -34,20 +34,20 @@ Ticket.init(
         key: 'id'
       }
     },
-    // priority_id: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: 'priority',
-    //     key: 'id'
-    //   }
-    // },
-    // status_change_id: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: 'statuschange',
-    //     key: 'id'
-    //   }
-    // },
+    priority_id: {
+      type: DataTypes.INTEGER,
+      // references: {
+      //   model: 'priority',
+      //   key: 'id'
+      // }
+    },
+    status_change_id: {
+      type: DataTypes.INTEGER,
+      // references: {
+      //   model: 'statuschange',
+      //   key: 'id'
+      // }
+    },
     // ticket_date: {
     //   type: DataTypes.DATE,
     //   defaultValue: DataTypes.NOW,
