@@ -12,7 +12,6 @@ router.get('/', withAuth, (req, res) => {
       'ticket_text',
       'title',
       'status',
-      // 'ticket_date',
       'created_at',
       [sequelize.literal('(SELECT COUNT(*) FROM ticket WHERE priority_id = 1)'), 'critical_count']
     ],
