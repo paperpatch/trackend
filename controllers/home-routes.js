@@ -68,6 +68,9 @@ router.get('/ticket/:id', withAuth, (req, res) => {
       'id',
       'ticket_text',
       'title',
+      'status',
+      'priority_id',
+      'status_change_id',
       'created_at',
     ],
     include: [

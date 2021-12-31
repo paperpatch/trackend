@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 const { Ticket, User, Comment, Priority, StatusChange} = require('../models');
 const withAuth = require('../utils/auth');
 
-// get all Tickets for dashboard
+// get all Tickets for priority
 router.get('/', withAuth, (req, res) => {
   console.log(req.session);
   console.log('======================');
@@ -16,8 +16,6 @@ router.get('/', withAuth, (req, res) => {
       'ticket_text',
       'title',
       'status',
-      'priority_id',
-      'status_change_id',
       'created_at',
     ],
     include: [
@@ -45,7 +43,7 @@ router.get('/', withAuth, (req, res) => {
   })
     .then(dbTicketData => {
       const tickets = dbTicketData.map(ticket => ticket.get({ plain: true }));
-      res.render('dashboard', { tickets, loggedIn: true });
+      res.render('priority', { tickets, loggedIn: true });
     })
     .catch(err => {
       console.log(err);
@@ -60,8 +58,6 @@ router.get('/edit/:id', withAuth, (req, res) => {
       'ticket_text',
       'title',
       'status',
-      'priority_id',
-      'status_change_id',
       'created_at',
     ],
     include: [
