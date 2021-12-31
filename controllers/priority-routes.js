@@ -16,6 +16,8 @@ router.get('/', withAuth, (req, res) => {
       'ticket_text',
       'title',
       'status',
+      'priority_id',
+      'status_change_id',
       'created_at',
     ],
     include: [
@@ -51,14 +53,10 @@ router.get('/', withAuth, (req, res) => {
     });
 });
 
-router.get('/edit/:id', withAuth, (req, res) => {
-  Ticket.findByPk(req.params.id, {
+router.get('/priority/:level', withAuth, (req, res) => {
+  Priority.findByPk(req.params.level, {
     attributes: [
-      'id',
-      'ticket_text',
-      'title',
-      'status',
-      'created_at',
+      'level',
     ],
     include: [
       {
@@ -74,8 +72,8 @@ router.get('/edit/:id', withAuth, (req, res) => {
         attributes: ['username']
       },
       {
-        model: Priority,
-        attributes: ['level']
+        model: Ticket,
+        attributes: ['id', 'ticket_text', 'title', 'status', 'priority_id', 'status_change_id', 'created_at']
       },
       {
         model: StatusChange,
@@ -87,7 +85,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
       if (dbTicketData) {
         const ticket = dbTicketData.get({ plain: true });
         
-        res.render('edit-ticket', {
+        res.render('priority', {
           ticket,
           loggedIn: true
         });

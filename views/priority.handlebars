@@ -1,7 +1,7 @@
 <ol class="ticket-list">
-  {{#each tickets as |priority|}}
+  {{#each tickets as |ticket|}}
   <li>
-    {{> priority-info }}
+    {{> recent-info ticket }}
   </li>
   {{/each}}
 </ol>
