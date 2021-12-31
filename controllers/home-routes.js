@@ -15,10 +15,10 @@ router.get('/', withAuth, (req, res) => {
       'priority_id',
       'status_change_id',
       'created_at',
-      [sequelize.literal('(SELECT COUNT(*) FROM Ticket WHERE Ticket.priority_id = 1)'), 'critical_count']
-      // [sequelize.literal('(SELECT COUNT(*) FROM Ticket WHERE Ticket.priority_id = 2)'), 'high_count']
-      // [sequelize.literal('(SELECT IFNULL(COUNT(*) FROM Ticket WHERE Ticket.priority_id = 3), 0)'), 'moderate_count']
-      // [sequelize.literal('(SELECT IFNULL(COUNT(*) FROM Ticket WHERE Ticket.priority_id = 4), 0)'), 'low_count']
+      [sequelize.literal('(SELECT COUNT(*) FROM ticket WHERE ticket.priority_id = 1)'), 'critical_count'],
+      [sequelize.literal('(SELECT COUNT(*) FROM ticket WHERE ticket.priority_id = 2)'), 'high_count'],
+      [sequelize.literal('(SELECT COUNT(*) FROM ticket WHERE ticket.priority_id = 3)'), 'moderate_count'],
+      [sequelize.literal('(SELECT COUNT(*) FROM ticket WHERE ticket.priority_id = 4)'), 'low_count'],
     ],
     order: [['created_at', 'DESC']],
     include: [

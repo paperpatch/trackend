@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Ticket, User, Comment, /* Priority, StatusChange */} = require('../models');
+const { Ticket, User, Comment, Priority, StatusChange} = require('../models');
 const withAuth = require('../utils/auth');
 
 // get all Tickets for dashboard
@@ -31,14 +31,14 @@ router.get('/', withAuth, (req, res) => {
         model: User,
         attributes: ['username']
       },
-      // {
-      //   model: Priority,
-      //   attributes: ['level']
-      // },
-      // {
-      //   model: StatusChange,
-      //   attributes: ['statusChange']
-      // },
+      {
+        model: Priority,
+        attributes: ['level']
+      },
+      {
+        model: StatusChange,
+        attributes: ['statusChange']
+      },
     ]
   })
     .then(dbTicketData => {
@@ -72,14 +72,14 @@ router.get('/edit/:id', withAuth, (req, res) => {
         model: User,
         attributes: ['username']
       },
-      // {
-      //   model: Priority,
-      //   attributes: ['level']
-      // },
-      // {
-      //   model: StatusChange,
-      //   attributes: ['statusChange']
-      // },
+      {
+        model: Priority,
+        attributes: ['level']
+      },
+      {
+        model: StatusChange,
+        attributes: ['statusChange']
+      },
     ]
   })
     .then(dbTicketData => {

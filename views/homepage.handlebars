@@ -12,14 +12,15 @@
     </div>
     
     <div class="col">
-    <span>Summary:</span>
-    <ol class="summary-list">
-      <i class="bi bi-pie-chart"> Placeholder</i>
-      <ul>{{ticket}} {{id}} critical priority tickets</ul>
-      <ul>{{ticket.critical_count}} high priority tickets</ul>
-      <ul>{{comments.length}} moderate priority tickets</ul>
-      <ul>{{low_count}} low priority tickets</ul>
-    </ol>
+      <span>Summary:</span>
+      {{#with tickets}} {{!-- how to change with to just 1 individual ticket? --}}
+      <ol class="summary-list">
+        <ul>{{critical_count}} critical priority tickets</ul>
+        <ul>{{ticket.high_count}} high priority tickets</ul>
+        <ul>{{moderate_count}} moderate priority tickets</ul>
+        <ul>{{low_count}} low priority tickets</ul>
+      </ol>
+      {{/with}}
     </div>
   </div>
 </div>
