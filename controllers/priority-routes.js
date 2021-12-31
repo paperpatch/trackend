@@ -53,33 +53,43 @@ router.get('/', withAuth, (req, res) => {
     });
 });
 
-router.get('/priority/:level', withAuth, (req, res) => {
-  Priority.findByPk(req.params.level, {
+router.get('/:level', withAuth, (req, res) => {
+  Priority.findAll({
+    where: {
+      level: req.params.level
+    },
     attributes: [
+      'id',
       'level',
     ],
     include: [
       {
-        model: Comment,
-        attributes: ['id', 'comment_text', 'ticket_id', 'user_id', 'created_at'],
-        include: {
-          model: User,
-          attributes: ['username']
-        }
-      },
-      {
-        model: User,
-        attributes: ['username']
-      },
-      {
         model: Ticket,
-        attributes: ['id', 'ticket_text', 'title', 'status', 'priority_id', 'status_change_id', 'created_at']
+        attributes: ['id', 'ticket_text', 'title', 'status', 'priority_id', 'status_change_id', 'created_at'],
+        include: [
+          {
+          model: Comment,
+          attributes: ['id', 'comment_text', 'ticket_id', 'user_id', 'created_at'],
+          },
+          {
+            model: User,
+            attributes: ['username']
+          },
+          {
+            model: StatusChange,
+            attributes: ['statusChange']
+          },
+          {
+            model: Comment,
+            attributes: ['id', 'comment_text', 'ticket_id', 'user_id', 'created_at'],
+            include: {
+              model: User,
+              attributes: ['username']
+            }
+          },
+        ],
       },
-      {
-        model: StatusChange,
-        attributes: ['statusChange']
-      },
-    ]
+    ],
   })
     .then(dbTicketData => {
       if (dbTicketData) {

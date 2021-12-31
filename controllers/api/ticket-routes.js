@@ -11,8 +11,10 @@ router.get('/', (req, res) => {
       'id',
       'ticket_text',
       'title',
-      'created_at',
       'status',
+      'priority_id',
+      'status_change_id',
+      'created_at',
     ],
     include: [
       {
@@ -53,6 +55,9 @@ router.get('/:id', (req, res) => {
       'id',
       'ticket_text',
       'title',
+      'status',
+      'priority_id',
+      'status_change_id',
       'created_at',
     ],
     include: [
