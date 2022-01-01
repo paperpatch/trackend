@@ -1,6 +1,6 @@
 const router = require('express').Router();
-// const sequelize = require('../../config/connection');
-const { Ticket, User, Comment} = require('../../models');
+const sequelize = require('../../config/connection');
+const { Ticket, User, Comment, Priority, StatusChange} = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // get all users
@@ -11,6 +11,9 @@ router.get('/', (req, res) => {
       'id',
       'ticket_text',
       'title',
+      'status',
+      'priority_id',
+      'status_change_id',
       'created_at',
     ],
     include: [
@@ -25,7 +28,15 @@ router.get('/', (req, res) => {
       {
         model: User,
         attributes: ['username']
-      }
+      },
+      {
+        mode: Priority,
+        attributes: ['level']
+      },
+      {
+        mode: StatusChange,
+        attributes: ['statusChange']
+      },
     ]
   })
     .then(dbTicketData => res.json(dbTicketData))
@@ -44,6 +55,9 @@ router.get('/:id', (req, res) => {
       'id',
       'ticket_text',
       'title',
+      'status',
+      'priority_id',
+      'status_change_id',
       'created_at',
     ],
     include: [
@@ -58,7 +72,15 @@ router.get('/:id', (req, res) => {
       {
         model: User,
         attributes: ['username']
-      }
+      },
+      {
+        mode: Priority,
+        attributes: ['level']
+      },
+      {
+        mode: StatusChange,
+        attributes: ['statusChange']
+      },
     ]
   })
     .then(dbTicketData => {

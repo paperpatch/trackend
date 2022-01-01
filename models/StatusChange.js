@@ -10,16 +10,8 @@ StatusChange.init(
       primaryKey: true,
       autoIncrement: true
     },
-    status: {
+    statusChange: {
       type: DataTypes.STRING,
-      allowNull: false,
-    },
-    ticket_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'ticket',
-        key: 'id'
-      }
     },
   },
   {
@@ -27,7 +19,7 @@ StatusChange.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'StatusChange'
+    modelName: 'statusChange'
   }
 );
 

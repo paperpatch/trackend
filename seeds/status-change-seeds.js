@@ -2,13 +2,12 @@ const { StatusChange } = require('../models');
 
 const statuschangedata = [
   {
-    status: 'Created',
+    statusChange: 'Created',
   },
   {
-    status: 'Edited'
+    statusChange: 'Edited'
   },
 ];
 
 const seedStatusChange = () => StatusChange.bulkCreate(statuschangedata);
-
 module.exports = seedStatusChange;

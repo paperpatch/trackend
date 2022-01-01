@@ -12,7 +12,7 @@ const prioritydata = [
   },
   {
     level: 'Low',
-  }
+  },
 ];
 
 const seedPriority = () => Priority.bulkCreate(prioritydata);

@@ -24,27 +24,8 @@ Ticket.init(
     },
     status: {
       type: DataTypes.BOOLEAN,
+      defaultValue: true,
       allowNull: false,
-    },
-    // priority_id: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: false,
-    //   references: {
-    //     model: 'priority',
-    //     key: 'id'
-    //   }
-    // },
-    // status_change_id: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: false,
-    //   references: {
-    //     model: 'statuschange',
-    //     key: 'id'
-    //   }
-    // },
-    ticket_date: {
-      type: DataTypes.DATE,
-      defaultValue: DataTypes.NOW,
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -52,7 +33,25 @@ Ticket.init(
         model: 'user',
         key: 'id'
       }
-    }
+    },
+    priority_id: {
+      type: DataTypes.INTEGER,
+      // references: {
+      //   model: 'priority',
+      //   key: 'id'
+      // }
+    },
+    status_change_id: {
+      type: DataTypes.INTEGER,
+      // references: {
+      //   model: 'statuschange',
+      //   key: 'id'
+      // }
+    },
+    // ticket_date: {
+    //   type: DataTypes.DATE,
+    //   defaultValue: DataTypes.NOW,
+    // },
   },
   {
     sequelize,

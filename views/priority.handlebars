@@ -1,0 +1,49 @@
+<table>
+  <thead>
+    <tr>
+      <h2>Priority Tickets</h2>
+      {{#each tickets.[0]}}
+        <th>{{@key}}</th> {{!-- renders object's attribute name --}}
+      {{/each}}
+    </tr>
+  </thead>
+
+  <tbody>
+    {{#each tickets}}
+      <tr>
+        {{#each this}}
+          <td>{{this}}</td>
+        {{/each}}
+      </tr>
+    {{/each}}
+  </tbody>
+  {{!-- {{> priority-info}} --}}
+</table>
+
+<section class="dashboard">
+  <h2>Test</h2>
+  <ol class="ticket-list">
+    {{#each tickets as |ticket|}}
+    <li>
+      {{> priority-info}}
+    </li>
+    {{/each}}
+  </ol>
+</section>
+
+{{!-- {{#if tickets.length}}
+<section class="dashboard">
+  <h2>Your Tickets</h2>
+  <ol>
+    {{#each tickets as |ticket|}}
+    
+    <li>
+      {{> ticket-info ticket}}
+      <a href="/dashboard/edit/{{ticket.id}}" class="edit-link">Edit ticket</a>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}} --}}
+
+{{!-- <script src="/javascript/add-ticket.js"></script> --}}
