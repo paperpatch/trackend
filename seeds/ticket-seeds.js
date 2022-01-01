@@ -55,7 +55,7 @@ const ticketdata = [
     status: true,
     user_id: 1,
     priority_id: 4,
-    status_change_id: 4,
+    status_change_id: 2,
   },
 ];
 
