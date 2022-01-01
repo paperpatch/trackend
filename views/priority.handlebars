@@ -1,41 +1,49 @@
-<ol class="ticket-list">
-  {{#each ticket}}
-  <li>
-    {{> recent-info}}
-  </li>
-  {{/each}}
-</ol>
+<table>
+  <thead>
+    <tr>
+      <h2>Priority Tickets</h2>
+      {{#each tickets.[0]}}
+        <th>{{@key}}</th> {{!-- renders object's attribute name --}}
+      {{/each}}
+    </tr>
+  </thead>
 
-{{!-- <ol class="ticket-list">
-  {{#each priority}}
-  <li>
-    {{> priority-info}}
-  </li>
-  {{/each}}
-</ol> --}}
+  <tbody>
+    {{#each tickets}}
+      <tr>
+        {{#each this}}
+          <td>{{this}}</td>
+        {{/each}}
+      </tr>
+    {{/each}}
+  </tbody>
+  {{!-- {{> priority-info}} --}}
+</table>
 
-Test <br/>
-ID: {{priority.id}} <br/>
-ID2: {{id}} <br/>
-Level: {{priority.level}} <br/>
-Level2: {{level}} <br/>
-Username: {{ticket.username}} <br/>
-Username2: {{user.username}} <br/>
-Comment: {{comment.id}} <br/>
-Comment2: {{comments.length}} <br/>
-Title: {{title}} <br/>
-Title2: {{priority.title}} <br/>
-Title3: {{ticket.title}} <br/>
-Created: {{created_at}} <br/>
+<section class="dashboard">
+  <h2>Test</h2>
+  <ol class="ticket-list">
+    {{#each tickets as |ticket|}}
+    <li>
+      {{> priority-info}}
+    </li>
+    {{/each}}
+  </ol>
+</section>
 
-<article class="ticket article">
-  <div class="title">
-    <a href="/ticket/{{id}}">{{title}}</a>
-  </div>
-  <span class="ticket-text">{{ticket_text}}</span>
-  <div class="meta">
-    Created by {{user.username}} on {{format_date created_at}}
-    |
-    <a href="/ticket/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
-  </div>
-</article>
+{{!-- {{#if tickets.length}}
+<section class="dashboard">
+  <h2>Your Tickets</h2>
+  <ol>
+    {{#each tickets as |ticket|}}
+    
+    <li>
+      {{> ticket-info ticket}}
+      <a href="/dashboard/edit/{{ticket.id}}" class="edit-link">Edit ticket</a>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}} --}}
+
+{{!-- <script src="/javascript/add-ticket.js"></script> --}}

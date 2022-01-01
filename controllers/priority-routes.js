@@ -53,57 +53,114 @@ router.get('/', withAuth, (req, res) => {
     });
 });
 
-router.get('/:level', withAuth, (req, res) => {
-  Priority.findAll({
+// router.get('/:level', withAuth, (req, res) => {
+//   Priority.findAll({
+//     where: {
+//       level: req.params.level
+//     },
+//     attributes: [
+//       'id',
+//       'level',
+//     ],
+//     include: [
+//       {
+//         model: Ticket,
+//         attributes: ['id', 'ticket_text', 'title', 'status', 'priority_id', 'status_change_id', 'created_at'],
+//         include: [
+//           {
+//           model: Comment,
+//           attributes: ['id', 'comment_text', 'ticket_id', 'user_id', 'created_at'],
+//           },
+//           {
+//             model: User,
+//             attributes: ['username']
+//           },
+//           {
+//             model: StatusChange,
+//             attributes: ['statusChange']
+//           },
+//           {
+//             model: Comment,
+//             attributes: ['id', 'comment_text', 'ticket_id', 'user_id', 'created_at'],
+//             include: {
+//               model: User,
+//               attributes: ['username']
+//             }
+//           },
+//         ],
+//       },
+//     ],
+//   })
+//     .then(dbTicketData => {
+//       if (dbTicketData) {
+//         const ticket = dbTicketData.get({ plain: true });
+        
+//         res.render('priority', {
+//           ticket,
+//           loggedIn: true
+//         });
+//       } else {
+//         res.status(404).end();
+//       }
+//     })
+//     .catch(err => {
+//       res.status(500).json(err);
+//     });
+// });
+
+router.get('/:priority_id', withAuth, (req, res) => {
+  console.log('======================');
+  Ticket.findAll({
     where: {
-      level: req.params.level
+      priority_id: req.params.priority_id
     },
     attributes: [
       'id',
-      'level',
+      'ticket_text',
+      'title',
+      'status',
+      'priority_id',
+      'status_change_id',
+      'created_at',
+      [sequelize.literal('(SELECT COUNT(*) FROM ticket WHERE ticket.priority_id = 1)'), 'critical_count'],
+      [sequelize.literal('(SELECT COUNT(*) FROM ticket WHERE ticket.priority_id = 2)'), 'high_count'],
+      [sequelize.literal('(SELECT COUNT(*) FROM ticket WHERE ticket.priority_id = 3)'), 'moderate_count'],
+      [sequelize.literal('(SELECT COUNT(*) FROM ticket WHERE ticket.priority_id = 4)'), 'low_count'],
     ],
+    order: [['created_at', 'DESC']],
     include: [
       {
-        model: Ticket,
-        attributes: ['id', 'ticket_text', 'title', 'status', 'priority_id', 'status_change_id', 'created_at'],
-        include: [
-          {
-          model: Comment,
-          attributes: ['id', 'comment_text', 'ticket_id', 'user_id', 'created_at'],
-          },
-          {
-            model: User,
-            attributes: ['username']
-          },
-          {
-            model: StatusChange,
-            attributes: ['statusChange']
-          },
-          {
-            model: Comment,
-            attributes: ['id', 'comment_text', 'ticket_id', 'user_id', 'created_at'],
-            include: {
-              model: User,
-              attributes: ['username']
-            }
-          },
-        ],
+        model: Comment,
+        attributes: ['id', 'comment_text', 'ticket_id', 'user_id', 'created_at'],
+        include: {
+          model: User,
+          attributes: ['username']
+        }
       },
-    ],
+      {
+        model: User,
+        attributes: ['username']
+      },
+      {
+        model: Priority,
+        attributes: ['level']
+      },
+      {
+        model: StatusChange,
+        attributes: ['statusChange']
+      },
+    ]
   })
     .then(dbTicketData => {
-      if (dbTicketData) {
-        const ticket = dbTicketData.get({ plain: true });
-        
-        res.render('priority', {
-          ticket,
-          loggedIn: true
-        });
-      } else {
-        res.status(404).end();
-      }
+      const tickets = dbTicketData.map(ticket => ticket.get({ plain: true }));
+
+      res.render('priority', {
+        tickets,
+        loggedIn: req.session.loggedIn
+      });
     })
     .catch(err => {
+      console.log(err);
       res.status(500).json(err);
     });
 });
