@@ -13,17 +13,17 @@ const seedAll = async () => {
   await seedUsers();
   console.log('-------------- Users seeded');
 
-  await seedTickets();
-  console.log('-------------- Tickets seeded');
-
-  await seedComments();
-  console.log('-------------- Comments seeded');
-
   await seedPriority();
   console.log('-------------- Priority seeded');
 
   await seedStatusChange();
   console.log('-------------- Status Change seeded');
+
+  await seedTickets();
+  console.log('-------------- Tickets seeded');
+
+  await seedComments();
+  console.log('-------------- Comments seeded');
 
   process.exit(0);
 };

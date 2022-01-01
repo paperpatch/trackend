@@ -15,6 +15,9 @@ router.get('/', withAuth, (req, res) => {
       'id',
       'ticket_text',
       'title',
+      'status',
+      'priority_id',
+      'status_change_id',
       'created_at',
     ],
     include: [
@@ -29,7 +32,15 @@ router.get('/', withAuth, (req, res) => {
       {
         model: User,
         attributes: ['username']
-      }
+      },
+      {
+        model: Priority,
+        attributes: ['level']
+      },
+      {
+        model: StatusChange,
+        attributes: ['statusChange']
+      },
     ]
   })
     .then(dbTicketData => {
@@ -48,6 +59,9 @@ router.get('/edit/:id', withAuth, (req, res) => {
       'id',
       'ticket_text',
       'title',
+      'status',
+      'priority_id',
+      'status_change_id',
       'created_at',
     ],
     include: [
@@ -62,7 +76,15 @@ router.get('/edit/:id', withAuth, (req, res) => {
       {
         model: User,
         attributes: ['username']
-      }
+      },
+      {
+        model: Priority,
+        attributes: ['level']
+      },
+      {
+        model: StatusChange,
+        attributes: ['statusChange']
+      },
     ]
   })
     .then(dbTicketData => {

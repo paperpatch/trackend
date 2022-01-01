@@ -31,7 +31,15 @@ router.get('/:id', (req, res) => {
           model: Ticket,
           attributes: ['title']
         }
-      }
+      },
+      {
+        mode: Priority,
+        attributes: ['level']
+      },
+      {
+        mode: StatusChange,
+        attributes: ['statusChange']
+      },
     ]
   })
     .then(dbUserData => {

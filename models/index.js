@@ -35,24 +35,24 @@ Ticket.hasMany(Comment, {
   onDelete: 'CASCADE',
 });
 
-Ticket.hasMany(Priority, {
-  foreignKey: 'ticket_id',
+Priority.hasMany(Ticket, {
+  foreignKey: 'priority_id',
+  // onDelete: 'CASCADE',
+});
+
+Ticket.belongsTo(Priority, {
+  foreignKey: 'priority_id',
   onDelete: 'CASCADE',
 });
 
-Priority.belongsTo(Ticket, {
-  foreignKey: 'ticket_id',
-  onDelete: 'CASCADE',
+StatusChange.hasMany(Ticket, {
+  foreignKey: 'status_change_id',
+  // onDelete: 'CASCADE',
 });
 
-Ticket.hasMany(StatusChange, {
-  foreignKey: 'ticket_id',
+Ticket.belongsTo(StatusChange, {
+  foreignKey: 'status_change_id',
   onDelete: 'CASCADE'
-});
-
-StatusChange.belongsTo(Ticket, {
-  foreignKey: 'ticket_id',
-  onDelete: 'CASCADE',
 });
 
 module.exports = { User, Ticket, Comment, Priority, StatusChange };
