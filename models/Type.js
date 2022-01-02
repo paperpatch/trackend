@@ -11,7 +11,7 @@ Type.init(
       primaryKey: true,
       autoIncrement: true
     },
-    types: {
+    type: {
       type: DataTypes.STRING,
       allowNull: false,
     },
