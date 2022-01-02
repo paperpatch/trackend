@@ -14,6 +14,7 @@ router.get('/', withAuth, (req, res) => {
       'status',
       'priority_id',
       'status_change_id',
+      'type_id',
       'created_at',
       [sequelize.literal('(SELECT COUNT(*) FROM ticket WHERE ticket.priority_id = 1)'), 'critical_count'],
       [sequelize.literal('(SELECT COUNT(*) FROM ticket WHERE ticket.priority_id = 2)'), 'high_count'],
@@ -71,6 +72,7 @@ router.get('/ticket/:id', withAuth, (req, res) => {
       'status',
       'priority_id',
       'status_change_id',
+      'type_id',
       'created_at',
     ],
     include: [

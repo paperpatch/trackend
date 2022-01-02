@@ -18,6 +18,7 @@ router.get('/', withAuth, (req, res) => {
       'status',
       'priority_id',
       'status_change_id',
+      'type_id',
       'created_at',
     ],
     include: [
@@ -62,6 +63,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
       'status',
       'priority_id',
       'status_change_id',
+      'type_id',
       'created_at',
     ],
     include: [

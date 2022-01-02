@@ -18,6 +18,7 @@ router.get('/', withAuth, (req, res) => {
       'status',
       'priority_id',
       'status_change_id',
+      'type_id',
       'created_at',
     ],
     include: [
@@ -65,7 +66,7 @@ router.get('/', withAuth, (req, res) => {
 //     include: [
 //       {
 //         model: Ticket,
-//         attributes: ['id', 'ticket_text', 'title', 'status', 'priority_id', 'status_change_id', 'created_at'],
+//         attributes: ['id', 'ticket_text', 'title', 'status', 'priority_id', 'status_change_id', 'type_id', 'created_at'],
 //         include: [
 //           {
 //           model: Comment,
@@ -121,6 +122,7 @@ router.get('/:priority_id', withAuth, (req, res) => {
       'status',
       'priority_id',
       'status_change_id',
+      'type_id',
       'created_at',
       [sequelize.literal('(SELECT COUNT(*) FROM ticket WHERE ticket.priority_id = 1)'), 'critical_count'],
       [sequelize.literal('(SELECT COUNT(*) FROM ticket WHERE ticket.priority_id = 2)'), 'high_count'],
