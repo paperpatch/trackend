@@ -46,7 +46,7 @@ router.get('/', withAuth, (req, res) => {
   })
     .then(dbTicketData => {
       const tickets = dbTicketData.map(ticket => ticket.get({ plain: true }));
-      res.render('dashboard', { tickets, loggedIn: true });
+      res.render('tickets', { tickets, loggedIn: true });
     })
     .catch(err => {
       console.log(err);
