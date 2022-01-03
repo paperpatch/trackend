@@ -4,11 +4,31 @@
       <div class="col">
         {{status}}
       </div>
+    </div>
+    <div class="row">
       <div class="col">
         <div class="title">
-          <a href="/ticket/{{id}}">{{title}}</a>
+          ID: <a href="/ticket/{{id}}">{{id}}</a>
         </div>
       </div>
+      <div class="col">
+        <div class="title">
+          Title: <a href="/ticket/{{id}}">{{title}}</a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        Created By: {{user.username}}
+      </div>
+      <div class="col">
+        Issued: {{format_date created_at}}
+      </div>
+      <div class="col">
+        Type: {{type.type}}
+      </div>
+    </div>
+
       <div class="col-3">
         {{ticket_text}}
       </div>
@@ -27,6 +47,5 @@
       <div class="col">
         <a href="/ticket/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
       </div>
-    </div>
   </div>
 </article>
