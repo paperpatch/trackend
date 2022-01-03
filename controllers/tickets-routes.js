@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Ticket, User, Comment, Priority, StatusChange, Type} = require('../models');
+const { Ticket, User, Comment, Priority, StatusChange, Type, Role} = require('../models');
 const withAuth = require('../utils/auth');
 
 // get all Tickets for dashboard
@@ -32,19 +32,23 @@ router.get('/', withAuth, (req, res) => {
       },
       {
         model: User,
-        attributes: ['username']
+        attributes: ['username', 'role_id'],
+        include: {
+          model: Role,
+          attributes: ['role']
+        }
       },
       {
         model: Priority,
-        attributes: ['level']
+        attributes: ['level'],
       },
       {
         model: StatusChange,
-        attributes: ['statusChange']
+        attributes: ['statusChange'],
       },
       {
         model: Type,
-        attributes: ['type']
+        attributes: ['type'],
       },
     ]
   })

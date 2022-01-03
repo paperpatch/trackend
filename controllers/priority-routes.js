@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Ticket, User, Comment, Priority, StatusChange, Type} = require('../models');
+const { Ticket, User, Comment, Priority, StatusChange, Type, Role} = require('../models');
 const withAuth = require('../utils/auth');
 
 // get all Tickets for priority
@@ -27,12 +27,20 @@ router.get('/', withAuth, (req, res) => {
         attributes: ['id', 'comment_text', 'ticket_id', 'user_id', 'created_at'],
         include: {
           model: User,
-          attributes: ['username']
+          attributes: ['username', 'role_id'],
+          include: {
+            model: Role,
+            attributes: ['role']
+          },
         }
       },
       {
         model: User,
-        attributes: ['username']
+        attributes: ['username', 'role_id'],
+        include: {
+          model: Role,
+          attributes: ['role']
+        },
       },
       {
         model: Priority,
@@ -85,12 +93,20 @@ router.get('/:priority_id', withAuth, (req, res) => {
         attributes: ['id', 'comment_text', 'ticket_id', 'user_id', 'created_at'],
         include: {
           model: User,
-          attributes: ['username']
+          attributes: ['username'],
+          include: {
+            model: Role,
+            attributes: ['role']
+          },
         }
       },
       {
         model: User,
-        attributes: ['username']
+        attributes: ['username'],
+        include: {
+          model: Role,
+          attributes: ['role']
+        },
       },
       {
         model: Priority,
