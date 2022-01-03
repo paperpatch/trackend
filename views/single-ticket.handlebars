@@ -1,6 +1,7 @@
+<h2>Detail List</h2>
+
 {{> ticket-info ticket}}
 
-{{#if loggedIn}}
 <form class="comment-form">
   <div>
     <textarea name="comment-body"></textarea>
@@ -9,15 +10,9 @@
   <div>
     <button type="submit">Add Comment</button>
   </div>
-
-{{else}}
-  <div class="want">Want to comment? <a href="/login">Login</a></div>
 </form>
-{{/if}}
 
+Comments:
 {{> comments ticket.comments}}
 
-{{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
-<script src="/javascript/upvote.js"></script>
-{{/if}}

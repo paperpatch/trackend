@@ -13,14 +13,12 @@
     
     <div class="col">
       <span>Summary:</span>
-      {{#each tickets}} {{!-- how to change each to just 1 individual ticket? --}}
       <ol class="summary-list">
-        <ul>{{critical_count}} critical priority tickets</ul>
-        <ul>{{high_count}} high priority tickets</ul>
-        <ul>{{moderate_count}} moderate priority tickets</ul>
-        <ul>{{low_count}} low priority tickets</ul>
+        <ul>{{tickets.[0].critical_count}} critical priority tickets</ul>
+        <ul>{{tickets.[0].high_count}} high priority tickets</ul>
+        <ul>{{tickets.[0].moderate_count}} moderate priority tickets</ul>
+        <ul>{{tickets.[0].low_count}} low priority tickets</ul>
       </ol>
-      {{/each}}
     </div>
   </div>
 </div>

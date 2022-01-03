@@ -50,66 +50,10 @@ router.get('/', withAuth, (req, res) => {
   })
     .then(dbTicketData => {
       const tickets = dbTicketData.map(ticket => ticket.get({ plain: true }));
-      res.render('dashboard', { tickets, loggedIn: true });
+      res.render('tickets', { tickets, loggedIn: true });
     })
     .catch(err => {
       console.log(err);
-      res.status(500).json(err);
-    });
-});
-
-router.get('/edit/:id', withAuth, (req, res) => {
-  Ticket.findByPk(req.params.id, {
-    attributes: [
-      'id',
-      'ticket_text',
-      'title',
-      'status',
-      'priority_id',
-      'status_change_id',
-      'type_id',
-      'created_at',
-    ],
-    include: [
-      {
-        model: Comment,
-        attributes: ['id', 'comment_text', 'ticket_id', 'user_id', 'created_at'],
-        include: {
-          model: User,
-          attributes: ['username']
-        }
-      },
-      {
-        model: User,
-        attributes: ['username']
-      },
-      {
-        model: Priority,
-        attributes: ['level']
-      },
-      {
-        model: StatusChange,
-        attributes: ['statusChange']
-      },
-      {
-        model: Type,
-        attributes: ['type']
-      },
-    ]
-  })
-    .then(dbTicketData => {
-      if (dbTicketData) {
-        const ticket = dbTicketData.get({ plain: true });
-        
-        res.render('edit-ticket', {
-          ticket,
-          loggedIn: true
-        });
-      } else {
-        res.status(404).end();
-      }
-    })
-    .catch(err => {
       res.status(500).json(err);
     });
 });

@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Ticket, User, Comment, Priority, StatusChange} = require('../models');
+const { Ticket, User, Comment, Priority, StatusChange, Type} = require('../models');
 const withAuth = require('../utils/auth');
 
 // get all Tickets for homepage
@@ -42,6 +42,10 @@ router.get('/', withAuth, (req, res) => {
       {
         model: StatusChange,
         attributes: ['statusChange']
+      },
+      {
+        model: Type,
+        attributes: ['type']
       },
     ]
   })
@@ -95,6 +99,10 @@ router.get('/ticket/:id', withAuth, (req, res) => {
       {
         model: StatusChange,
         attributes: ['statusChange']
+      },
+      {
+        model: Type,
+        attributes: ['type']
       },
     ]
   })
