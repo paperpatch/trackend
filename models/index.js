@@ -5,6 +5,7 @@ const Comment = require('./Comment');
 const Priority = require('./Priority');
 const StatusChange = require('./StatusChange');
 const Type = require('./Type');
+const Role = require('./Role');
 
 // create associations
 User.hasMany(Ticket, {
@@ -38,7 +39,7 @@ Ticket.hasMany(Comment, {
 
 Priority.hasMany(Ticket, {
   foreignKey: 'priority_id',
-  // onDelete: 'CASCADE',
+  onDelete: 'CASCADE',
 });
 
 Ticket.belongsTo(Priority, {
@@ -48,7 +49,7 @@ Ticket.belongsTo(Priority, {
 
 StatusChange.hasMany(Ticket, {
   foreignKey: 'status_change_id',
-  // onDelete: 'CASCADE',
+  onDelete: 'CASCADE',
 });
 
 Ticket.belongsTo(StatusChange, {
@@ -58,7 +59,7 @@ Ticket.belongsTo(StatusChange, {
 
 Type.hasMany(Ticket, {
   foreignKey: 'type_id',
-  // onDelete: 'CASCADE',
+  onDelete: 'CASCADE',
 });
 
 Ticket.belongsTo(Type, {
@@ -66,4 +67,14 @@ Ticket.belongsTo(Type, {
   onDelete: 'CASCADE'
 });
 
-module.exports = { User, Ticket, Comment, Priority, StatusChange, Type };
+Role.hasMany(Ticket, {
+  foreignKey: 'role_id',
+  onDelete: 'CASCADE',
+});
+
+Ticket.belongsTo(Role, {
+  foreignKey: 'role_id',
+  onDelete: 'CASCADE'
+});
+
+module.exports = { User, Ticket, Comment, Priority, StatusChange, Type, Role };
