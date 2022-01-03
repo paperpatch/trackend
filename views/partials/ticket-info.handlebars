@@ -28,22 +28,22 @@
         Type: {{type.type}}
       </div>
     </div>
-
-      <div class="col-3">
+    <div class="row">
+      <div class="col">
+        Assigned To:
+      </div>
+      <div class="col">
+        Due By:
+      </div>
+      <div class="col">
+        Priority: {{priority.level}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
         {{ticket_text}}
       </div>
-      <div class="col">
-        {{priority.level}}
-      </div>
-      <div class="col">
-        {{statuschange.statusChange}}
-      </div>
-      <div class="col">
-        {{user.username}}
-      </div>
-      <div class="col">
-        {{format_date created_at}}
-      </div>
+    </div>
       <div class="col">
         <a href="/ticket/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
       </div>
