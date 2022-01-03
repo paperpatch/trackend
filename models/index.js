@@ -39,7 +39,7 @@ Ticket.hasMany(Comment, {
 
 Priority.hasMany(Ticket, {
   foreignKey: 'priority_id',
-  onDelete: 'CASCADE',
+  // onDelete: 'CASCADE',
 });
 
 Ticket.belongsTo(Priority, {
@@ -49,7 +49,7 @@ Ticket.belongsTo(Priority, {
 
 StatusChange.hasMany(Ticket, {
   foreignKey: 'status_change_id',
-  onDelete: 'CASCADE',
+  // onDelete: 'CASCADE',
 });
 
 Ticket.belongsTo(StatusChange, {
@@ -59,7 +59,7 @@ Ticket.belongsTo(StatusChange, {
 
 Type.hasMany(Ticket, {
   foreignKey: 'type_id',
-  onDelete: 'CASCADE',
+  // onDelete: 'CASCADE',
 });
 
 Ticket.belongsTo(Type, {
@@ -67,12 +67,12 @@ Ticket.belongsTo(Type, {
   onDelete: 'CASCADE'
 });
 
-Role.hasMany(Ticket, {
+Role.hasMany(User, {
   foreignKey: 'role_id',
-  onDelete: 'CASCADE',
+  // onDelete: 'CASCADE',
 });
 
-Ticket.belongsTo(Role, {
+User.belongsTo(Role, {
   foreignKey: 'role_id',
   onDelete: 'CASCADE'
 });

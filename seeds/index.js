@@ -4,12 +4,16 @@ const seedComments = require('./comment-seeds');
 const seedPriority = require('./priority-seeds');
 const seedStatusChange = require('./status-change-seeds');
 const seedType = require('./type-seeds');
+const seedRole = require('./role-seeds');
 
 const sequelize = require('../config/connection');
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
   console.log('-------------- Seeding Initialized');
+
+  await seedRole();
+  console.log('-------------- Roles seeded')
 
   await seedUsers();
   console.log('-------------- Users seeded');
