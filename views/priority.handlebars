@@ -1,9 +1,9 @@
-<table>
+{{!-- <table>
   <thead>
     <tr>
       <h2>Priority Tickets</h2>
       {{#each tickets.[0]}}
-        <th>{{@key}}</th> {{!-- renders object's attribute name --}}
+        <th>{{@key}}</th>
       {{/each}}
     </tr>
   </thead>
@@ -17,33 +17,43 @@
       </tr>
     {{/each}}
   </tbody>
-  {{!-- {{> priority-info}} --}}
-</table>
+</table> --}}
 
 <section class="dashboard">
-  <h2>Test</h2>
+  <h2>{{tickets.[0].priority.level}} Priority Tickets</h2>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        Status:
+      </div>
+      <div class="col">
+        Title:
+      </div>
+      <div class="col-3">
+        Description:
+      </div>
+      <div class="col">
+        Level:
+      </div>
+      <div class="col">
+        Latest:
+      </div>
+      <div class="col">
+        Username:
+      </div>
+      <div class="col">
+        Issued:
+      </div>
+      <div class="col">
+        Comments:
+      </div>
+    </div>
+  </div>
   <ol class="ticket-list">
     {{#each tickets as |ticket|}}
     <li>
-      {{> priority-info}}
+      {{> ticket-list}}
     </li>
     {{/each}}
   </ol>
 </section>
-
-{{!-- {{#if tickets.length}}
-<section class="dashboard">
-  <h2>Your Tickets</h2>
-  <ol>
-    {{#each tickets as |ticket|}}
-    
-    <li>
-      {{> ticket-info ticket}}
-      <a href="/dashboard/edit/{{ticket.id}}" class="edit-link">Edit ticket</a>
-    </li>
-    {{/each}}
-  </ol>
-</section>
-{{/if}} --}}
-
-{{!-- <script src="/javascript/add-ticket.js"></script> --}}

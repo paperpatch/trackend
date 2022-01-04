@@ -1,11 +1,51 @@
 <article class="ticket article">
-  <div class="title">
-    <a href="/ticket/{{id}}">{{title}}</a>
-  </div>
-  <span class="ticket-text">{{ticket_text}}</span>
-  <div class="meta">
-    Created by {{user.username}} on {{format_date created_at}}
-    |
-    <a href="/ticket/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        {{status}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="title">
+          ID: <a href="/ticket/{{id}}">{{id}}</a>
+        </div>
+      </div>
+      <div class="col">
+        <div class="title">
+          Title: <a href="/ticket/{{id}}">{{title}}</a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        Created By: {{user.username}}
+      </div>
+      <div class="col">
+        Issued: {{format_date created_at}}
+      </div>
+      <div class="col">
+        Type: {{type.type}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        Assigned To:
+      </div>
+      <div class="col">
+        Due By:
+      </div>
+      <div class="col">
+        Priority: {{priority.level}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        {{ticket_text}}
+      </div>
+    </div>
+      <div class="col">
+        <a href="/ticket/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+      </div>
   </div>
 </article>

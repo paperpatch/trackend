@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Ticket, User, Comment, Priority, StatusChange} = require('../models');
+const { Ticket, User, Comment, Priority, StatusChange, Type, Role} = require('../models');
 const withAuth = require('../utils/auth');
 
 // get all Tickets for dashboard
@@ -18,6 +18,7 @@ router.get('/', withAuth, (req, res) => {
       'status',
       'priority_id',
       'status_change_id',
+      'type_id',
       'created_at',
     ],
     include: [
@@ -26,12 +27,20 @@ router.get('/', withAuth, (req, res) => {
         attributes: ['id', 'comment_text', 'ticket_id', 'user_id', 'created_at'],
         include: {
           model: User,
-          attributes: ['username']
+          attributes: ['username', 'role_id'],
+          include: {
+            model: Role,
+            attributes: ['role']
+          },
         }
       },
       {
         model: User,
-        attributes: ['username']
+        attributes: ['username', 'role_id'],
+        include: {
+          model: Role,
+          attributes: ['role']
+        },
       },
       {
         model: Priority,
@@ -40,6 +49,10 @@ router.get('/', withAuth, (req, res) => {
       {
         model: StatusChange,
         attributes: ['statusChange']
+      },
+      {
+        model: Type,
+        attributes: ['type']
       },
     ]
   })
@@ -62,6 +75,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
       'status',
       'priority_id',
       'status_change_id',
+      'type_id',
       'created_at',
     ],
     include: [
@@ -70,12 +84,20 @@ router.get('/edit/:id', withAuth, (req, res) => {
         attributes: ['id', 'comment_text', 'ticket_id', 'user_id', 'created_at'],
         include: {
           model: User,
-          attributes: ['username']
-        }
+          attributes: ['username', 'role_id'],
+          include: {
+            model: Role,
+            attributes: ['role']
+          },
+        },
       },
       {
         model: User,
-        attributes: ['username']
+        attributes: ['username', 'role_id'],
+        include: {
+          model: Role,
+          attributes: ['role']
+        },
       },
       {
         model: Priority,
@@ -84,6 +106,10 @@ router.get('/edit/:id', withAuth, (req, res) => {
       {
         model: StatusChange,
         attributes: ['statusChange']
+      },
+      {
+        model: Type,
+        attributes: ['type']
       },
     ]
   })

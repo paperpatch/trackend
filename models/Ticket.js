@@ -48,6 +48,9 @@ Ticket.init(
       //   key: 'id'
       // }
     },
+    type_id: {
+      type: DataTypes.INTEGER,
+    },
     // ticket_date: {
     //   type: DataTypes.DATE,
     //   defaultValue: DataTypes.NOW,
