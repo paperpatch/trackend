@@ -1,16 +1,22 @@
-<h2>Profile</h2>
-
-<section>
-  <ul>
-    <span>ID</span>
-    {{id}}
-    <span>Username</span>
-    {{username}}
-    <span>Email</span>
-    {{email}}
-    <span>Password</span>
-    {{password}}
-    <span>Account Role</span>
-    {{role_id}}
-  </ul>
+<section class="dashbaord">
+  <h2>Profile</h2>
+  <div class="">
+    <div class="row flex-column">
+      <div class="col">
+        <span>ID:</span> {{profile.[0].id}}
+      </div>
+      <div class="col">
+        <span>Username:</span> {{profile.[0].username}}
+      </div>
+      <div class="col">
+        <span>Email:</span> {{profile.[0].email}}
+      </div>
+      <div class="col">
+        <span>Password:</span> *********
+      </div>
+      <div class="col">
+        <span>Account Role:</span> {{profile.[0].role_id}}
+      </div>
+    </div>
+  </div>
 </section>

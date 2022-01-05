@@ -3,13 +3,13 @@ const sequelize = require('../config/connection');
 const { User } = require('../models');
 const withAuth = require('../utils/auth');
 
-// get all Tickets for dashboard
+// get all Profile data
 router.get('/', withAuth, (req, res) => {
   console.log(req.session);
   console.log('======================');
   User.findAll({
     where: {
-      id: req.session.id
+      id: req.session.user_id
     },
     attributes: [
       'id',
@@ -19,9 +19,9 @@ router.get('/', withAuth, (req, res) => {
       'role_id',
     ],
   })
-    .then(dbTicketData => {
-      const tickets = dbTicketData.map(ticket => ticket.get({ plain: true }));
-      res.render('profile', { tickets, loggedIn: true });
+    .then(dbProfileData => {
+      const profile = dbProfileData.map(profile => profile.get({ plain: true }));
+      res.render('profile', { profile, loggedIn: true });
     })
     .catch(err => {
       console.log(err);
