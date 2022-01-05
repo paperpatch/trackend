@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { User } = require('../models');
+const { User, Role } = require('../models');
 const withAuth = require('../utils/auth');
 
 // get all Profile data
@@ -18,6 +18,10 @@ router.get('/', withAuth, (req, res) => {
       'password',
       'role_id',
     ],
+    include: {
+      model: Role,
+      attributes: ['role']
+    }
   })
     .then(dbProfileData => {
       const profile = dbProfileData.map(profile => profile.get({ plain: true }));
