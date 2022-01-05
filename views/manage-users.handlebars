@@ -1,0 +1,32 @@
+<section class="dashboard">
+  <h2>User List:</h2>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        Users:
+      </div>
+      <div class="col">
+        Role:
+      </div>
+      <div class="col-3">
+        Email:
+      </div>
+      <div class="col">
+        Created On:
+      </div>
+      <div class="col">
+        Edit:
+      </div>
+      <div class="col">
+        Delete:
+      </div>
+    </div>
+  </div>
+  <ol class="ticket-list">
+    {{#each tickets as |ticket|}}
+    <li>
+      {{> user-info}}
+    </li>
+    {{/each}}
+  </ol>
+</section>

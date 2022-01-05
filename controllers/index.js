@@ -6,6 +6,7 @@ const dashboardRoutes = require('./dashboard-routes.js');
 const priorityRoutes = require('./priority-routes.js');
 const ticketsRoutes = require('./tickets-routes');
 const createTicketRoutes = require('./create-ticket-routes.js');
+const manageRoutes = require('./manage-routes');
 
 router.use('/', homeRoutes);
 router.use('/dashboard', dashboardRoutes);
@@ -13,5 +14,6 @@ router.use('/api', apiRoutes);
 router.use('/priority', priorityRoutes);
 router.use('/tickets', ticketsRoutes);
 router.use('/create-ticket', createTicketRoutes);
+router.use('/manageusers', manageRoutes);
 
 module.exports = router;
