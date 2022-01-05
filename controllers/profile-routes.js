@@ -9,7 +9,7 @@ router.get('/', withAuth, (req, res) => {
   console.log('======================');
   User.findAll({
     where: {
-      user_id: req.session.id
+      id: req.session.id
     },
     attributes: [
       'id',
@@ -21,7 +21,7 @@ router.get('/', withAuth, (req, res) => {
   })
     .then(dbTicketData => {
       const tickets = dbTicketData.map(ticket => ticket.get({ plain: true }));
-      res.render('profile-setting', { tickets, loggedIn: true });
+      res.render('profile', { tickets, loggedIn: true });
     })
     .catch(err => {
       console.log(err);
