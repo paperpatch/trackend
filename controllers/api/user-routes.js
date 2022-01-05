@@ -32,14 +32,17 @@ router.get('/:id', (req, res) => {
           attributes: ['title']
         }
       },
-      {
-        mode: Priority,
-        attributes: ['level']
-      },
-      {
-        mode: StatusChange,
-        attributes: ['statusChange']
-      },
+      // {
+      //   model: Priority,
+      //   attributes: ['level'],
+      //   through: Ticket,
+      //   as: 'ticket-priority'
+        
+      // },
+      // {
+      //   model: StatusChange,
+      //   attributes: ['statusChange']
+      // },
     ]
   })
     .then(dbUserData => {
@@ -59,7 +62,9 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
   User.create({
     username: req.body.username,
-    password: req.body.password
+    email: req.body.email,
+    password: req.body.password,
+    role_id: req.body.role_id
   })
     .then(dbUserData => {
       req.session.save(() => {
