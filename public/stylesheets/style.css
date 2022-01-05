@@ -128,6 +128,9 @@ main {
 
 .delete-ticket-btn {
   background-color: #d41414;
+  /* display: inline; */
+  margin: 0 0 3% 1%;
+  padding-left: 1%;
 }
 
 .delete-ticket-btn:hover {
@@ -144,7 +147,7 @@ main {
 } */
 
 .edit-link {
-  display: block;
+  display: inline;
   margin: 0 0 3% 1%;
   padding-left: 1%;
 }
