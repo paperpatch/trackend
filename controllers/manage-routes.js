@@ -8,9 +8,9 @@ router.get('/', withAuth, (req, res) => {
   console.log(req.session);
   console.log('======================');
   Ticket.findAll({
-    where: {
-      user_id: req.session.user_id
-    },
+    // where: {
+    //   user_id: req.session.user_id
+    // },
     attributes: [
       'id',
       'ticket_text',
@@ -32,7 +32,7 @@ router.get('/', withAuth, (req, res) => {
       },
       {
         model: User,
-        attributes: ['username', 'role_id'],
+        attributes: ['username', 'email', 'role_id'],
         include: {
           model: Role,
           attributes: ['role']
