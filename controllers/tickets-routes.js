@@ -27,7 +27,11 @@ router.get('/', withAuth, (req, res) => {
         attributes: ['id', 'comment_text', 'ticket_id', 'user_id', 'created_at'],
         include: {
           model: User,
-          attributes: ['username']
+          attributes: ['username'],
+          include: {
+            model: Role,
+            attributes: ['role']
+          },
         }
       },
       {
