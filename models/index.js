@@ -12,10 +12,19 @@ User.hasMany(Ticket, {
   foreignKey: 'user_id'
 });
 
+User.hasMany(Ticket, {
+  foreignKey: 'assigned_id'
+})
+
 Ticket.belongsTo(User, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE'
 });
+
+Ticket.belongsTo(User, {
+  foreignKey: 'assigned_id',
+  onDelete: 'CASCADE',
+})
 
 Comment.belongsTo(User, {
   foreignKey: 'user_id',
