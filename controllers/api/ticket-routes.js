@@ -31,11 +31,17 @@ router.get('/', (req, res) => {
       },
       {
         model: User,
-        attributes: ['username', 'role_id'],
+        as: 'user',
+        attributes: ['username', 'role_id',],
         include: {
           model: Role,
           attributes: ['role']
-        },
+        }
+      },
+      {
+        model: User,
+        as: 'assign',
+        attributes: ['username'],
       },
       {
         mode: Priority,
@@ -83,11 +89,17 @@ router.get('/:id', (req, res) => {
       },
       {
         model: User,
-        attributes: ['username', 'role_id'],
+        as: 'user',
+        attributes: ['username', 'role_id',],
         include: {
           model: Role,
           attributes: ['role']
-        },
+        }
+      },
+      {
+        model: User,
+        as: 'assign',
+        attributes: ['username'],
       },
       {
         mode: Priority,

@@ -38,11 +38,17 @@ router.get('/', withAuth, (req, res) => {
       },
       {
         model: User,
-        attributes: ['username', 'role_id'],
+        as: 'user',
+        attributes: ['username', 'role_id',],
         include: {
           model: Role,
           attributes: ['role']
-        },
+        }
+      },
+      {
+        model: User,
+        as: 'assign',
+        attributes: ['username'],
       },
       {
         model: Priority,
@@ -104,11 +110,17 @@ router.get('/ticket/:id', withAuth, (req, res) => {
       },
       {
         model: User,
-        attributes: ['username'],
+        as: 'user',
+        attributes: ['username', 'role_id',],
         include: {
           model: Role,
           attributes: ['role']
-        },
+        }
+      },
+      {
+        model: User,
+        as: 'assign',
+        attributes: ['username'],
       },
       {
         model: Priority,
