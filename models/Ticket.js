@@ -51,6 +51,9 @@ Ticket.init(
     type_id: {
       type: DataTypes.INTEGER,
     },
+    assigned_id: {
+      type: DataTypes.INTEGER,
+    },
     // ticket_date: {
     //   type: DataTypes.DATE,
     //   defaultValue: DataTypes.NOW,
