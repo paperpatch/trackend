@@ -145,7 +145,8 @@ router.put('/:id', withAuth, (req, res) => {
   Ticket.update(
     {
       title: req.body.title,
-      ticket_text: req.body.ticket_text
+      ticket_text: req.body.ticket_text,
+      status: req.body.status
     },
     {
       where: {

@@ -8,6 +8,12 @@
       <input name="ticket-title" type="text" value="{{ticket.title}}" />
     </div>
     <div>
+      <select name="status" id="status">
+        <option value="true">Open</option>
+        <option value="false">Closed</option>
+      </select>
+    </div>
+    <div>
       <textarea name="ticket-text">{{ticket.ticket_text}}</textarea>
     </div>
     <div>
