@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 const { Ticket, User, Comment, Priority, StatusChange, Type, Role} = require('../models');
 const withAuth = require('../utils/auth');
 
-// get all Tickets for dashboard
+// get all Tickets for All
 router.get('/', withAuth, (req, res) => {
   console.log(req.session);
   console.log('======================');
