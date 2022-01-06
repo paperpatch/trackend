@@ -19,6 +19,7 @@ router.get('/', withAuth, (req, res) => {
       'priority_id',
       'status_change_id',
       'type_id',
+      'assigned_id',
       'created_at',
     ],
     include: [
