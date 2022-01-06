@@ -31,11 +31,17 @@ router.get('/', (req, res) => {
       },
       {
         model: User,
-        attributes: ['username', 'role_id'],
+        as: 'user',
+        attributes: ['username', 'role_id',],
         include: {
           model: Role,
           attributes: ['role']
-        },
+        }
+      },
+      {
+        model: User,
+        as: 'assign',
+        attributes: ['username'],
       },
       {
         mode: Priority,
@@ -83,11 +89,17 @@ router.get('/:id', (req, res) => {
       },
       {
         model: User,
-        attributes: ['username', 'role_id'],
+        as: 'user',
+        attributes: ['username', 'role_id',],
         include: {
           model: Role,
           attributes: ['role']
-        },
+        }
+      },
+      {
+        model: User,
+        as: 'assign',
+        attributes: ['username'],
       },
       {
         mode: Priority,
@@ -133,7 +145,8 @@ router.put('/:id', withAuth, (req, res) => {
   Ticket.update(
     {
       title: req.body.title,
-      ticket_text: req.body.ticket_text
+      ticket_text: req.body.ticket_text,
+      status: req.body.status
     },
     {
       where: {

@@ -36,22 +36,17 @@ Ticket.init(
     },
     priority_id: {
       type: DataTypes.INTEGER,
-      // references: {
-      //   model: 'priority',
-      //   key: 'id'
-      // }
     },
     status_change_id: {
       type: DataTypes.INTEGER,
-      // references: {
-      //   model: 'statuschange',
-      //   key: 'id'
-      // }
     },
     type_id: {
       type: DataTypes.INTEGER,
     },
-    // ticket_date: {
+    assigned_id: {
+      type: DataTypes.INTEGER,
+    },
+    // due_date: {
     //   type: DataTypes.DATE,
     //   defaultValue: DataTypes.NOW,
     // },

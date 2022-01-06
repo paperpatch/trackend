@@ -2,7 +2,11 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        {{status}}
+        {{#if status}}
+        Open
+        {{else}}
+        Closed
+        {{/if}}
       </div>
     </div>
     <div class="row">
@@ -30,7 +34,7 @@
     </div>
     <div class="row">
       <div class="col">
-        Assigned To:
+        Assigned To: {{assign.username}}
       </div>
       <div class="col">
         Due By:
