@@ -1,4 +1,4 @@
-<script src="/javascript/delete-ticket.js"></script>{{#if tickets.length}}
+{{#if tickets.length}}
 <section class="dashboard">
   <h2>My Tickets</h2>
   <ol>
@@ -7,11 +7,8 @@
     <li>
       {{> ticket-front ticket}}
       <a href="/dashboard/edit/{{ticket.id}}" class="edit-link">Edit ticket</a>
-      <button class="delete-ticket-btn">Delete</button>
     </li>
     {{/each}}
   </ol>
 </section>
 {{/if}}
-
-<script src="/javascript/delete-ticket.js"></script>
