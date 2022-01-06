@@ -9,7 +9,7 @@ const ticketdata = [
     priority_id: 2,
     status_change_id: 1,
     type_id: 5,
-    assigned_id: 1,
+    assigned_id: 2,
   },
   {
     title: 'Bug in navigation',
@@ -29,7 +29,7 @@ const ticketdata = [
     priority_id: 4,
     status_change_id: 1,
     type_id: 4,
-    assigned_id: 3,
+    assigned_id: 5,
   },
   {
     title: 'Priority Tickets Work',
@@ -39,7 +39,7 @@ const ticketdata = [
     priority_id: 1,
     status_change_id: 1,
     type_id: 2,
-    assigned_id: 1,
+    assigned_id: 6,
   },
   {
     title: 'Add Type Section',
@@ -49,7 +49,7 @@ const ticketdata = [
     priority_id: 2,
     status_change_id: 1,
     type_id: 4,
-    assigned_id: 2,
+    assigned_id: 7,
   },
   {
     title: 'Wireframe',
@@ -59,7 +59,7 @@ const ticketdata = [
     priority_id: 1,
     status_change_id: 2,
     type_id: 5,
-    assigned_id: 3,
+    assigned_id: 4,
   },
   {
     title: 'Minimal Viable Product',
@@ -69,7 +69,7 @@ const ticketdata = [
     priority_id: 4,
     status_change_id: 2,
     type_id: 4,
-    assigned_id: 1,
+    assigned_id: 5,
   },
 ];
 

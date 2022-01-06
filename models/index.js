@@ -17,11 +17,13 @@ User.hasMany(Ticket, {
 })
 
 Ticket.belongsTo(User, {
+  as: 'user',
   foreignKey: 'user_id',
   onDelete: 'CASCADE'
 });
 
 Ticket.belongsTo(User, {
+  as: 'assign',
   foreignKey: 'assigned_id',
   onDelete: 'CASCADE',
 })

@@ -104,6 +104,7 @@ router.get('/:priority_id', withAuth, (req, res) => {
       },
       {
         model: User,
+        as: 'User',
         attributes: ['username'],
         include: {
           model: Role,
