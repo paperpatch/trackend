@@ -1,3 +1,6 @@
+const togglePassword = document.querySelector('#togglePassword');
+const password = document.querySelector('.pwSignUp');
+
 const checkpassword = () => {
 
 	let password1 = document.querySelector('#password-signup').value.trim();
@@ -43,5 +46,12 @@ async function signupFormHandler(event) {
 	}
 	
 }
+
+togglePassword.addEventListener('click', function(e) {
+	const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+	password.setAttribute('type', type);
+  
+	this.classList.toggle('bi-eye');
+});
 
 document.querySelector('.signup-form').addEventListener('submit',  signupFormHandler);
