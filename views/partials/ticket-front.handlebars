@@ -2,6 +2,9 @@
   <div class="title">
     <a href="/ticket/{{id}}">{{title}}</a>
   </div>
+  <div>
+    {{#if status}}Open{{else}}Closed{{/if}}
+  </div>
   <span class="ticket-text">{{ticket_text}}</span>
   <div class="meta">
     Created by {{user.username}} on {{format_date created_at}}

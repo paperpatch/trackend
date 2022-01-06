@@ -2,7 +2,11 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        {{status}}
+        {{#if status}}
+        Open
+        {{else}}
+        Closed
+        {{/if}}
       </div>
     </div>
     <div class="row">
