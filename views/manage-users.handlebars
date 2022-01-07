@@ -1,32 +1,24 @@
-<section class="dashboard">
-  <h2>User List:</h2>
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        Users:
-      </div>
-      <div class="col">
-        Role:
-      </div>
-      <div class="col-3">
-        Email:
-      </div>
-      <div class="col">
-        Created On:
-      </div>
-      <div class="col">
-        Edit:
-      </div>
-      <div class="col">
-        Delete:
-      </div>
-    </div>
-  </div>
-  <ol class="ticket-list">
-    {{#each tickets as |ticket|}}
-    <li>
-      {{> user-info}}
-    </li>
-    {{/each}}
-  </ol>
-</section>
+<h2>User List</h2>
+
+<div class="fresh-table toolbar-color-orange">
+  <!--
+    Available colors for the full background: full-color-blue, full-color-azure, full-color-green, full-color-red, full-color-orange
+    Available colors only for the toolbar: toolbar-color-blue, toolbar-color-azure, toolbar-color-green, toolbar-color-red, toolbar-color-orange
+  -->
+  <table class="table select-table">
+    <thead>
+      <th data-field="id" data-sortable="true">ID</th>
+      <th data-field="username" data-sortable="true">Username</th>
+      <th data-field="role" data-sortable="true">Role</th>
+      <th data-field="email" data-sortable="true">Email</th>
+      <th data-field="Edit" data-sortable="true">Edit</th>
+      <th data-field="Delete" data-sortable="true">Delete</th>
+      {{!-- <th data-field="actions" data-formatter="operateFormatter" data-events="operateEvents">Actions</th> --}}
+    </thead>
+    <tbody>
+      {{#each user as |user|}}
+        {{>user-info}}
+      {{/each}}
+    </tbody>
+  </table>
+</div>
