@@ -1,5 +1,7 @@
 const togglePassword = document.querySelector('#togglePassword');
-const password = document.querySelector('.pwSignUp');
+const togglePassword2 = document.querySelector('#togglePassword2');
+const passwordOne = document.querySelector('#password-signup');
+const passwordTwo = document.querySelector('#confirm-password');
 
 const checkpassword = () => {
 
@@ -48,8 +50,15 @@ async function signupFormHandler(event) {
 }
 
 togglePassword.addEventListener('click', function(e) {
-	const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-	password.setAttribute('type', type);
+	const type = passwordOne.getAttribute('type') === 'password' ? 'text' : 'password';
+	passwordOne.setAttribute('type', type);
+  
+	this.classList.toggle('bi-eye');
+});
+
+togglePassword2.addEventListener('click', function(e) {
+	const type = passwordTwo.getAttribute('type') === 'password' ? 'text' : 'password';
+	passwordTwo.setAttribute('type', type);
   
 	this.classList.toggle('bi-eye');
 });
