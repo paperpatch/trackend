@@ -1,8 +1,12 @@
 <article>
   <a href="/dashboard"> &larr; Back to dashboard</a>
   <div id="status-div">
-      <h2 id="status-text">Status: Open</h2>
-    </div>
+    {{#if ticket.status}}
+      <h2 class="statusText">{{statusOpen}}</h2>
+    {{!-- {{#else ticket.status}}
+      <h2 class="statusText">{{statusClosed}}</h2> --}}
+    {{/if}}
+  </div>
   <h4>
     Edit Ticket
   </h4>
