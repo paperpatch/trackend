@@ -22,7 +22,7 @@ function closeTicket() {
     window.location.toString().split('/').length - 1
         ];
   
-    const response = await fetch(`/api/tickets/${id}`, {
+    const response = fetch(`/api/tickets/${id}`, {
         method: 'PUT',
             body: JSON.stringify({
                 title,
