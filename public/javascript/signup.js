@@ -46,7 +46,30 @@ async function signupFormHandler(event) {
 			alert(response.statusText);
 		}	
 	}
-	
+}
+
+async function loginGuestHandler(event) {
+  event.preventDefault();
+
+  const username = 'guest';
+  const password = 'guest';
+
+  if (username && password) {
+    const response = await fetch('/api/users/login', {
+      method: 'post',
+      body: JSON.stringify({
+        username,
+        password
+      }),
+      headers: { 'Content-Type': 'application/json' }
+    });
+
+    if (response.ok) {
+      document.location.replace('/');
+    } else {
+      alert(response.statusText);
+    }
+  }
 }
 
 togglePassword.addEventListener('click', function(e) {
@@ -64,3 +87,4 @@ togglePassword2.addEventListener('click', function(e) {
 });
 
 document.querySelector('.signup-form').addEventListener('submit',  signupFormHandler);
+document.querySelector('.login-guest').addEventListener('submit', loginGuestHandler);
