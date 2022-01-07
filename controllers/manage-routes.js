@@ -23,9 +23,9 @@ router.get('/', withAuth, (req, res) => {
       attributes: ['role']
     }
   })
-    .then(dbProfileData => {
-      const profile = dbProfileData.map(profile => profile.get({ plain: true }));
-      res.render('manage-users', { profile, loggedIn: true });
+    .then(dbUserData => {
+      const user = dbUserData.map(user => user.get({ plain: true }));
+      res.render('manage-users', { user, loggedIn: true });
     })
     .catch(err => {
       console.log(err);
