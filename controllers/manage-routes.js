@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 const { Ticket, User, Comment, Priority, StatusChange, Type, Role} = require('../models');
 const withAuth = require('../utils/auth');
 
-// get all Tickets for dashboard
+// get all Users for Managing Users
 router.get('/', withAuth, (req, res) => {
   console.log(req.session);
   console.log('======================');
@@ -19,6 +19,7 @@ router.get('/', withAuth, (req, res) => {
       'priority_id',
       'status_change_id',
       'type_id',
+      'assigned_id',
       'created_at',
     ],
     include: [
@@ -32,11 +33,17 @@ router.get('/', withAuth, (req, res) => {
       },
       {
         model: User,
-        attributes: ['username', 'email', 'role_id'],
+        as: 'user',
+        attributes: ['username', 'role_id',],
         include: {
           model: Role,
           attributes: ['role']
         }
+      },
+      {
+        model: User,
+        as: 'assign',
+        attributes: ['username'],
       },
       {
         model: Priority,

@@ -15,6 +15,7 @@ router.get('/', withAuth, (req, res) => {
       'priority_id',
       'status_change_id',
       'type_id',
+      'assigned_id',
       'created_at',
       [sequelize.literal('(SELECT COUNT(*) FROM ticket WHERE ticket.priority_id = 1)'), 'critical_count'],
       [sequelize.literal('(SELECT COUNT(*) FROM ticket WHERE ticket.priority_id = 2)'), 'high_count'],
@@ -37,11 +38,17 @@ router.get('/', withAuth, (req, res) => {
       },
       {
         model: User,
-        attributes: ['username', 'role_id'],
+        as: 'user',
+        attributes: ['username', 'role_id',],
         include: {
           model: Role,
           attributes: ['role']
-        },
+        }
+      },
+      {
+        model: User,
+        as: 'assign',
+        attributes: ['username'],
       },
       {
         model: Priority,
@@ -85,6 +92,7 @@ router.get('/ticket/:id', withAuth, (req, res) => {
       'priority_id',
       'status_change_id',
       'type_id',
+      'assigned_id',
       'created_at',
     ],
     include: [
@@ -102,11 +110,17 @@ router.get('/ticket/:id', withAuth, (req, res) => {
       },
       {
         model: User,
-        attributes: ['username'],
+        as: 'user',
+        attributes: ['username', 'role_id',],
         include: {
           model: Role,
           attributes: ['role']
-        },
+        }
+      },
+      {
+        model: User,
+        as: 'assign',
+        attributes: ['username'],
       },
       {
         model: Priority,

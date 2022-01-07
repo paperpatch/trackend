@@ -18,10 +18,6 @@ Comment.init(
         len: [1]
       }
     },
-    // comment_date: {
-    //   type: DataTypes.DATE,
-    //   defaultValue: DataTypes.NOW,
-    // },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
