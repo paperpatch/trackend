@@ -19,7 +19,7 @@
                         <a href="/dashboard" class="nav-link px-0"> <span class="d-none d-sm-inline">My Tickets</span></a>
                     </li>
                     <li>
-                        <a href="/tickets" class="nav-link px-0"> <span class="d-none d-sm-inline">All Tickets</span></a>
+                        <a href="/all" class="nav-link px-0"> <span class="d-none d-sm-inline">All Tickets</span></a>
                     </li>
                 </ul>
         </li>
@@ -41,10 +41,12 @@
                     </li>
                 </ul>
         </li>
+        {{#ifAdmin user_username}}
         <li>
             <a href="/manageusers" class="nav-link px-0 align-middle">
                 <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Manage Users</span> </a>
         </li>
+        {{/ifAdmin}}
         <li>
             <a href="/profile/" class="nav-link px-0 align-middle">
                 <i class="fs-4 bi-gear"></i> <span class="ms-1 d-none d-sm-inline">Profile Settings</span> </a>

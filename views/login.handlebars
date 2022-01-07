@@ -7,16 +7,18 @@
     </div>
     <div>
       <label for="password-login">Password:</label>
-      <input type="password" id="password-login" />
+      <input type="password" id="password-login" /> <i class="bi bi-eye-slash" id="togglePassword"></i>
     </div>
     <div class="d-flex flex-column align-items-center">
       <button class="w-100" type="submit">Login</button>
     </div>
   </form>
 
-  <div>Forgot your <a href="/signup">Password?</a></div>
-  <div>Create an Account? <a href="/signup">Sign Up</a></div>
-  <div>Sign in as a <a href="/signup">Demo User</a></div>
+  <form class="login-guest">
+    <div>Forgot your <a href="/signup">Password?</a></div>
+    <div>Create an Account? <a href="/signup">Sign Up</a></div>
+    <div>Sign in as a <button class="btn-guest" type="submit">Guest</button></div>
+  </form>
 </div>
 
 
