@@ -22,7 +22,7 @@ router.get('/', withAuth, (req, res) => {
   })
     .then(dbUserData => {
       const user = dbUserData.map(user => user.get({ plain: true }));
-      res.render('manage-users', { user, loggedIn: true });
+      res.render('manage-users', { user, loggedIn: true, user_username: req.session.username });
     })
     .catch(err => {
       console.log(err);

@@ -65,7 +65,7 @@ router.get('/', withAuth, (req, res) => {
   })
     .then(dbTicketData => {
       const tickets = dbTicketData.map(ticket => ticket.get({ plain: true }));
-      res.render('priority', { tickets, loggedIn: true });
+      res.render('priority', { tickets, loggedIn: true, user_username: req.session.username });
     })
     .catch(err => {
       console.log(err);
@@ -141,7 +141,8 @@ router.get('/:priority_id', withAuth, (req, res) => {
 
       res.render('priority', {
         tickets,
-        loggedIn: req.session.loggedIn
+        loggedIn: req.session.loggedIn,
+        user_username: req.session.username
       });
     })
     .catch(err => {
