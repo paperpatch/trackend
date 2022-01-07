@@ -1,18 +1,17 @@
 <article>
   <a href="/dashboard"> &larr; Back to dashboard</a>
-  <h2>
+  <div id="status-div">
+      <h2 id="status-text">Status: Open</h2>
+    </div>
+  <h4>
     Edit Ticket
-  </h2>
+  </h4>
+  
   <form class="edit-ticket-form">
     <div>
       <input name="ticket-title" type="text" value="{{ticket.title}}" />
     </div>
-    <div>
-      <select name="status" id="status">
-        <option value="true">Open</option>
-        <option value="false">Closed</option>
-      </select>
-    </div>
+    
     <div>
       <textarea name="ticket-text">{{ticket.ticket_text}}</textarea>
     </div>
@@ -22,6 +21,7 @@
       <a href="/ticket/{{ticket.id}}">{{ticket.comments.length}} {{format_plural "comment" ticket.comments.length}}</a>
     </div>
     <button type="submit">Save Ticket</button>
+    <button type="button" class="close-ticket-btn" id="closeBtn" onclick="closeTicket()">Close Ticket</button>
     <button type="button" class="delete-ticket-btn">Delete ticket</button>
   </form>
 </article>
@@ -41,3 +41,4 @@
 <script src="/javascript/edit-ticket.js"></script>
 <script src="/javascript/delete-ticket.js"></script>
 <script src="/javascript/comment.js"></script>
+<script src="/javascript/close-ticket.js"></script>
