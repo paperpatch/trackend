@@ -47,4 +47,4 @@ async function loginGuestHandler(event) {
 }
 
 document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
-document.querySelector('.login-form').addEventListener('guest', loginGuestHandler);
+document.querySelector('.login-guest').addEventListener('submit', loginGuestHandler);

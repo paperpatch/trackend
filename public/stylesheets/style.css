@@ -17,11 +17,7 @@ a {
   transition: color .1s;
 }
 
-#login-guest {
-  color: #225ca3;
-}
-
-a:hover, #login-guest {
+a:hover {
   color: #3486eb;
 }
 
@@ -38,6 +34,16 @@ button {
 
 button:hover {
   background-color: #3486eb;
+}
+
+#login-guest {
+  color: #225ca3;
+  background-color: transparent;
+  padding: 0%;
+}
+
+#login-guest:hover {
+  color: #3486eb;
 }
 
 .ticket-list, .dashboard ol {
