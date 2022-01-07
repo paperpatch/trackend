@@ -1,4 +1,4 @@
-var $table = $('#fresh-table')
+var $table = $('.select-table')
 var $alertBtn = $('#alertBtn')
 
 window.operateEvents = {
