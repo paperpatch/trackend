@@ -65,7 +65,7 @@ router.get('/', withAuth, (req, res) => {
   })
     .then(dbTicketData => {
       const tickets = dbTicketData.map(ticket => ticket.get({ plain: true }));
-      res.render('tickets', { tickets, loggedIn: true });
+      res.render('tickets', { tickets, loggedIn: true, user_username: req.session.username });
     })
     .catch(err => {
       console.log(err);

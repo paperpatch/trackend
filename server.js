@@ -36,6 +36,13 @@ Handlebars.registerHelper('ifGuest', function(input, options) {
   return options.fn(this);
 });
 
+Handlebars.registerHelper('ifAdmin', function(input, options) {
+  if(input === 'Admin' || input === 'admin') {
+    return options.fn(this);
+  }
+  return options.inverse(this);
+});
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
