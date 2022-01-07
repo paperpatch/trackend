@@ -80,6 +80,11 @@ form label {
   display: block;
 }
 
+form i {
+  margin-left: -30px;
+  cursor: pointer;
+}
+
 .wrapper {
   width: 100%;
   min-height: 100%;
