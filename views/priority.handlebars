@@ -28,7 +28,7 @@
     <table
       id="table"
       data-toggle="table"
-      data-url="/public/data.json">
+    >
       <thead>
         <tr>
           <th data-field="id">ID</th>
@@ -39,3 +39,16 @@
     </table>
   </div>
 </section>
+
+<script>
+  var $table = $('#table')
+
+  $(function() {
+    var fs = require('fs');
+  
+// Use fs.readFile() method to read the file
+let rawdata = fs.readFileSync('./public/data.json');
+let data = JSON.parse(rawdata);
+    $table.bootstrapTable({data: data})
+  })
+</script>
