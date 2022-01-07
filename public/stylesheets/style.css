@@ -36,14 +36,15 @@ button:hover {
   background-color: #3486eb;
 }
 
-#login-guest {
+.btn-guest {
   color: #225ca3;
   background-color: transparent;
   padding: 0%;
 }
 
-#login-guest:hover {
+.btn-guest:hover {
   color: #3486eb;
+  background-color: transparent;
 }
 
 .ticket-list, .dashboard ol {
