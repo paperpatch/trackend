@@ -12,17 +12,16 @@
 
   <table id="fresh-table" class="table">
     <thead>
-      <th data-field="status" data-sortable="true">Status</th>
       <th data-field="id" data-sortable="true">ID</th>
-      <th data-field="title" data-sortable="true">Title</th>
-      <th data-field="type" data-sortable="true">Type</th>
-      <th data-field="priority" data-sortable="true">Priority</th>
-      <th data-field="assigned" data-sortable="true">Assigned To</th>
-      <th data-field="due" data-sortable="true">Due By</th>
+      <th data-field="username" data-sortable="true">Username</th>
+      <th data-field="role" data-sortable="true">Role</th>
+      <th data-field="email" data-sortable="true">Email</th>
+      <th data-field="Edit" data-sortable="true">Edit</th>
+      <th data-field="Delete" data-sortable="true">Delete</th>
       {{!-- <th data-field="actions" data-formatter="operateFormatter" data-events="operateEvents">Actions</th> --}}
     </thead>
     <tbody>
-      {{#each user}}
+      {{#each user as |user|}}
         {{>user-info}}
       {{/each}}
     </tbody>
