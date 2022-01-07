@@ -17,7 +17,11 @@ a {
   transition: color .1s;
 }
 
-a:hover {
+#login-guest {
+  color: #225ca3;
+}
+
+a:hover, #login-guest {
   color: #3486eb;
 }
 
