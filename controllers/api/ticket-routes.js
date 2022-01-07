@@ -3,7 +3,7 @@ const sequelize = require('../../config/connection');
 const { Ticket, User, Comment, Priority, StatusChange, Type, Role } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// get all users
+// get api tickets
 router.get('/', (req, res) => {
   console.log('======================');
   Ticket.findAll({
@@ -14,6 +14,8 @@ router.get('/', (req, res) => {
       'status',
       'priority_id',
       'status_change_id',
+      'type_id',
+      'assigned_id',
       'created_at',
     ],
     include: [
@@ -44,12 +46,16 @@ router.get('/', (req, res) => {
         attributes: ['username'],
       },
       {
-        mode: Priority,
+        model: Priority,
         attributes: ['level']
       },
       {
-        mode: StatusChange,
+        model: StatusChange,
         attributes: ['statusChange']
+      },
+      {
+        model: Type,
+        attributes: ['type'],
       },
     ]
   })
