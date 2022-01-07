@@ -24,9 +24,17 @@ app.use(session(sess));
 const helpers = require('./utils/helpers');
 
 const hbs = exphbs.create({ helpers });
+const Handlebars = require('handlebars');
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+
+Handlebars.registerHelper('ifGuest', function(input, options) {
+  if(input === 'Guest' || input === 'guest') {
+    return options.inverse(this);
+  }
+  return options.fn(this);
+});
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

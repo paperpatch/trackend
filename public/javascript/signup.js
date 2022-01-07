@@ -46,7 +46,6 @@ async function signupFormHandler(event) {
 			alert(response.statusText);
 		}	
 	}
-	
 }
 
 async function loginGuestHandler(event) {
