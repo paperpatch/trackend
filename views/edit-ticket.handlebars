@@ -1,12 +1,11 @@
 <article>
   <a href="/dashboard"> &larr; Back to dashboard</a>
-  <div id="status-div">
-    {{#if ticket.status}}
-      <h2 class="statusText">/h2>
-    {{!-- {{#else ticket.status}}
-      <h2 class="statusText">{{statusClosed}}</h2> --}}
-    {{/if}}
-  </div>
+    <div>
+      <select name="status" id="status">
+        <option value="true">Open</option>
+        <option value="false">Closed</option>
+      </select>
+    </div>
   <h4>
     Edit Ticket
   </h4>
