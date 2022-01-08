@@ -1,10 +1,5 @@
 @charset "UTF-8";
-/*
-    Fresh Bootstrap Table redesign by Creative Tim
-    http://www.creative-tim.com
-    @CreativeTim
 
-*/
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -325,105 +320,12 @@ div.fixed-table-scroll-outer {
     opacity: 0;
   }
 }
-/*           Font Smoothing      */
-body {
-  font-family: "Roboto", "Helvetica Neue", "Open Sans", Arial, sans-serif;
-}
-
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .navbar, .brand, .btn, a, .td-name, td, .form-control, label {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  font-family: "Roboto", "Helvetica Neue", "Open Sans", Arial, sans-serif;
-}
-
-/* h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
-  font-weight: 400;
-  margin: 30px 0 15px;
-} */
-
-h1, .h1 {
-  font-size: 52px;
-}
-
-h2, .h2 {
-  font-size: 36px;
-}
-
-h3, .h3 {
-  font-size: 28px;
-  margin: 20px 0 10px;
-}
-
-h4, .h4 {
-  font-size: 22px;
-  line-height: 30px;
-}
-
-h5, .h5 {
-  font-size: 18px;
-  margin-bottom: 15px;
-}
-
-/* h6, .h6 {
-  font-size: 14px;
-  font-weight: 600;
-  text-transform: uppercase;
-} */
-
-p {
-  font-size: 16px;
-  line-height: 1.5;
-}
-
-h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small, h1 .small, h2 .small, h3 .small, h4 .small, h5 .small, h6 .small, .h1 .small, .h2 .small, .h3 .small, .h4 .small, .h5 .small, .h6 .small {
-  color: #9A9A9A;
-  font-weight: 300;
-  line-height: 1.5;
-}
-
-h1 small, h2 small, h3 small, h1 .small, h2 .small, h3 .small {
-  font-size: 60%;
-}
-
-h1 .subtitle {
-  display: block;
-  font-family: "Grand Hotel", cursive;
-  margin: 0 0 30px;
-}
-
-.text-primary, .text-primary:hover {
-  color: #1D62F0 !important;
-}
-
-.text-info, .text-info:hover {
-  color: #109CFF !important;
-}
-
-.text-success, .text-success:hover {
-  color: #0C9C14 !important;
-}
-
-.text-warning, .text-warning:hover {
-  color: #ED8D00 !important;
-}
-
-.text-danger, .text-danger:hover {
-  color: #EE2D20 !important;
-}
 
 /*     General overwrite     */
 .freshbt-unique-ct {
   display: block;
   padding: 10px;
   margin-top: auto;
-}
-
-a {
-  color: #2CA8FF;
-}
-a:hover, a:focus {
-  color: #109CFF;
-  text-decoration: none;
 }
 
 a:focus, a:active,
@@ -477,14 +379,6 @@ input[type=file] > input[type=button]::-moz-focus-inner {
   -o-transition: all 370ms linear;
   -ms-transition: all 370ms linear;
   transition: all 370ms linear;
-}
-
-.fa {
-  text-align: center;
-}
-
-.margin-top {
-  margin-top: 50px;
 }
 
 .btn {
@@ -1542,5 +1436,3 @@ input[type=file] > input[type=button]::-moz-focus-inner {
 .fresh-table .fa {
   min-width: 18px;
 }
-
-/*# sourceMappingURL=fresh-bootstrap-table.css.map */

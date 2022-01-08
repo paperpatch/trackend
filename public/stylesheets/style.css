@@ -53,14 +53,6 @@ button:hover {
   list-style: none;
 }
 
-/* .ticket-list li, .dashboard li {
-  margin: 1%;
-  padding: 1%;
-  background-color: white;
-  box-shadow: 3px 4px 15px -2px rgb(219, 219, 219);
-  border-radius: 5px;
-} */
-
 .dashboard, .dashboard-create, .dashboard h2 {
   margin: 1%;
   padding: 1%;
@@ -121,7 +113,6 @@ header h1 {
 
 main {
   flex: 1;
-  /* padding: 2% 4%; */
 }
 
 .btn-no-style {
@@ -144,7 +135,6 @@ main {
 
 .delete-ticket-btn {
   background-color: #d41414;
-  /* display: inline; */
   margin: 0 0 3% 1%;
   padding-left: 1%;
 }
@@ -156,11 +146,6 @@ main {
 .ticket {
   line-height: 150%;
 }
-
-/* .ticket .title span {
-  font-style: italic;
-  font-size: 90%;
-} */
 
 .edit-link {
   display: inline;
