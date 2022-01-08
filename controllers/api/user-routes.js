@@ -22,7 +22,7 @@ router.get('/:id', (req, res) => {
     include: [
       {
         model: Ticket,
-        attributes: ['id', 'title', 'ticket_text', 'created_at']
+        attributes: ['id', 'title', 'ticket_text', 'created_at', 'due_date']
       },
       {
         model: Comment,
@@ -32,17 +32,6 @@ router.get('/:id', (req, res) => {
           attributes: ['title']
         }
       },
-      // {
-      //   model: Priority,
-      //   attributes: ['level'],
-      //   through: Ticket,
-      //   as: 'ticket-priority'
-        
-      // },
-      // {
-      //   model: StatusChange,
-      //   attributes: ['statusChange']
-      // },
     ]
   })
     .then(dbUserData => {

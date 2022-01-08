@@ -17,6 +17,7 @@ router.get('/', (req, res) => {
       'type_id',
       'assigned_id',
       'created_at',
+      'due_date',
     ],
     include: [
       {
@@ -79,6 +80,7 @@ router.get('/:id', (req, res) => {
       'priority_id',
       'status_change_id',
       'created_at',
+      'due_date',
     ],
     include: [
       {
