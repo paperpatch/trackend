@@ -36,12 +36,24 @@ header {
   background-color: #3d5974;
 }
 
-header h1 {
-  font-size: 1.5em;
+h1 {
+  margin: 0;
+  text-shadow: 0 0 5px black;
+}
+
+h1 a {
+  color: white;
+  text-decoration: none;
+}
+
+h1 a:hover {
+  color: white;
+  text-decoration: none;
 }
 
 .dropdown-toggle, .dropdown-toggle:active {
   color: white !important;
+  text-shadow: 0 0 5px black;
 }
 
 nav a img {
@@ -53,7 +65,9 @@ nav a img {
   width: 24rem;
   font-family: 'Lato', sans-serif;
   font-size: 15px;
+  font-weight: bold;
   border-right: 0.5px solid #DCDCDC;
+  
 }
 
 .navigation ul {
@@ -72,6 +86,12 @@ nav a img {
 }
 
 /* Pages Section */
+
+.page-title {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: 'open sans', sans-serif;
+}
 
 .dashboard, .dashboard-create, .dashboard h2 {
   margin: 1%;
@@ -141,29 +161,6 @@ form label {
 form i {
   margin-left: -30px;
   cursor: pointer;
-}
-
-/* Other Font Section */
-
-h1 {
-  margin: 0;
-}
-
-a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color .1s;
-}
-
-a:hover {
-  color: white;
-  text-decoration: none;
-}
-
-header h1 {
-  color: white;
-  text-shadow: black 1px 0px 5px;
 }
 
 textarea, input {
