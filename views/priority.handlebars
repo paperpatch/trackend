@@ -1,54 +1,22 @@
-{{!-- <table>
-  <thead>
-    <tr>
-      <h2>Priority Tickets</h2>
-      {{#each tickets.[0]}}
-        <th>{{@key}}</th>
-      {{/each}}
-    </tr>
-  </thead>
-
-  <tbody>
-    {{#each tickets}}
-      <tr>
-        {{#each this}}
-          <td>{{this}}</td>
-        {{/each}}
-      </tr>
-    {{/each}}
-  </tbody>
-</table> --}}
 <link href="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.css" rel="stylesheet">
- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
- <script src="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.js"></script>
 
 <section class="dashboard">
   <h2>{{tickets.[0].priority.level}} Priority Tickets</h2>
   <div class="container">
-    <table
-      id="table"
-      data-toggle="table"
-    >
+<table
+  id="table"
+  data-toggle="table"
+  data-url="/javascript/data.json">
       <thead>
         <tr>
           <th data-field="id">ID</th>
           <th data-field="title">Item Name</th>
-          <th data-field="priority_id">Item Price</th>
+          <th data-field="priority_id">priority_id</th>
         </tr>
       </thead>
     </table>
   </div>
 </section>
 
-<script>
-  var $table = $('#table')
-
-  $(function() {
-    var fs = require('fs');
-  
-// Use fs.readFile() method to read the file
-let rawdata = fs.readFileSync('./public/data.json');
-let data = JSON.parse(rawdata);
-    $table.bootstrapTable({data: data})
-  })
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.js"></script>
