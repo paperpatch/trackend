@@ -1,7 +1,7 @@
 # Trackend
 ![Github license](http://img.shields.io/badge/license-MIT-blue.svg)
 
-Built a CMS (Content Management System) style [Issue Tracker](#) that tracks bugs and issues. Users can submit and comment on tickets while Administrators can manage user database. Uses authentication and MVC (Model-View-Controller) paradigm, using `Handlebars.js` as template, `Sequelize` as ORM, and `Express-Session` npm (node package manager) for authentication.
+Built a CMS (Content Management System) style [Issue Tracker](#) that tracks bugs and issues through a ticketing system. Users can submit and comment on tickets while Administrators can manage user database. Uses MVC (Model-View-Controller) paradigm, using `Handlebars.js` as template, `Sequelize` as ORM, and `Express-Session` npm (node package manager) for authentication.
 
 ![Screenshot](#)
 
@@ -24,6 +24,8 @@ The database uses the following npm:
   - Loads environment variables from a `.env` file into `process.env`. Sync .env files between machines, environments, and team members.
 - [bcrypt](https://www.npmjs.com/package/bcrypt)
   - Library to help hash passwords.
+- [Bootstrap Table](https://bootstrap-table.com/)
+  - An extended table to the integration with some of the most widely used CSS frameworks.
 
 Uses MySQL and MySQL2 tools for this application:
 
@@ -68,18 +70,24 @@ DB_NAME='trackend_db'
 DB_USER='your-username' // typically root
 DB_PW='your-password'
 ```
+Note that this is related to your SQL database.
 
-Seed your database by typing `node seeds/index.js` in the command line. Feel free to change the seeds data as desired.
+Seed your database by typing `node seeds` in the command line. Feel free to change the seeds data as desired.
+
+Start the server by typing `npm start`.
 
 ## Deployment
 
-[Deployed link to Tech Blog](https://salty-eyrie-03206.herokuapp.com/)
+[Deployed link to Trackend](#)
 
 ## Contributing
 
 :octocat:
 
-[paperpatch](https://github.com/paperpatch)
+[paperpatch](https://github.com/paperpatch) </br>
+[Adamcalcasola](https://github.com/Adamcalcasola) </br>
+[davezer](https://github.com/davezer) </br>
+[Toomeme](https://github.com/Toomeme) </br>
 
 ## License
 
