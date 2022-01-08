@@ -1,59 +1,22 @@
-{{!-- <table>
-  <thead>
-    <tr>
-      <h2>Priority Tickets</h2>
-      {{#each tickets.[0]}}
-        <th>{{@key}}</th>
-      {{/each}}
-    </tr>
-  </thead>
-
-  <tbody>
-    {{#each tickets}}
-      <tr>
-        {{#each this}}
-          <td>{{this}}</td>
-        {{/each}}
-      </tr>
-    {{/each}}
-  </tbody>
-</table> --}}
+<link href="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.css" rel="stylesheet">
 
 <section class="dashboard">
   <h2>{{tickets.[0].priority.level}} Priority Tickets</h2>
   <div class="container">
-    <div class="row">
-      <div class="col">
-        Status:
-      </div>
-      <div class="col">
-        Title:
-      </div>
-      <div class="col-3">
-        Description:
-      </div>
-      <div class="col">
-        Level:
-      </div>
-      <div class="col">
-        Latest:
-      </div>
-      <div class="col">
-        Username:
-      </div>
-      <div class="col">
-        Issued:
-      </div>
-      <div class="col">
-        Comments:
-      </div>
-    </div>
+<table
+  id="table"
+  data-toggle="table"
+  data-url="/javascript/data.json">
+      <thead>
+        <tr>
+          <th data-field="id">ID</th>
+          <th data-field="title">Item Name</th>
+          <th data-field="priority_id">priority_id</th>
+        </tr>
+      </thead>
+    </table>
   </div>
-  <ol class="ticket-list">
-    {{#each tickets as |ticket|}}
-    <li>
-      {{> ticket-list}}
-    </li>
-    {{/each}}
-  </ol>
 </section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.js"></script>

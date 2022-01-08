@@ -2,6 +2,8 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Ticket, User, Comment, Priority, StatusChange, Type, Role} = require('../models');
 const withAuth = require('../utils/auth');
+var fs = require('fs');
+
 
 // get all Tickets for priority
 router.get('/', withAuth, (req, res) => {
@@ -65,6 +67,7 @@ router.get('/', withAuth, (req, res) => {
   })
     .then(dbTicketData => {
       const tickets = dbTicketData.map(ticket => ticket.get({ plain: true }));
+<<<<<<< HEAD
       res.render('priority', { tickets, loggedIn: true, user_username: req.session.username });
     })
     .catch(err => {
@@ -143,12 +146,22 @@ router.get('/:priority_id', withAuth, (req, res) => {
         tickets,
         loggedIn: req.session.loggedIn,
         user_username: req.session.username
+=======
+      fs.writeFile('./public/data.json', JSON.stringify(tickets),(err) => {
+        if (err)
+          console.log(err);
+        else {
+          console.log("File written successfully!");
+        }
+>>>>>>> feature/paginated
       });
+      res.render('priority', { tickets, loggedIn: true });
     })
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
     });
 });
+
 
 module.exports = router;
