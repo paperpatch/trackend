@@ -10,7 +10,7 @@ const ticketdata = [
     status_change_id: 1,
     type_id: 5,
     assigned_id: 2,
-    due_date: 2022-05-15,
+    due_date: '2022-05-15',
   },
   {
     title: 'Bug in navigation',
@@ -21,7 +21,7 @@ const ticketdata = [
     status_change_id: 2,
     type_id: 1,
     assigned_id: 2,
-    due_date: 2022-06-04,
+    due_date: '2022-06-04',
   },
   {
     title: 'Help with CSS',
@@ -32,7 +32,7 @@ const ticketdata = [
     status_change_id: 1,
     type_id: 4,
     assigned_id: 5,
-    due_date: 2022-07-03,
+    due_date: '2022-07-03',
   },
   {
     title: 'Priority Tickets Work',
@@ -43,7 +43,7 @@ const ticketdata = [
     status_change_id: 1,
     type_id: 2,
     assigned_id: 6,
-    due_date: 2022-03-04,
+    due_date: '2022-03-04',
   },
   {
     title: 'Add Type Section',
@@ -54,7 +54,7 @@ const ticketdata = [
     status_change_id: 1,
     type_id: 4,
     assigned_id: 7,
-    due_date: 2022-01-22,
+    due_date: '2022-01-22',
   },
   {
     title: 'Wireframe',
@@ -65,7 +65,7 @@ const ticketdata = [
     status_change_id: 2,
     type_id: 5,
     assigned_id: 4,
-    due_date: 2022-01-04,
+    due_date: '2022-01-04',
   },
   {
     title: 'Minimal Viable Product',
@@ -76,7 +76,7 @@ const ticketdata = [
     status_change_id: 2,
     type_id: 4,
     assigned_id: 5,
-    due_date: 2022-02-22,
+    due_date: '2022-02-22',
   },
   {
     title: 'Test1',
@@ -87,7 +87,7 @@ const ticketdata = [
     status_change_id: 2,
     type_id: 4,
     assigned_id: 2,
-    due_date: 2022-02-23,
+    due_date: '2022-02-23',
   },
   {
     title: 'Test2',
@@ -98,7 +98,7 @@ const ticketdata = [
     status_change_id: 2,
     type_id: 4,
     assigned_id: 1,
-    due_date: 2022-02-24,
+    due_date: '2022-02-24',
   },
   {
     title: 'Test3',
@@ -109,7 +109,7 @@ const ticketdata = [
     status_change_id: 2,
     type_id: 4,
     assigned_id: 5,
-    due_date: 2022-01-01,
+    due_date: '2022-01-01',
   },
   {
     title: 'Test4',
@@ -120,7 +120,7 @@ const ticketdata = [
     status_change_id: 2,
     type_id: 1,
     assigned_id: 4,
-    due_date: 2022-01-02,
+    due_date: '2022-01-02',
   },
   {
     title: 'Test5',
@@ -131,7 +131,7 @@ const ticketdata = [
     status_change_id: 2,
     type_id: 4,
     assigned_id: 6,
-    due_date: 2022-02-02,
+    due_date: '2022-02-02',
   },
   {
     title: 'Test6',
@@ -142,7 +142,7 @@ const ticketdata = [
     status_change_id: 2,
     type_id: 4,
     assigned_id: 4,
-    due_date: 2022-03-04,
+    due_date: '2022-03-04',
   },
   {
     title: 'Test7',
@@ -153,7 +153,7 @@ const ticketdata = [
     status_change_id: 2,
     type_id: 2,
     assigned_id: 3,
-    due_date: 2022-01-09,
+    due_date: '2022-01-09',
   },
   {
     title: 'Test8',
@@ -164,7 +164,7 @@ const ticketdata = [
     status_change_id: 2,
     type_id: 3,
     assigned_id: 1,
-    due_date: 2022-01-08,
+    due_date: '2022-01-08',
   },
   {
     title: 'Test9',
@@ -175,7 +175,7 @@ const ticketdata = [
     status_change_id: 2,
     type_id: 1,
     assigned_id: 1,
-    due_date: 2022-01-24,
+    due_date: '2022-01-24',
   },
   {
     title: 'Test10',
@@ -186,7 +186,7 @@ const ticketdata = [
     status_change_id: 2,
     type_id: 4,
     assigned_id: 2,
-    due_date: 2022-01-18,
+    due_date: '2022-01-18',
   },
 ];
 
