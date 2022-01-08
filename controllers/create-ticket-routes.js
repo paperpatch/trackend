@@ -4,7 +4,7 @@ const { Ticket, User, Comment, Priority, StatusChange, Type, Role} = require('..
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, (req, res) => {
-    res.render('create-ticket', { loggedIn: true, user_username: req.session.username });
+    res.render('create-ticket', { loggedIn: true });
 });
 
 module.exports = router;

@@ -69,8 +69,7 @@ router.get('/', withAuth, (req, res) => {
 
       res.render('homepage', {
         tickets,
-        loggedIn: req.session.loggedIn,
-        user_username: req.session.username
+        loggedIn: req.session.loggedIn
       });
     })
     .catch(err => {
@@ -147,8 +146,7 @@ router.get('/ticket/:id', withAuth, (req, res) => {
 
       res.render('single-ticket', {
         ticket,
-        loggedIn: req.session.loggedIn,
-        user_username: req.session.username
+        loggedIn: req.session.loggedIn
       });
     })
     .catch(err => {

@@ -65,7 +65,7 @@ router.get('/', withAuth, (req, res) => {
   })
     .then(dbTicketData => {
       const tickets = dbTicketData.map(ticket => ticket.get({ plain: true }));
-      res.render('dashboard', { tickets, loggedIn: true, user_username: req.session.username });
+      res.render('dashboard', { tickets, loggedIn: true });
     })
     .catch(err => {
       console.log(err);
@@ -133,8 +133,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
         
         res.render('edit-ticket', {
           ticket,
-          loggedIn: true,
-          user_username: req.session.username
+          loggedIn: true
         });
       } else {
         res.status(404).end();

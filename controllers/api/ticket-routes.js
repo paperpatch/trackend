@@ -1,9 +1,9 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const { Ticket, User, Comment, Priority, StatusChange, Type, Role } = require('../../models');
+const { Ticket, User, Comment, Priority, StatusChange, Type, Role} = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// get api tickets
+// get all users
 router.get('/', (req, res) => {
   console.log('======================');
   Ticket.findAll({
@@ -14,8 +14,6 @@ router.get('/', (req, res) => {
       'status',
       'priority_id',
       'status_change_id',
-      'type_id',
-      'assigned_id',
       'created_at',
     ],
     include: [
@@ -46,16 +44,12 @@ router.get('/', (req, res) => {
         attributes: ['username'],
       },
       {
-        model: Priority,
+        mode: Priority,
         attributes: ['level']
       },
       {
-        model: StatusChange,
+        mode: StatusChange,
         attributes: ['statusChange']
-      },
-      {
-        model: Type,
-        attributes: ['type'],
       },
     ]
   })

@@ -1,7 +1,7 @@
 # Trackend
 ![Github license](http://img.shields.io/badge/license-MIT-blue.svg)
 
-Built a CMS (Content Management System) style [Issue Tracker](#) that tracks bugs and issues through a ticketing system. Users can submit and comment on tickets while Administrators can manage user database. Uses MVC (Model-View-Controller) paradigm, using `Handlebars.js` as template, `Sequelize` as ORM, and `Express-Session` npm (node package manager) for authentication.
+Built a CMS (Content Management System) style [Issue Tracker](#) that tracks bugs and issues. Users can submit and comment on tickets while Administrators can manage user database. Uses authentication and MVC (Model-View-Controller) paradigm, using `Handlebars.js` as template, `Sequelize` as ORM, and `Express-Session` npm (node package manager) for authentication.
 
 ![Screenshot](#)
 
@@ -24,8 +24,6 @@ The database uses the following npm:
   - Loads environment variables from a `.env` file into `process.env`. Sync .env files between machines, environments, and team members.
 - [bcrypt](https://www.npmjs.com/package/bcrypt)
   - Library to help hash passwords.
-- [Bootstrap Table](https://bootstrap-table.com/)
-  - An extended table to the integration with some of the most widely used CSS frameworks.
 
 Uses MySQL and MySQL2 tools for this application:
 
@@ -57,21 +55,12 @@ This repository uses the following server:
 
 :computer:
 
-Go to [Trackend site](#) and navigate through seeded tickets and comments. Login to be able to post and comment on issue tickets. Users are able to anonymously login through the `Guest` link.
+Go to [Trackend site](#) and navigate through seeded tickets and comments. Login to be able to post and comment on issue tickets.
 
-Guest Access:
+User is able to:
 - Create a new account to post their own tickets and links to a website.
 - Edit, comment and delete their own posts.
-- Comment on other posted tickets.
-- View their own profile.
-
-User Access:
-- Everything a guest can do.
-- View their own email and password.
-
-Administrative Access:
-- Everything a user can do
-- See the tab `Manage Users` on the navigation bar.
+- Comment other posted tickets.
 
 If you cloned or copied the repository, ensure that you `npm install` to download the packages and create an `.env` file in your local repository with similar text below:
 ```js
@@ -79,24 +68,18 @@ DB_NAME='trackend_db'
 DB_USER='your-username' // typically root
 DB_PW='your-password'
 ```
-Note that this is related to your SQL database.
 
-Seed your database by typing `node seeds` in the command line. Feel free to change the seeds data as desired.
-
-Start the server by typing `npm start`.
+Seed your database by typing `node seeds/index.js` in the command line. Feel free to change the seeds data as desired.
 
 ## Deployment
 
-[Deployed link to Trackend](#)
+[Deployed link to Tech Blog](https://salty-eyrie-03206.herokuapp.com/)
 
 ## Contributing
 
 :octocat:
 
-[paperpatch](https://github.com/paperpatch) </br>
-[Adamcalcasola](https://github.com/Adamcalcasola) </br>
-[davezer](https://github.com/davezer) </br>
-[Toomeme](https://github.com/Toomeme) </br>
+[paperpatch](https://github.com/paperpatch)
 
 ## License
 

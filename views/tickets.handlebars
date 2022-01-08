@@ -1,31 +1,37 @@
 <section class="dashboard">
-  <h2>User List:</h2>
+  <h2>All Tickets:</h2>
   <div class="container">
     <div class="row">
       <div class="col">
-        Users:
+        Status:
       </div>
       <div class="col">
-        Role:
+        Title:
       </div>
       <div class="col-3">
-        Email:
+        Description:
       </div>
       <div class="col">
-        Created On:
+        Level:
       </div>
       <div class="col">
-        Edit:
+        Latest:
       </div>
       <div class="col">
-        Delete:
+        Username:
+      </div>
+      <div class="col">
+        Issued:
+      </div>
+      <div class="col">
+        Comments:
       </div>
     </div>
   </div>
   <ol class="ticket-list">
     {{#each tickets as |ticket|}}
     <li>
-      {{> user-info}}
+      {{> ticket-info}}
     </li>
     {{/each}}
   </ol>
