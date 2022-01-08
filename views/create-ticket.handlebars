@@ -36,7 +36,14 @@
         <option value="5">Other</option>
       </select>
     </div>
-
+    <div>
+      <label for="assigned">Assigned</label>
+      <select name="assigned" id="assigned">
+        {{#each users as |user|}}
+        <option value='{{user.id}}'>{{user.username}}</option>
+        {{/each}}
+      </select>
+    </div>
     <button type="submit">Create</button>
   </form>
 </section>

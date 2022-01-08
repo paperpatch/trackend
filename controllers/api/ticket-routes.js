@@ -142,7 +142,8 @@ router.post('/', withAuth, (req, res) => {
     user_id: req.session.user_id,
     priority_id: req.body.priority_id,
     status_change_id: 1,
-    type_id: req.body.type_id
+    type_id: req.body.type_id,
+    assigned_id: req.body.assigned_id
   })
     .then(dbTicketData => res.json(dbTicketData))
     .catch(err => {
