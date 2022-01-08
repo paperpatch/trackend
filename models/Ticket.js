@@ -46,10 +46,11 @@ Ticket.init(
     assigned_id: {
       type: DataTypes.INTEGER,
     },
-    // due_date: {
-    //   type: DataTypes.DATE,
-    //   defaultValue: DataTypes.NOW,
-    // },
+    due_date: {
+      type: DataTypes.DATEONLY,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
   },
   {
     sequelize,
