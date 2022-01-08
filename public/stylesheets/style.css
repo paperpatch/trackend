@@ -1,6 +1,9 @@
-/* Imports */
+/* Google FamilyFont
+'Open Sans', sans-serif;
+'Roboto', sans-serif;
+ */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@100&display=swap'); */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 * {
   box-sizing: border-box;
@@ -47,7 +50,9 @@ nav a img {
 
 .navigation {
   background-color: white;
-  width: 25rem;
+  width: 24rem;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
 }
 
 .navigation ul {
@@ -56,6 +61,13 @@ nav a img {
 
 .nav-link {
   color: #191919;
+}
+
+.roboto {
+  font-family: 'Roboto', sans-serif;
+  margin: 5px 0 5px 5px;
+  font-size: 11px;
+  font-weight: bold;
 }
 
 /* Pages Section */
@@ -130,7 +142,7 @@ form i {
   cursor: pointer;
 }
 
-/* Font Section */
+/* Other Font Section */
 
 h1 {
   margin: 0;
@@ -168,13 +180,6 @@ textarea:focus, input:focus {
 textarea {
   min-width: 60%;
   min-height: 100px;
-}
-
-.roborto {
-  font-family: 'Roboto', sans-serif;
-  margin: 5px 0 5px 5px;
-  font-size: 11px;
-  font-weight: bold;
 }
 
 /* Utility Section */
