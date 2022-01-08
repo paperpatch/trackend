@@ -20,19 +20,16 @@
 
     {{!-- Fonts and Icons --}}
     <link href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" rel="stylesheet">
-    <link href="http://fonts.googleapis.com/css?family=Roboto:400,700,300" rel="stylesheet" type="text/css">
 
   </head>
 
   <body>
     <div class="wrapper">
       {{#if loggedIn}}
-        <header>
-          <h1>
-            <a href="/">Trackend</a>
-          </h1>
+        <header class="header shadow">
+          <h1 class="m-4 fs-1"><a href="/"><big>T</big>RACKEND</a></h1>
           <nav>
-            <div class="dropdown pb-4">
+            <div class="dropdown">
               <a
                 href="#"
                 class="d-flex align-items-center text-decoration-none dropdown-toggle"
@@ -42,19 +39,19 @@
               >
                 <img
                   src="/images/user_image.png"
-                  alt="hugenerd"
+                  alt="userimg"
                   width="30"
                   height="30"
                   class="rounded-circle"
                 />
-                <span class="d-none d-sm-inline mx-1">User</span>
+                <span class="d-none d-sm-inline mx-1">{{format_upper user_username}}</span>
               </a>
               <ul
-                class="dropdown-menu text-small shadow"
+                class="dropdown-menu"
                 aria-labelledby="dropdownUser1"
               >
-                <li><a class="dropdown-item" href="/dashboard/">Settings</a></li>
-                <li><a class="dropdown-item" href="/dashboard/">Profile</a></li>
+                <li><a class="dropdown-item" href="/profile/">Settings</a></li>
+                <li><a class="dropdown-item" href="/profile/">Profile</a></li>
                 <li>
                   <hr class="dropdown-divider" />
                 </li>
@@ -66,9 +63,9 @@
       <main>
         <div class="container-fluid">
           <div class="row flex-nowrap">
-            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0">
+            <nav class="navigation shadow col-auto">
               {{> navigation}}
-            </div>
+            </nav>
             <div class="col py-3">
               {{{body}}}
             </div>
