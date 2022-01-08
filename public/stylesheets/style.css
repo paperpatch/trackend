@@ -1,3 +1,7 @@
+/* Imports */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -14,7 +18,7 @@ main {
   flex: 1;
 }
 
-/* Header Section */
+/* Header & Navigation Section */
 
 .wrapper {
   width: 100%;
@@ -39,6 +43,15 @@ header h1 {
 
 nav a img {
   margin: 0 10px;
+}
+
+.navigation {
+  background-color: white;
+  width: 25rem;
+}
+
+.navigation ul {
+  margin: 0px 5px;
 }
 
 /* Pages Section */
@@ -150,6 +163,13 @@ textarea:focus, input:focus {
 textarea {
   min-width: 60%;
   min-height: 100px;
+}
+
+.roborto {
+  font-family: 'Roboto', sans-serif;
+  margin: 5px 0 5px 5px;
+  font-size: 11px;
+  font-weight: bold;
 }
 
 /* Utility Section */

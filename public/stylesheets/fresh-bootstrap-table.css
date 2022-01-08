@@ -430,7 +430,7 @@ input[type=file] > input[type=button]::-moz-focus-inner {
   padding: 8px;
 }
 
-.btn-primary {
+/* .btn-primary {
   border-color: #3472F7;
   color: #3472F7;
 }
@@ -618,9 +618,9 @@ input[type=file] > input[type=button]::-moz-focus-inner {
 }
 .btn-neutral.btn-simple:active, .btn-neutral.btn-simple.active {
   background-color: transparent;
-}
+} */
 
-.btn:disabled, .btn[disabled], .btn.disabled {
+/* .btn:disabled, .btn[disabled], .btn.disabled {
   opacity: 0.5;
   filter: alpha(opacity=50);
 }
@@ -697,7 +697,7 @@ input[type=file] > input[type=button]::-moz-focus-inner {
   top: 50%;
   margin-top: -1px;
   right: 8px;
-}
+} */
 
 .form-control::-moz-placeholder {
   color: #DDDDDD;
