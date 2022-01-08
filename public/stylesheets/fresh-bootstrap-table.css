@@ -336,10 +336,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .navbar, .brand, .btn, 
   font-family: "Roboto", "Helvetica Neue", "Open Sans", Arial, sans-serif;
 }
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
+/* h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   font-weight: 400;
   margin: 30px 0 15px;
-}
+} */
 
 h1, .h1 {
   font-size: 52px;
@@ -364,11 +364,11 @@ h5, .h5 {
   margin-bottom: 15px;
 }
 
-h6, .h6 {
+/* h6, .h6 {
   font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
-}
+} */
 
 p {
   font-size: 16px;
@@ -803,72 +803,6 @@ input[type=file] > input[type=button]::-moz-focus-inner {
   top: 50%;
   margin-top: -1px;
   right: 8px;
-}
-
-.btn-social {
-  opacity: 0.85;
-  padding: 8px 9px;
-  min-width: 100px;
-  margin: 20px 2px 0;
-}
-.btn-social .fa {
-  font-size: 18px;
-  vertical-align: middle;
-  display: inline-block;
-  margin-right: 5px;
-}
-.btn-social.btn-round {
-  padding: 9px 10px;
-}
-
-.btn-facebook {
-  border-color: #3b5998;
-  color: #3b5998;
-}
-.btn-facebook:hover, .btn-facebook:focus, .btn-facebook:active, .btn-facebook.active, .open > .btn-facebook.dropdown-toggle {
-  background-color: transparent;
-  color: #3b5998;
-  border-color: #3b5998;
-  opacity: 1;
-}
-.btn-facebook:disabled, .btn-facebook[disabled], .btn-facebook.disabled {
-  background-color: transparent;
-  border-color: #3b5998;
-}
-.btn-facebook.btn-fill {
-  color: #FFFFFF;
-  background-color: #3b5998;
-  opacity: 0.9;
-}
-.btn-facebook.btn-fill:hover, .btn-facebook.btn-fill:focus, .btn-facebook.btn-fill:active, .btn-facebook.btn-fill.active, .open > .btn-facebook.btn-fill.dropdown-toggle {
-  background-color: #3b5998;
-  color: #FFFFFF;
-  opacity: 1;
-}
-
-.btn-twitter {
-  border-color: #55acee;
-  color: #55acee;
-}
-.btn-twitter:hover, .btn-twitter:focus, .btn-twitter:active, .btn-twitter.active, .open > .btn-twitter.dropdown-toggle {
-  background-color: transparent;
-  color: #55acee;
-  border-color: #55acee;
-  opacity: 1;
-}
-.btn-twitter:disabled, .btn-twitter[disabled], .btn-twitter.disabled {
-  background-color: transparent;
-  border-color: #55acee;
-}
-.btn-twitter.btn-fill {
-  color: #FFFFFF;
-  background-color: #55acee;
-  opacity: 0.9;
-}
-.btn-twitter.btn-fill:hover, .btn-twitter.btn-fill:focus, .btn-twitter.btn-fill:active, .btn-twitter.btn-fill.active, .open > .btn-twitter.btn-fill.dropdown-toggle {
-  background-color: #55acee;
-  color: #FFFFFF;
-  opacity: 1;
 }
 
 .form-control::-moz-placeholder {
