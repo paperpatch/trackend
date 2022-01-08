@@ -108,11 +108,11 @@ router.get('/:id', (req, res) => {
         attributes: ['username'],
       },
       {
-        mode: Priority,
+        model: Priority,
         attributes: ['level']
       },
       {
-        mode: StatusChange,
+        model: StatusChange,
         attributes: ['statusChange']
       },
       {
