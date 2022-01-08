@@ -16,10 +16,6 @@ main {
 
 /* Header Section */
 
-header {
-  background-color: black;
-}
-
 .wrapper {
   width: 100%;
   min-height: 100%;
@@ -34,9 +30,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 2%;
-  background-color: white;
-  box-shadow: 0px 4px 2px -2px rgb(219, 219, 219);
-  border-radius: 3px;
+  background-color: #3d5974;
 }
 
 header h1 {
@@ -127,14 +121,18 @@ h1 {
 
 a {
   text-decoration: none;
-  color: #225ca3;
   font-weight: bold;
   transition: color .1s;
 }
 
 a:hover {
-  color: #3486eb;
+  color: white;
   text-decoration: none;
+}
+
+header a {
+  color: white;
+  text-shadow: black 1px 0px 5px;
 }
 
 textarea, input {
@@ -180,24 +178,6 @@ button:hover {
 .btn-guest:hover {
   color: #3486eb;
   background-color: transparent;
-}
-
-.btn-no-style {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  text-decoration: none;
-  color: #225ca3;
-  font-size: 100%;
-  font-weight: bold;
-  transition: color .1s;
-  margin-left: 16px;
-}
-
-.btn-no-style:hover {
-  background: none;
-  color: #3486eb;
 }
 
 .delete-ticket-btn {

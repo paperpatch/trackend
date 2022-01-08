@@ -27,7 +27,7 @@
   <body>
     <div class="wrapper">
       {{#if loggedIn}}
-        <header>
+        <header class="shadow">
           <h1 class="m-4">
             <span class="align-bottom"><a href="/"><big>T</big>RACKEND</a></span>
           </h1>
@@ -50,7 +50,7 @@
                 <span class="d-none d-sm-inline mx-1">{{format_upper user_username}}</span>
               </a>
               <ul
-                class="dropdown-menu text-small shadow"
+                class="dropdown-menu dropdown-menu-dark bg-dark"
                 aria-labelledby="dropdownUser1"
               >
                 <li><a class="dropdown-item" href="/dashboard/">Settings</a></li>
