@@ -57,12 +57,21 @@ This repository uses the following server:
 
 :computer:
 
-Go to [Trackend site](#) and navigate through seeded tickets and comments. Login to be able to post and comment on issue tickets.
+Go to [Trackend site](#) and navigate through seeded tickets and comments. Login to be able to post and comment on issue tickets. Users are able to anonymously login through the `Guest` link.
 
-User is able to:
+Guest Access:
 - Create a new account to post their own tickets and links to a website.
 - Edit, comment and delete their own posts.
-- Comment other posted tickets.
+- Comment on other posted tickets.
+- View their own profile.
+
+User Access:
+- Everything a guest can do.
+- View their own email and password.
+
+Administrative Access:
+- Everything a user can do
+- See the tab `Manage Users` on the navigation bar.
 
 If you cloned or copied the repository, ensure that you `npm install` to download the packages and create an `.env` file in your local repository with similar text below:
 ```js
