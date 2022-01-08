@@ -67,6 +67,7 @@ router.get('/', withAuth, (req, res) => {
   })
     .then(dbTicketData => {
       const tickets = dbTicketData.map(ticket => ticket.get({ plain: true }));
+
       fs.writeFile('./public/data.json', JSON.stringify(tickets),(err) => {
         if (err)
           console.log(err);

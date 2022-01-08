@@ -1,3 +1,8 @@
+const togglePassword = document.querySelector('#togglePassword');
+const togglePassword2 = document.querySelector('#togglePassword2');
+const passwordOne = document.querySelector('#password-signup');
+const passwordTwo = document.querySelector('#confirm-password');
+
 const checkpassword = () => {
 
 	let password1 = document.querySelector('#password-signup').value.trim();
@@ -41,7 +46,45 @@ async function signupFormHandler(event) {
 			alert(response.statusText);
 		}	
 	}
-	
 }
 
+async function loginGuestHandler(event) {
+  event.preventDefault();
+
+  const username = 'guest';
+  const password = 'guest';
+
+  if (username && password) {
+    const response = await fetch('/api/users/login', {
+      method: 'post',
+      body: JSON.stringify({
+        username,
+        password
+      }),
+      headers: { 'Content-Type': 'application/json' }
+    });
+
+    if (response.ok) {
+      document.location.replace('/');
+    } else {
+      alert(response.statusText);
+    }
+  }
+}
+
+togglePassword.addEventListener('click', function(e) {
+	const type = passwordOne.getAttribute('type') === 'password' ? 'text' : 'password';
+	passwordOne.setAttribute('type', type);
+  
+	this.classList.toggle('bi-eye');
+});
+
+togglePassword2.addEventListener('click', function(e) {
+	const type = passwordTwo.getAttribute('type') === 'password' ? 'text' : 'password';
+	passwordTwo.setAttribute('type', type);
+  
+	this.classList.toggle('bi-eye');
+});
+
 document.querySelector('.signup-form').addEventListener('submit',  signupFormHandler);
+document.querySelector('.login-guest').addEventListener('submit', loginGuestHandler);
