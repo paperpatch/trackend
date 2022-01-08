@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <span>Recent Updates:</span>
+      <h4 class="page-title">Recent Updates:</h4>
       <ol class="ticket-list">
         {{#each tickets as |ticket|}}
         <li>
@@ -12,7 +12,7 @@
     </div>
     
     <div class="col">
-      <span>Summary:</span>
+      <h4 class="page-title">Summary:</h4>
       <ol class="summary-list">
         <ul>{{tickets.[0].critical_count}} critical priority tickets</ul>
         <ul>{{tickets.[0].high_count}} high priority tickets</ul>
