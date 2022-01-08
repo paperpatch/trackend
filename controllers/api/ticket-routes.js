@@ -138,7 +138,11 @@ router.post('/', withAuth, (req, res) => {
   Ticket.create({
     title: req.body.title,
     ticket_text: req.body.ticket_text,
-    user_id: req.session.user_id
+    status: true,
+    user_id: req.session.user_id,
+    priority_id: req.body.priority_id,
+    status_change_id: 1,
+    type_id: req.body.type_id
   })
     .then(dbTicketData => res.json(dbTicketData))
     .catch(err => {

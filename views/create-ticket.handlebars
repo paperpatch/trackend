@@ -11,14 +11,32 @@
       <textarea id="ticket-text" name="ticket-text"></textarea>
     </div>
     {{!-- <div>
-      <label for="Priority">Status</label>
+      <label for="ticket-status">Status</label>
+      <select name="ticket-status" id="ticket-status">
+        <option value="TRUE">Open</option>
+        <option value="FALSE">Closed</option>
+      </select>
+    </div> --}}
+    <div>
+      <label for="ticket-priority">Priority</label>
       <select name="ticket-priority" id="ticket-priority">
         <option value="1">Critical</option>
         <option value="2">High</option>
         <option value="3">Moderate</option>
         <option value="4">Low</option>
       </select>
-    </div> --}}
+    </div>
+    <div>
+      <label for="ticket-type">Type</label>
+      <select name="ticket-type" id="ticket-type">
+        <option value="1">Bug</option>
+        <option value="2">IT</option>
+        <option value="3">Security</option>
+        <option value="4">Server</option>
+        <option value="5">Other</option>
+      </select>
+    </div>
+
     <button type="submit">Create</button>
   </form>
 </section>
