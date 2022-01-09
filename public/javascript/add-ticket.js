@@ -3,11 +3,9 @@ async function newFormHandler(event) {
 
   const title = document.querySelector('input[name="ticket-title"]').value;
   const ticket_text = document.querySelector('textarea[name="ticket-text"]').value;
-  // const status = JSON.parse(document.getElementById('ticket-status').value);
   const priority_id = JSON.parse(document.getElementById('ticket-priority').value);
-  // const priority_id = document.querySelector('select[name="priority-status"]').value;
-  type_id = JSON.parse(document.getElementById('ticket-type').value);
-  assigned_id = JSON.parse(document.getElementById('assigned').value);
+  const type_id = JSON.parse(document.getElementById('ticket-type').value);
+  const assigned_id = JSON.parse(document.getElementById('assigned').value);
 
   const response = await fetch(`/api/tickets`, {
     method: 'POST',
