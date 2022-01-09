@@ -118,9 +118,16 @@ nav a img {
   padding-left: 1%;
 }
 
-.article, .comment {
+/* Ticket Detail */
+
+.ticket-detail-title {
+  margin: 1%;
+  padding: 1%;
+  font-family: 'open sans', sans-serif;
+}
+
+.article, .comments {
   background-color: white;
-  box-shadow: 3px 4px 15px -2px rgb(219, 219, 219);
   border-radius: 5px;
 }
 

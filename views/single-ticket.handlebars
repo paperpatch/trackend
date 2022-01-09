@@ -1,30 +1,33 @@
-<h2>Detail List</h2>
-{{!-- <option name="status" value="Open">Open</option> --}}
-{{> ticket-single ticket}}
+<h3 class="ticket-detail-title">Ticket Detail</h3>
 
-{{#ifOpen ticket.status}}
-<button><a href="/dashboard/edit/{{ticket.id}}" class="edit-link">Edit ticket</a></button>
-<button type="button" class="close-ticket-btn" id="closeBtn" onclick="closeTicket()">Close Ticket</button>
-{{else}}
-<button type="button" class="reopen-ticket-btn" id="reopenBtn" onclick="reopenTicket()">Open Ticket</button>
-{{/ifOpen}}
+<section class="article shadow">
+  {{> ticket-single ticket}}
 
-<br/>
+  {{#ifOpen ticket.status}}
+  <button><a href="/dashboard/edit/{{ticket.id}}" class="edit-link">Edit ticket</a></button>
+  <button type="button" class="close-ticket-btn" id="closeBtn" onclick="closeTicket()">Close Ticket</button>
+  {{else}}
+  <button type="button" class="reopen-ticket-btn" id="reopenBtn" onclick="reopenTicket()">Open Ticket</button>
+  {{/ifOpen}}
+</section>
 
-{{#ifOpen ticket.status}}
-<form class="comment-form">
-  <div>
-    <textarea name="comment-body"></textarea>
-  </div>
+<div class="comments shadow">
+  <h4>Discussion ({{ticket.comments.length}})</h4>
+  {{#ifOpen ticket.status}}
+  <form class="comment-form">
+    <div>
+      <textarea name="comment-body"></textarea>
+    </div>
 
-  <div>
-    <button type="submit">Add Comment</button>
-  </div>
-</form>
-{{/ifOpen}}
+    <div>
+      <button type="submit">Add Comment</button>
+    </div>
+  </form>
+  {{/ifOpen}}
 
-Comments:
-{{> comments ticket.comments}}
+  {{> comments ticket.comments}}
+
+</div>
 
 <script src="/javascript/comment.js"></script>
 <script src="/javascript/close-ticket.js"></script>
