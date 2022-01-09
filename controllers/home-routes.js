@@ -3,6 +3,16 @@ const sequelize = require('../config/connection');
 const { Ticket, User, Comment, Priority, StatusChange, Type, Role} = require('../models');
 const withAuth = require('../utils/auth');
 
+// router.get('/', (req, res) => {
+//   User.findall().then(userData => {
+//     const users = userData.map(user => user.get({plain: true}));
+//   })
+//   .catch(err => {
+//     console.log(err);
+//     res.status(500).json(err);
+//   })
+// });
+
 // get all Tickets for homepage
 router.get('/', withAuth, (req, res) => {
   console.log('======================');
@@ -23,6 +33,7 @@ router.get('/', withAuth, (req, res) => {
       [sequelize.literal('(SELECT COUNT(*) FROM ticket WHERE ticket.priority_id = 2)'), 'high_count'],
       [sequelize.literal('(SELECT COUNT(*) FROM ticket WHERE ticket.priority_id = 3)'), 'moderate_count'],
       [sequelize.literal('(SELECT COUNT(*) FROM ticket WHERE ticket.priority_id = 4)'), 'low_count'],
+      [sequelize.literal('(SELECT COUNT(*) FROM user)'), 'total_users']
     ],
     order: [['created_at', 'DESC']],
     include: [
@@ -41,7 +52,7 @@ router.get('/', withAuth, (req, res) => {
       {
         model: User,
         as: 'user',
-        attributes: ['username', 'role_id',],
+        attributes: ['username', 'role_id'],
         include: {
           model: Role,
           attributes: ['role']
@@ -68,9 +79,11 @@ router.get('/', withAuth, (req, res) => {
   })
     .then(dbTicketData => {
       const tickets = dbTicketData.map(ticket => ticket.get({ plain: true }));
-
+      const usersCount = User.count();
+      console.log(usersCount);
       res.render('homepage', {
-        tickets,
+        tickets, 
+        usersCount,
         loggedIn: req.session.loggedIn,
         user_username: req.session.username
       });
