@@ -1,0 +1,24 @@
+<div>
+
+  Status: <option name="status" value="{{#if status}}true{{else}}false{{/if}}">{{#if status}}Open{{else}}Closed{{/if}}</option>
+
+  <div class="id">ID: {{id}}</div>
+
+
+  <div>Title: <a href="/ticket/{{id}}">{{title}}</a></div>
+
+  <div>Description: {{ticket_text}}</div>
+
+  <div>Type: {{type.type}}</div>
+
+  <div>Priority: {{priority.level}}</div>
+
+  <div>Username: {{user.username}}</div>
+
+  <div>Created At: {{format_date created_at}}</div>
+
+  <div>Assignee: {{assign.username}}</div>
+
+  <a href="/ticket/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+
+</div>

@@ -43,6 +43,13 @@ Handlebars.registerHelper('ifAdmin', function(input, options) {
   return options.inverse(this);
 });
 
+Handlebars.registerHelper('ifOpen', function(input, options) {
+  if(input === 'true' || input === true) {
+    return options.fn(this);
+  }
+  return options.inverse(this);
+});
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));

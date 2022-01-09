@@ -7,6 +7,7 @@ const withAuth = require('../utils/auth');
 router.get('/', withAuth, (req, res) => {
   console.log('======================');
   Ticket.findAll({
+    limit: 8,
     attributes: [
       'id',
       'ticket_text',
@@ -17,6 +18,7 @@ router.get('/', withAuth, (req, res) => {
       'type_id',
       'assigned_id',
       'created_at',
+      'due_date',
       [sequelize.literal('(SELECT COUNT(*) FROM ticket WHERE ticket.priority_id = 1)'), 'critical_count'],
       [sequelize.literal('(SELECT COUNT(*) FROM ticket WHERE ticket.priority_id = 2)'), 'high_count'],
       [sequelize.literal('(SELECT COUNT(*) FROM ticket WHERE ticket.priority_id = 3)'), 'moderate_count'],
@@ -95,6 +97,7 @@ router.get('/ticket/:id', withAuth, (req, res) => {
       'type_id',
       'assigned_id',
       'created_at',
+      'due_date',
     ],
     include: [
       {
