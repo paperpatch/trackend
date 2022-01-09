@@ -6,21 +6,26 @@
 //     })
 // }
 
+
+
 async function reopenTicket() {
     
-    
+    const title = document.querySelector('input[name="ticket-title"]').value.trim();
+     const ticket_text = document.querySelector('textarea[name="ticket-text"]').value;
     let status = JSON.parse(document.getElementById('status').value);
-    console.log(status);
+    // console.log(status);
 
     const id = window.location.toString().split('/')[
             window.location.toString().split('/').length - 1
             ];
 
-    status = !status 
+    status = true;
 
     const response = await fetch(`/api/tickets/${id}`, {
       method: 'PUT',
       body: JSON.stringify({
+        title,
+        ticket_text,
         status
       }),
       headers: {
@@ -38,8 +43,8 @@ async function reopenTicket() {
             document.getElementById('reopenBtn').hidden = true;
         } else {
             status = false;
-            document.getElementById('deleteBtn').hidden = true;
-            document.getElementById('closeBtn').hidden = true;
+            document.getElementById('deleteBtn').hidden = false;
+            document.getElementById('closeBtn').hidden = false;
         }
     })
   

@@ -1,5 +1,7 @@
 async function closeTicket() {
     
+    const title = document.querySelector('input[name="ticket-title"]').value.trim();
+    const ticket_text = document.querySelector('textarea[name="ticket-text"]').value;
     let status = JSON.parse(document.getElementById('status').value);
 
     const id = window.location.toString().split('/')[
@@ -11,7 +13,8 @@ async function closeTicket() {
     const response = await fetch(`/api/tickets/${id}`, {
       method: 'PUT',
       body: JSON.stringify({
-
+        title,
+        ticket_text,
         status
       }),
       headers: {
