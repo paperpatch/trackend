@@ -76,12 +76,11 @@ router.get('/', withAuth, (req, res) => {
   })
     .then(dbTicketData => {
       const tickets = dbTicketData.map(ticket => ticket.get({ plain: true }));
-      // async const total_users = await User.count();
-      // console.log(total_users);
-
+      const usersCount = User.count();
+      console.log(usersCount);
       res.render('homepage', {
         tickets, 
-        // total_users,
+        usersCount,
         loggedIn: req.session.loggedIn,
         user_username: req.session.username
       });
