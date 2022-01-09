@@ -24,8 +24,6 @@
       <a href="/ticket/{{ticket.id}}">{{ticket.comments.length}} {{format_plural "comment" ticket.comments.length}}</a>
     </div>
     <button type="submit" id="saveBtn">Save Ticket</button>
-    <button type="button" class="close-ticket-btn" id="closeBtn" onclick="closeTicket()">Close Ticket</button>
-    <button type="button" class="reopen-ticket-btn" id="reopenBtn" onclick="reopenTicket()">Open Ticket</button>
     <button type="button" class="delete-ticket-btn" id='deleteBtn'>Delete ticket</button>
   </form>
 </article>
@@ -45,6 +43,3 @@
 <script src="/javascript/edit-ticket.js"></script>
 <script src="/javascript/delete-ticket.js"></script>
 <script src="/javascript/comment.js"></script>
-<script src="/javascript/close-ticket.js"></script>
-<script src="/javascript/reopen-ticket.js"></script>
-<script src="/javascript/check-ticket-status.js"></script>

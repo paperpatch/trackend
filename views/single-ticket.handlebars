@@ -3,6 +3,8 @@
 {{> ticket-single ticket}}
 
 <button><a href="/dashboard/edit/{{ticket.id}}" class="edit-link">Edit ticket</a></button>
+<button type="button" class="close-ticket-btn" id="closeBtn" onclick="closeTicket()">Close Ticket</button>
+<button type="button" class="reopen-ticket-btn" id="reopenBtn" onclick="reopenTicket()">Open Ticket</button>
 
 <form class="comment-form">
   <div>
@@ -18,3 +20,6 @@ Comments:
 {{> comments ticket.comments}}
 
 <script src="/javascript/comment.js"></script>
+<script src="/javascript/close-ticket.js"></script>
+<script src="/javascript/reopen-ticket.js"></script>
+<script src="/javascript/check-ticket-status.js"></script>
