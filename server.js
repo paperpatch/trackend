@@ -44,7 +44,7 @@ Handlebars.registerHelper('ifAdmin', function(input, options) {
 });
 
 Handlebars.registerHelper('ifOpen', function(input, options) {
-  if(input === 'Open' || input === 'open') {
+  if(input === 'true' || input === true) {
     return options.fn(this);
   }
   return options.inverse(this);

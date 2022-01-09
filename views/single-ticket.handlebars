@@ -2,10 +2,16 @@
 
 {{> ticket-single ticket}}
 
+{{#ifOpen ticket.status}}
 <button><a href="/dashboard/edit/{{ticket.id}}" class="edit-link">Edit ticket</a></button>
 <button type="button" class="close-ticket-btn" id="closeBtn" onclick="closeTicket()">Close Ticket</button>
+{{else}}
 <button type="button" class="reopen-ticket-btn" id="reopenBtn" onclick="reopenTicket()">Open Ticket</button>
+{{/ifOpen}}
 
+<br/>
+
+{{#ifOpen ticket.status}}
 <form class="comment-form">
   <div>
     <textarea name="comment-body"></textarea>
@@ -15,6 +21,7 @@
     <button type="submit">Add Comment</button>
   </div>
 </form>
+{{/ifOpen}}
 
 Comments:
 {{> comments ticket.comments}}
