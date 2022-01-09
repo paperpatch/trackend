@@ -45,8 +45,9 @@
     </div>
     <div>
       <label for="edit-assigned">Edit Assigned</label>
+      {{ticket.user.username}}
       <select name="edit-assigned" id="edit-assigned">
-        {{#each users as |user|}}
+        {{#each ticket as |ticket|}}
         <option value='{{user.id}}'>{{user.username}}</option>
         {{/each}}
       </select>
