@@ -1,11 +1,5 @@
 <article>
   <a href="/dashboard"> &larr; Back to dashboard</a>
-<div class="statusDiv">
-  <select name="status" id="status">
-    <option value="true">Open</option>
-    <option value="false">Closed</option>
-  </select>
-</div>
   <h4>
     Edit Ticket
   </h4>
@@ -48,9 +42,9 @@
       {{ticket.assign.username}}
       <br/>
       <select name="edit-assigned" id="edit-assigned">
-        {{#each ticket as |user|}}
-        <option value='{{user.id}}'>{{user.username}}</option>
-        {{/each}}
+        {{!-- {{#each users as |user|}}
+        <option value='{{users.id}}'>{{users.username}}</option>
+        {{/each}} --}}
       </select>
     </div>
     <div>

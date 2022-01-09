@@ -87,6 +87,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
       'assigned_id',
       'created_at',
       'due_date',
+      // [sequelize.literal('(SELECT id, username FROM user)', 'user_list')]
     ],
     include: [
       {
@@ -104,7 +105,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
       {
         model: User,
         as: 'user',
-        attributes: ['username', 'role_id',],
+        attributes: ['username', 'role_id'],
         include: {
           model: Role,
           attributes: ['role']
@@ -132,10 +133,11 @@ router.get('/edit/:id', withAuth, (req, res) => {
     .then(dbTicketData => {
       if (dbTicketData) {
         const ticket = dbTicketData.get({ plain: true });
-        
+        // const users = JSON.parse(ticket.user_list);
+
         res.render('edit-ticket', {
           ticket,
-          users,
+          // users,
           loggedIn: true,
           user_username: req.session.username
         });
