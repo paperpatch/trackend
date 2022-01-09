@@ -85,6 +85,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
       'type_id',
       'assigned_id',
       'created_at',
+      
     ],
     include: [
       {

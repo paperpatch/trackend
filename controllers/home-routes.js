@@ -30,7 +30,8 @@ router.get('/', withAuth, (req, res) => {
       [sequelize.literal('(SELECT COUNT(*) FROM ticket WHERE ticket.priority_id = 1)'), 'critical_count'],
       [sequelize.literal('(SELECT COUNT(*) FROM ticket WHERE ticket.priority_id = 2)'), 'high_count'],
       [sequelize.literal('(SELECT COUNT(*) FROM ticket WHERE ticket.priority_id = 3)'), 'moderate_count'],
-      [sequelize.literal('(SELECT COUNT(*) FROM ticket WHERE ticket.priority_id = 4)'), 'low_count']
+      [sequelize.literal('(SELECT COUNT(*) FROM ticket WHERE ticket.priority_id = 4)'), 'low_count'],
+      [sequelize.literal('(SELECT COUNT(*) FROM user)'), 'user_count']
     ],
     order: [['created_at', 'DESC']],
     include: [
@@ -76,11 +77,9 @@ router.get('/', withAuth, (req, res) => {
   })
     .then(dbTicketData => {
       const tickets = dbTicketData.map(ticket => ticket.get({ plain: true }));
-      const usersCount = User.count();
-      console.log(usersCount);
+
       res.render('homepage', {
         tickets, 
-        usersCount,
         loggedIn: req.session.loggedIn,
         user_username: req.session.username
       });
