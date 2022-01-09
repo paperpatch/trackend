@@ -33,7 +33,8 @@ router.get('/', withAuth, (req, res) => {
       [sequelize.literal('(SELECT COUNT(*) FROM ticket WHERE ticket.priority_id = 2)'), 'high_count'],
       [sequelize.literal('(SELECT COUNT(*) FROM ticket WHERE ticket.priority_id = 3)'), 'moderate_count'],
       [sequelize.literal('(SELECT COUNT(*) FROM ticket WHERE ticket.priority_id = 4)'), 'low_count'],
-      [sequelize.literal('(SELECT COUNT(*) FROM user)'), 'total_users']
+      [sequelize.literal('(SELECT COUNT(*) FROM ticket)'), 'total_tickets'],
+      [sequelize.literal('(SELECT COUNT(*) FROM user)'), 'total_users'],
     ],
     order: [['created_at', 'DESC']],
     include: [
