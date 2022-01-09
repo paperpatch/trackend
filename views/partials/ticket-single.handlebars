@@ -1,24 +1,24 @@
 
 <div>
-Status: {{#if status}}
-Open
-{{else}}
-Closed
-{{/if}}
-<br/>
-Title: <a href="/ticket/{{id}}">{{title}}</a>
-<br/>
-Description: {{ticket_text}}
-<br/>
-Type: {{type.type}}
-<br/>
-Priority: {{priority.level}}
-<br/>
-Username: {{user.username}}
-<br/>
-Created At: {{format_date created_at}}
-<br/>
-Assignee: {{assign.username}}
-<br/>
+
+Status: <div class="statusDiv">{{#if status}}Open{{else}}Closed{{/if}}</div>
+<div class="id">ID: {{id}}</div>
+
+
+<div>Title: <a href="/ticket/{{id}}">{{title}}</a></div>
+
+<div>Description: {{ticket_text}}</div>
+
+<div>Type: {{type.type}}</div>
+
+<div>Priority: {{priority.level}}</div>
+
+<div>Username: {{user.username}}</div>
+
+<div>Created At: {{format_date created_at}}</div>
+
+<div>Assignee: {{assign.username}}</div>
+
 <a href="/ticket/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+
 </div>
