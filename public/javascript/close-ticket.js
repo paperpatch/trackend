@@ -1,55 +1,42 @@
 async function closeTicket() {
 
-    const title = document.querySelector('input[name="ticket-title"]').value.trim();
-    const ticket_text = document.querySelector('textarea[name="ticket-text"]').value;
-    let status = JSON.parse(document.getElementById('status').value);
+  const id = window.location.toString().split('/')[
+    window.location.toString().split('/').length - 1
+  ];
+  console.log(id);
 
+  const trueFalse = document.querySelector('option[name="status"]').value;
+  let status = true;
+  console.log(trueFalse);
 
-    const id = window.location.toString().split('/')[
-        window.location.toString().split('/').length - 1
-        ];
-    
-    status = !status 
+  if(trueFalse ==="undefined") {
+    return 'Undefined value!';
+  }
 
-    const response = await fetch(`/api/tickets/${id}`, {
-      method: 'PUT',
-      body: JSON.stringify({
-        status
-      }),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
+  if(trueFalse === "Open" || "OPEN") {
+    status = true;
+  } else {
+    status = false;
+  }
 
-    fetch(`/api/tickets/${id}`).then(function(response){
-        return response.json();
-    }).then(function(data){
-        console.log(data);
-        
-        if(status === false) {
-            status = false;
-            document.getElementById('reopenBtn').hidden = false;
-            document.getElementById('closeBtn').hidden = true;
-            document.getElementById('deleteBtn').hidden = true;
-            document.getElementById('saveBtn').hidden = true;
-            
-        
-        } else {
-            status = true;
-            document.getElementById('reopenBtn').hidden = true;
-            document.getElementById('closeBtn').hidden = false;
-            document.getElementById('deleteBtn').hidden = false;
-            document.getElementById('saveBtn').hidden = false;
-        }
-    })
-  
-    // if (response.ok) {
-    //   document.location.replace('/dashboard');
-    // } else {
-    //   alert(response.statusText);
-    // }
-    
-    checkStatus();
+  // reverse the value
+  status = !status
+
+  console.log('reverse', status)
+
+  const response = await fetch(`/api/tickets/${id}`, {
+    method: 'PUT',
+    body: JSON.stringify({
+      status
+    }),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+
+  if (response.ok) {
+    document.location.replace(`/ticket/${id}`);
+  } else {
+    alert(response.statusText);
+  }
 }
-
-
