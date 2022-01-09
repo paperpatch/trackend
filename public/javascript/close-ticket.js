@@ -30,14 +30,14 @@ async function closeTicket() {
     }).then(function(data){
         console.log(data);
         
-        if(status === false) {
-            status = false;
-            document.getElementById('closeBtn').hidden = true;
-            document.getElementById('deleteBtn').hidden = true;
-        } else {
-            status = true;
-            document.getElementById('reopenBtn').hidden = false;
-        }
+        // if(status === false) {
+        //     status = false;
+        //     document.getElementById('closeBtn').hidden = true;
+        //     document.getElementById('deleteBtn').hidden = true;
+        // } else {
+        //     status = true;
+        //     document.getElementById('reopenBtn').hidden = false;
+        // }
     })
   
     // if (response.ok) {
@@ -46,25 +46,7 @@ async function closeTicket() {
     //   alert(response.statusText);
     // }
     
+    checkStatus();
 }
 
-const checkStatus = (status) => {
 
-
-    fetch(`/api/tickets/${id}`).then(function(res){
-        return res.json();
-    }).then(function(data){
-        console.log(data.status)
-    })
-
-    if(status === false) {
-        status = false;
-        document.getElementById('closeBtn').hidden = true;
-        document.getElementById('deleteBtn').hidden = true;
-    } else {
-        status = true;
-        document.getElementById('reopenBtn').hidden = false;
-    }
-}
-
-checkStatus();
