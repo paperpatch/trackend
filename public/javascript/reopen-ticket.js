@@ -1,9 +1,5 @@
-async function reopenTicket() {
-    
-    const title = document.querySelector('input[name="ticket-title"]').value.trim();
-    const ticket_text = document.querySelector('textarea[name="ticket-text"]').value;
-    let status = JSON.parse(document.getElementById('status').value);
-    // console.log(status);
+function reopenTicket(status) {
+  
 
     const id = window.location.toString().split('/')[
             window.location.toString().split('/').length - 1
@@ -11,7 +7,7 @@ async function reopenTicket() {
 
     status = true;
 
-    const response = await fetch(`/api/tickets/${id}`, {
+    const response =  fetch(`/api/tickets/${id}`, {
       method: 'PUT',
       body: JSON.stringify({
         title,
@@ -28,26 +24,23 @@ async function reopenTicket() {
     }).then(function(data){
         console.log(data);
         
-        // if(status=== true) {
-        //     status = true;
-        //     document.getElementById('reopenBtn').hidden = true;
-        //     document.getElementById('deleteBtn').hidden = false;
-        //     document.getElementById('closeBtn').hidden = false;
-        //     document.getElementById('saveBtn').hidden = false;
-        // } else if (status === false){}
-        //     status = false;
-        //     document.getElementById('saveBtn').hidden = true;
-        //     document.getElementById('reopenBtn').hidden = true;
-        //     document.getElementById('deleteBtn').hidden = false;
-        //     document.getElementById('closeBtn').hidden = false;
-        
+        if (status === true) {
+            status = true;
+            document.getElementById('reopenBtn').hidden = true;
+            
+        } else {
+            status = false;
+            document.getElementById('deleteBtn').hidden = true;
+            document.getElementById('closeBtn').hidden = true;
+            document.getElementById('saveBtn').hidden = true;
+        }
     })
   
     // if (response.ok) {
-    //   document.location.replace('/dashboard');
+    //   document.location.replace('/edit');
     // } else {
     //   alert(response.statusText);
     // }
 
-
+checkStatus();
 }
