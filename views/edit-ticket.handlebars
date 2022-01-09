@@ -14,9 +14,44 @@
     <div>
       <input name="ticket-title" type="text" value="{{ticket.title}}" />
     </div>
-    
+    <div>
+      <label for="edit-status" id="edit status">Edit Status</label>
+      <select name="edit-status" id="edit-status">
+        <option value="true">Open</option>
+        <option value="false">Closed</option>
+      </select>
+    </div>
     <div>
       <textarea name="ticket-text">{{ticket.ticket_text}}</textarea>
+    </div>
+    <div>
+      <label for="edit-priority">Edit Priority</label>
+      <select name="edit-priority" id="edit-priority">
+        <option value="1">Critical</option>
+        <option value="2">High</option>
+        <option value="3">Moderate</option>
+        <option value="4">Low</option>
+      </select>
+    </div>
+    <div>
+      <label for="edit-type">Edit Type</label>
+      <select name="edit-type" id="edit-type">
+        <option value="1">Bug</option>
+        <option value="2">IT</option>
+        <option value="3">Security</option>
+        <option value="4">Server</option>
+        <option value="5">Other</option>
+      </select>
+    </div>
+    <div>
+      <label for="edit-assigned">Edit Assigned</label>
+      {{ticket.assign.username}}
+      <br/>
+      <select name="edit-assigned" id="edit-assigned">
+        {{#each ticket as |user|}}
+        <option value='{{user.id}}'>{{user.username}}</option>
+        {{/each}}
+      </select>
     </div>
     <div>
       Created by you on {{format_date ticket.created_at}}

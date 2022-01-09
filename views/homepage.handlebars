@@ -10,14 +10,18 @@
         {{/each}}
       </ol>
     </div>
-    
+
     <div class="col">
       <h4 class="page-title">Summary:</h4>
       <ol class="summary-list">
+        <br>
         <ul>{{tickets.[0].critical_count}} critical priority tickets</ul>
         <ul>{{tickets.[0].high_count}} high priority tickets</ul>
         <ul>{{tickets.[0].moderate_count}} moderate priority tickets</ul>
         <ul>{{tickets.[0].low_count}} low priority tickets</ul>
+        <br>
+        <ul>{{tickets.[0].total_tickets}} total tickets</ul>
+        <ul>{{tickets.[0].total_users}} total users</ul>
       </ol>
     </div>
   </div>

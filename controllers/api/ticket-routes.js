@@ -35,7 +35,7 @@ router.get('/', (req, res) => {
       {
         model: User,
         as: 'user',
-        attributes: ['username', 'role_id',],
+        attributes: ['username', 'role_id'],
         include: {
           model: Role,
           attributes: ['role']
@@ -68,10 +68,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-  Ticket.findOne({
-    where: {
-      id: req.params.id
-    },
+  Ticket.findByPk(req.params.id, {
     attributes: [
       'id',
       'ticket_text',
@@ -98,7 +95,7 @@ router.get('/:id', (req, res) => {
       {
         model: User,
         as: 'user',
-        attributes: ['username', 'role_id',],
+        attributes: ['username', 'role_id'],
         include: {
           model: Role,
           attributes: ['role']
@@ -140,7 +137,12 @@ router.post('/', withAuth, (req, res) => {
   Ticket.create({
     title: req.body.title,
     ticket_text: req.body.ticket_text,
-    user_id: req.session.user_id
+    status: true,
+    user_id: req.session.user_id,
+    priority_id: req.body.priority_id,
+    status_change_id: 1,
+    type_id: req.body.type_id,
+    assigned_id: req.body.assigned_id
   })
     .then(dbTicketData => res.json(dbTicketData))
     .catch(err => {
@@ -154,7 +156,12 @@ router.put('/:id', withAuth, (req, res) => {
     {
       title: req.body.title,
       ticket_text: req.body.ticket_text,
-      status: req.body.status
+      status: req.body.status,
+      user_id: req.session.user_id,
+      priority_id: req.body.priority_id,
+      status_change_id: 2,
+      type_id: req.body.type_id,
+      assigned_id: req.body.assigned_id
     },
     {
       where: {
