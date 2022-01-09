@@ -70,11 +70,9 @@ router.get('/', withAuth, (req, res) => {
   })
     .then(dbTicketData => {
       const tickets = dbTicketData.map(ticket => ticket.get({ plain: true }));
-      const usersCount = User.count();
-      console.log(usersCount);
+
       res.render('homepage', {
         tickets, 
-        usersCount,
         loggedIn: req.session.loggedIn,
         user_username: req.session.username
       });
