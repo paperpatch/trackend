@@ -133,6 +133,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
         
         res.render('edit-ticket', {
           ticket,
+          users,
           loggedIn: true,
           user_username: req.session.username
         });
