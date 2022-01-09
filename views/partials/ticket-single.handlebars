@@ -1,0 +1,23 @@
+
+<div>
+Status: {{#if status}}
+Open
+{{else}}
+Closed
+{{/if}}
+<br/>
+Title: <a href="/ticket/{{id}}">{{title}}</a>
+<br/>
+Description: {{ticket_text}}
+<br/>
+Type: {{type.type}}
+<br/>
+Priority: {{priority.level}}
+<br/>
+Username: {{user.username}}
+<br/>
+Created At: {{format_date created_at}}
+<br/>
+Assignee: {{assign.username}}
+<a href="/ticket/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+</div>
