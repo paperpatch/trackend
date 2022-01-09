@@ -217,3 +217,9 @@ button:hover {
 .delete-ticket-btn:hover {
   background-color: #ff643d;
 }
+
+/* Edit Page */
+#statusDiv {
+
+display: none;
+}
