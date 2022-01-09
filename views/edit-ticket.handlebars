@@ -1,6 +1,6 @@
 <article>
   <a href="/dashboard"> &larr; Back to dashboard</a>
-    <div>
+<div>
       <select name="status" id="status">
         <option value="true">Open</option>
         <option value="false">Closed</option>
@@ -25,7 +25,8 @@
     </div>
     <button type="submit">Save Ticket</button>
     <button type="button" class="close-ticket-btn" id="closeBtn" onclick="closeTicket()">Close Ticket</button>
-    <button type="button" class="delete-ticket-btn">Delete ticket</button>
+    <button type="button" class="reopen-ticket-btn" id="reopenBtn" onclick="reopenTicket()">Open Ticket</button>
+    <button type="button" class="delete-ticket-btn" id='deleteBtn'>Delete ticket</button>
   </form>
 </article>
 
@@ -45,3 +46,4 @@
 <script src="/javascript/delete-ticket.js"></script>
 <script src="/javascript/comment.js"></script>
 <script src="/javascript/close-ticket.js"></script>
+<script src="/javascript/reopen-ticket.js"></script>
