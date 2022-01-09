@@ -3,16 +3,6 @@ const sequelize = require('../config/connection');
 const { Ticket, User, Comment, Priority, StatusChange, Type, Role} = require('../models');
 const withAuth = require('../utils/auth');
 
-// router.get('/', (req, res) => {
-//   User.findall().then(userData => {
-//     const users = userData.map(user => user.get({plain: true}));
-//   })
-//   .catch(err => {
-//     console.log(err);
-//     res.status(500).json(err);
-//   })
-// });
-
 // get all Tickets for homepage
 router.get('/', withAuth, (req, res) => {
   console.log('======================');
