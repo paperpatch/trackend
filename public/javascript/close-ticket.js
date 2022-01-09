@@ -6,14 +6,7 @@ async function closeTicket() {
 
   let status = document.querySelector('option[name="status"]').value;
 
-  if(status === "Open" || "OPEN") {
-    status = true;
-  } else {
-    status = false;
-  }
-
-  // reverse the value
-  status = !status
+  status = false;
 
   const response = await fetch(`/api/tickets/${id}`, {
     method: 'PUT',
