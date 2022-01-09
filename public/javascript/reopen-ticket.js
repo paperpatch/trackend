@@ -1,51 +1,33 @@
 function reopenTicket() {
   
-    const title = document.querySelector('input[name="ticket-title"]').value.trim();
-    const ticket_text = document.querySelector('textarea[name="ticket-text"]').value;
-    let status = JSON.parse(document.getElementById('status').value);
-    
-    const id = window.location.toString().split('/')[
-            window.location.toString().split('/').length - 1
-            ];
+  const id = window.location.toString().split('/')[
+    window.location.toString().split('/').length - 1
+  ];
 
+  let status = document.querySelector('option[name="status"]').value;
+
+  if(status === "Open" || "OPEN") {
     status = true;
+  } else {
+    status = false;
+  }
 
-    const response =  fetch(`/api/tickets/${id}`, {
-      method: 'PUT',
-      body: JSON.stringify({
-        status
-      }),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
+  // reverse the value
+  status = !status
 
-    fetch(`/api/tickets/${id}`).then(function(response){
-        return response.json();
-    }).then(function(data){
-        console.log(data);
-        
-        if (status === true) {
-            status = true;
-            document.getElementById('reopenBtn').hidden = true;
-            document.getElementById('closeBtn').hidden = false;
-            document.getElementById('deleteBtn').hidden = false;
-            document.getElementById('saveBtn').hidden = false;
-            
-        } else {
-            status = false;
-            document.getElementById('reopenBtn').hidden = false;
-        document.getElementById('deleteBtn').hidden = true;
-        document.getElementById('closeBtn').hidden = true;
-        document.getElementById('saveBtn').hidden = true;
-        }
-    })
-  
-    // if (response.ok) {
-    //   document.location.replace('/edit');
-    // } else {
-    //   alert(response.statusText);
-    // }
+  const response = fetch(`/api/tickets/${id}`, {
+    method: 'PUT',
+    body: JSON.stringify({
+      status
+    }),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
 
-checkStatus();
+  if (response.ok) {
+    document.location.replace(`/ticket/${id}`);
+  } else {
+    alert(response.statusText);
+  }
 }
