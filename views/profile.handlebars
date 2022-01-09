@@ -1,33 +1,33 @@
 <section class="profile">
   <h3 class="shadow">Profile</h3>
-  <div class="profile-section shadow">
-    <div class="container">
+  <div class="profile-section shadow container">
+    <div class="">
       <div class="row flex-column">
         <div class="col">
           <div class="row">
-            <span class="profile-key col">ID: </span><span class="profile-text col">{{profile.[0].id}}</span>
+            <span class="profile-key col-3">ID: </span><span class="profile-text col">{{profile.[0].id}}</span>
           </div>
         </div>
         <div class="col">
           <div class="row">
-            <span class="profile-key col">Username: </span><span class="profile-text col">{{profile.[0].username}}</span>
+            <span class="profile-key col-3">Username: </span><span class="profile-text col">{{profile.[0].username}}</span>
           </div>
         </div>
         {{#ifGuest profile.[0].role.role}}
         <div class="col">
           <div class="row">
-            <span class="profile-key col">Email: </span><span class="profile-text col">{{profile.[0].email}}</span>
+            <span class="profile-key col-3">Email: </span><span class="profile-text col">{{profile.[0].email}}</span>
           </div>
         </div>
         <div class="col">
           <div class="row">
-            <span class="profile-key col">Password: </span><span class="profile-text col">*********</span>
+            <span class="profile-key col-3">Password: </span><span class="profile-text col">*********</span>
           </div>
         </div>
         {{/ifGuest}}
         <div class="col">
           <div class="row">
-            <span class="profile-key col">Account Access: </span><span class="profile-text col">{{profile.[0].role.role}}</span>
+            <span class="profile-key col-3">Account Access: </span><span class="profile-text col">{{profile.[0].role.role}}</span>
           </div>
         </div>
       </div>
