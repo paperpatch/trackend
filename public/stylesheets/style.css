@@ -112,12 +112,6 @@ nav a img {
   line-height: 150%;
 }
 
-.edit-link {
-  display: inline;
-  margin: 0 0 3% 1%;
-  padding-left: 1%;
-}
-
 /* Ticket Detail Section */
 
 .ticket-detail-page-title {
@@ -181,14 +175,31 @@ nav a img {
   opacity: .6;
 }
 
-/* Create/Edit Ticket Section */
+/* Single, Create, and Edit Ticket Section */
 
 .new-ticket-form input {
   width: 300px;
 }
 
+.edit-link {
+  color: white;
+}
+
+.edit-link:hover {
+  color: white;
+  text-decoration: none;
+}
+
 .edit-ticket-form {
   margin-bottom: 5%;
+}
+
+.edit-ticket-btn, .close-ticket-btn, .reopen-ticket-btn {
+  margin-left: 2%;
+}
+
+#statusDiv {
+  display: none;
 }
 
 form > div {
@@ -296,10 +307,4 @@ button:hover {
 
 .delete-ticket-btn:hover {
   background-color: #ff643d;
-}
-
-/* Edit Page */
-#statusDiv {
-
-display: none;
 }

@@ -5,7 +5,7 @@
 </section>
 
 {{#ifOpen ticket.status}}
-<button><a href="/dashboard/edit/{{ticket.id}}" class="edit-link">Edit ticket</a></button>
+<button class="edit-ticket-btn"><a href="/dashboard/edit/{{ticket.id}}" class="edit-link">Edit ticket</a></button>
 <button type="button" class="close-ticket-btn" id="closeBtn" onclick="closeTicket()">Close Ticket</button>
 {{else}}
 <button type="button" class="reopen-ticket-btn" id="reopenBtn" onclick="reopenTicket()">Open Ticket</button>
