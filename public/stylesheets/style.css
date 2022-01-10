@@ -89,13 +89,31 @@ nav a img {
   font-weight: bold;
 }
 
-/* Pages Section */
+/* Home Page Section */
+
+.homepage {
+  margin: 0;
+}
 
 .page-title {
   font-size: 18px;
   font-weight: bold;
   font-family: 'open sans', sans-serif;
 }
+
+.summary-list {
+  margin: 1%;
+  padding: 1%;
+}
+
+.card {
+  background-color: white;
+  border-radius: 5px;
+  margin: 1%;
+  padding: 5%;
+}
+
+/* Dashboard Section */
 
 .dashboard, .dashboard-create, .dashboard h2 {
   margin: 1%;

@@ -7,6 +7,9 @@ const withAuth = require('../utils/auth');
 router.get('/', withAuth, (req, res) => {
   console.log('======================');
   Ticket.findAll({
+    where: {
+      status: true,
+    },
     limit: 8,
     attributes: [
       'id',
