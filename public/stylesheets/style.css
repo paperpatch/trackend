@@ -91,18 +91,19 @@ nav a img {
 
 /* Home Page Section */
 
-.homepage {
-  margin: 0;
+.homepage, .container {
+  margin: 15px;
 }
 
 .page-title {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: bold;
   font-family: 'open sans', sans-serif;
+  margin-left: 5%;
 }
 
 .summary-list {
-  margin: 1%;
+  margin: 2% 5%;
   padding: 1%;
 }
 
@@ -115,12 +116,37 @@ nav a img {
 
 .summary-card {
   font-size: 17px;
-  margin: 5px;
+  margin: 15px;
 }
 
 .summary-number {
   font-size: 22px;
   font-weight: bold;
+}
+
+.recent-ticket-section {
+  background-color: white;
+  border-radius: 5px;
+  margin: 3% 1%;
+  padding: 2% 3%;
+}
+
+.recent-title {
+  font-size: 18px;
+  line-height: 2;
+  font-family: 'roboto', 'sans-serif';
+}
+
+.recent-text {
+  font-size: 15px;
+}
+
+.recent-footer {
+  margin-top: 1rem;
+}
+
+.summary-border {
+  border-left: 1px solid black;
 }
 
 /* Dashboard Section */

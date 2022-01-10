@@ -5,7 +5,7 @@
     {{#each tickets as |ticket|}}
     
     <li>
-      {{> ticket-front ticket}}
+      {{> ticket-dashboard ticket}}
       <a href="/dashboard/edit/{{ticket.id}}" class="edit-link">Edit Ticket</a>
     </li>
     {{/each}}
