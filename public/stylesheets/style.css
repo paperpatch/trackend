@@ -114,27 +114,27 @@ nav a img {
 
 /* Ticket Detail Section */
 
-.ticket-detail-page-title {
+.ticket-detail-page-title, .ticket-edit-page-title {
   margin: 1%;
   padding: 1%;
   font-family: 'lato', sans-serif;
   font-weight: bold;
 }
 
-.ticket-detail-section .container {
+.ticket-detail-section .container, .edit-ticket-form .container {
   margin: 0;
 }
 
-.ticket-detail-section .row {
+.ticket-detail-section .row, .ticket-edit-section .row {
   padding: 16px 10px;
 }
 
-.ticket-detail-title {
+.ticket-detail-title, .ticket-edit-title {
   font-size: 18px;
   font-weight: bold;
 }
 
-.ticket-detail-keytext {
+.ticket-detail-keytext, .ticket-edit-keytext {
   font-family: 'arial', sans-serif;
   font-size: 14px;
   font-weight: bold;
@@ -142,13 +142,13 @@ nav a img {
   line-height: 1.8;
 }
 
-.ticket-detail-text {
+.ticket-detail-text, .ticket-edit-text {
   color: black;
   font-weight: normal;
   font-size: 14px;
 }
 
-.article, .comments {
+.article, .edit-ticket-form, .comments {
   background-color: white;
   border-radius: 5px;
 }
@@ -180,6 +180,11 @@ nav a img {
   width: 300px;
 }
 
+.ticket-edit-page-back {
+  text-decoration: none;
+  color: black;
+}
+
 .edit-link {
   color: white;
 }
@@ -193,7 +198,7 @@ nav a img {
   margin-bottom: 5%;
 }
 
-.edit-ticket-btn, .close-ticket-btn, .reopen-ticket-btn {
+.edit-ticket-btn, .close-ticket-btn, .reopen-ticket-btn, .save-ticket-btn, .delete-ticket-btn {
   margin-left: 2%;
 }
 
