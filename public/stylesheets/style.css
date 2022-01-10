@@ -33,13 +33,34 @@ main {
 .login-signup-page h1 {
   font-weight: bold;
   color: var(--theme-bg-color);
-  margin: 5rem;
+  margin: 5rem 5rem 0 5rem;
 }
 
-.login-signup-page
+.login-signup-page h4 {
+  margin-bottom: 3rem;
+}
+
+.front-btn {
+  font-size: 16px;
+  height: 4rem;
+}
 
 .login-misc {
   margin: 0 auto;
+}
+
+.github {
+  margin-top: 3rem;
+  font-size: 3rem;
+}
+.github a {
+  color: black;
+  text-decoration: none;
+  transition: all 0.3s ease-out;
+}
+
+.github a:hover{
+  color: var(--theme-bg-color);
 }
 
 /* Header & Navigation Section */
