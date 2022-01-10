@@ -21,6 +21,27 @@ main {
   flex: 1;
 }
 
+/* Login and Signup Section */
+
+.login-signup-page {
+  margin-bottom: 15rem;
+  padding: 5rem;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.login-signup-page h1 {
+  font-weight: bold;
+  color: var(--theme-bg-color);
+  margin: 5rem;
+}
+
+.login-signup-page
+
+.login-misc {
+  margin: 0 auto;
+}
+
 /* Header & Navigation Section */
 
 .wrapper {
@@ -40,17 +61,17 @@ header {
   background-color: var(--theme-bg-color);
 }
 
-h1 {
+header h1 {
   margin: 0;
   text-shadow: 0 0 5px black;
 }
 
-h1 a {
+header h1 a {
   color: white;
   text-decoration: none;
 }
 
-h1 a:hover {
+header h1 a:hover {
   color: white;
   text-decoration: none;
 }
@@ -120,7 +141,7 @@ nav a img {
 }
 
 .summary-number {
-  font-size: 22px;
+  font-size: 28px;
   font-weight: bold;
 }
 

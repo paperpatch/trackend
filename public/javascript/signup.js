@@ -87,4 +87,4 @@ togglePassword2.addEventListener('click', function(e) {
 });
 
 document.querySelector('.signup-form').addEventListener('submit',  signupFormHandler);
-document.querySelector('.login-guest').addEventListener('submit', loginGuestHandler);
+document.querySelector('.login-misc').addEventListener('submit', loginGuestHandler);

@@ -57,4 +57,4 @@ togglePassword.addEventListener('click', function(e) {
 })
 
 document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
-document.querySelector('.login-guest').addEventListener('submit', loginGuestHandler);
+document.querySelector('.login-misc').addEventListener('submit', loginGuestHandler);

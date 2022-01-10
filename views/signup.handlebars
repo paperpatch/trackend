@@ -1,31 +1,33 @@
 <div class="d-flex flex-column align-items-center justify-content-center center flex-fill">
+  <div class="login-signup-page shadow">
   <h1>Trackend Signup</h1>
   <form class="signup-form">
     <div>
       <label for="username-signup">Username:</label>
-      <input type="text" id="username-signup" />
+      <input class="w-100" type="text" id="username-signup" />
     </div>
     <div>
       <label for="email-signup">Email:</label>
-      <input type="text" id="email-signup" />
+      <input class="w-100" type="text" id="email-signup" />
     </div>
     <div>
       <label for="password-signup">Password:</label>
-      <input type="password" id="password-signup" class="pwSignUp" /> <i class="bi bi-eye-slash" id="togglePassword"></i>
+      <input class="w-100" type="password" id="password-signup" class="pwSignUp" /> <i class="bi bi-eye-slash" id="togglePassword"></i>
     </div>
     <div>
       <label for="confirm-password">Confirm Password:</label> 
-      <input type="password" id="confirm-password" class="pwSignUp"/> <i class="bi bi-eye-slash" id="togglePassword2"></i>
+      <input class="w-100" type="password" id="confirm-password" class="pwSignUp"/> <i class="bi bi-eye-slash" id="togglePassword2"></i>
     </div>
     <div class="d-flex flex-column align-items-center">
       <button class="w-100" type="submit">Sign Up</button>
     </div>
   </form>
 
-  <form class="login-guest">
+  <form class="login-misc">
     <div>Already Have an Account? <a href="/login">Login</a></div>
     <div>Sign in as a <button class="btn-guest" type="submit">Guest</button></div>
   </form>
+  </div>
 </div>
 
 <script src="/javascript/signup.js"></script>
