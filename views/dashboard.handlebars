@@ -1,14 +1,7 @@
-{{#if tickets.length}}
-<section class="dashboard">
-  <h2>My Tickets</h2>
-  <ol>
-    {{#each tickets as |ticket|}}
-    
-    <li>
-      {{> ticket-dashboard ticket}}
-      <a href="/dashboard/edit/{{ticket.id}}" class="edit-link">Edit Ticket</a>
-    </li>
-    {{/each}}
-  </ol>
-</section>
-{{/if}}
+<h3 class="ticket-detail-page-title">My Tickets</h3>
+
+{{#each tickets as |ticket|}}
+  
+  {{> ticket-dashboard ticket}}
+
+{{/each}}
