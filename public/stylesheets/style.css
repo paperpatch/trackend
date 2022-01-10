@@ -118,12 +118,40 @@ nav a img {
   padding-left: 1%;
 }
 
-/* Ticket Detail */
+/* Ticket Detail Section */
 
-.ticket-detail-title {
+.ticket-detail-page-title {
   margin: 1%;
   padding: 1%;
-  font-family: 'open sans', sans-serif;
+  font-family: 'lato', sans-serif;
+  font-weight: bold;
+}
+
+.ticket-detail-section .container {
+  margin: 0;
+}
+
+.ticket-detail-section .row {
+  padding: 16px 10px;
+}
+
+.ticket-detail-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.ticket-detail-keytext {
+  font-family: 'arial', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: grey;
+  line-height: 1.8;
+}
+
+.ticket-detail-text {
+  color: black;
+  font-weight: normal;
+  font-size: 14px;
 }
 
 .article, .comments {
@@ -152,6 +180,8 @@ nav a img {
   margin-bottom: .5%;
   opacity: .6;
 }
+
+/* Create/Edit Ticket Section */
 
 .new-ticket-form input {
   width: 300px;

@@ -1,15 +1,16 @@
-<h3 class="ticket-detail-title">Ticket Detail</h3>
+<h3 class="ticket-detail-page-title">Ticket Detail</h3>
 
-<section class="article shadow">
+<section class="ticket-detail-section article shadow">
   {{> ticket-single ticket}}
-
-  {{#ifOpen ticket.status}}
-  <button><a href="/dashboard/edit/{{ticket.id}}" class="edit-link">Edit ticket</a></button>
-  <button type="button" class="close-ticket-btn" id="closeBtn" onclick="closeTicket()">Close Ticket</button>
-  {{else}}
-  <button type="button" class="reopen-ticket-btn" id="reopenBtn" onclick="reopenTicket()">Open Ticket</button>
-  {{/ifOpen}}
 </section>
+
+{{#ifOpen ticket.status}}
+<button><a href="/dashboard/edit/{{ticket.id}}" class="edit-link">Edit ticket</a></button>
+<button type="button" class="close-ticket-btn" id="closeBtn" onclick="closeTicket()">Close Ticket</button>
+{{else}}
+<button type="button" class="reopen-ticket-btn" id="reopenBtn" onclick="reopenTicket()">Open Ticket</button>
+{{/ifOpen}}
+
 
 <div class="comments shadow">
   <h4>Discussion ({{ticket.comments.length}})</h4>
