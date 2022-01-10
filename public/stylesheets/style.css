@@ -113,6 +113,16 @@ nav a img {
   padding: 5%;
 }
 
+.summary-card {
+  font-size: 17px;
+  margin: 5px;
+}
+
+.summary-number {
+  font-size: 22px;
+  font-weight: bold;
+}
+
 /* Dashboard Section */
 
 .dashboard, .dashboard-create, .dashboard h2 {

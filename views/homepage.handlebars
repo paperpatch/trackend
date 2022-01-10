@@ -14,15 +14,17 @@
     <div class="col-md-3">
       <h4 class="page-title">Summary:</h4>
       <div class="summary-list">
-        <div class="row">
-          <div class="col-12 card"><i class="bi bi-files"></i>{{tickets.[0].total_tickets}} Total Tickets</div>
-          <div class="col-12 card"><i class="bi bi-people"></i>{{tickets.[0].total_users}} Total Users</div>
-          <div class="col-12 card"><i class="bi bi-journal-text"></i> Open Tickets</div>
-          <div class="col-12 card"><i class="bi bi-check2-circle"></i> Closed Tickets</div>
-          <div class="col-12 card"><i class="bi bi-file-earmark-text"></i>{{tickets.[0].critical_count}} Critical Priority Tickets</div>
-          <div class="col-12 card"><i class="bi bi-file-earmark-text"></i>{{tickets.[0].high_count}} High Priority Tickets</div>
-          <div class="col-12 card"><i class="bi bi-file-earmark-text"></i>{{tickets.[0].moderate_count}} Moderate Priority Tickets</div>
-          <div class="col-12 card"><i class="bi bi-file-earmark-text"></i>{{tickets.[0].low_count}} Low Priority Tickets</div>
+        <div class="grid">
+          <div class="row">
+            <div class="col-12 card summary-card text-end"><span class="summary-number">{{tickets.[0].total_tickets}}</span>Total Tickets</div>
+            <div class="col-12 card summary-card text-end"><span class="summary-number">{{tickets.[0].open_tickets}}</span>Open Tickets</div>
+            <div class="col-12 card summary-card text-end"><span class="summary-number">{{tickets.[0].closed_tickets}}</span>Closed Tickets</div>
+            {{!-- <div class="col-12 card summary-card text-end"><span class="summary-number">{{tickets.[0].total_users}}</span>Total Users</div> --}}
+            <div class="col-12 card summary-card text-end"><span class="summary-number text-danger">{{tickets.[0].critical_count}}</span>Critical Priority Tickets</div>
+            <div class="col-12 card summary-card text-end"><span class="summary-number text-warning">{{tickets.[0].high_count}}</span>High Priority Tickets</div>
+            <div class="col-12 card summary-card text-end"><span class="summary-number text-primary">{{tickets.[0].moderate_count}}</span>Moderate Priority Tickets</div>
+            <div class="col-12 card summary-card text-end"><span class="summary-number text-success">{{tickets.[0].low_count}}</span>Low Priority Tickets</div>
+          </div>
         </div>
       </div>
     </div>
