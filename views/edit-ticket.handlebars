@@ -1,5 +1,5 @@
 <article class="ticket-edit-section">
-  <a class="ticket-edit-page-back" href="/ticket/{{ticket.id}}"> &larr; Back to Ticket</a>
+  <a class="ticket-edit-page-back" href="/ticket/{{ticket.id}}"><i class="bi bi-arrow-return-left"></i> Back to Ticket Detail</a>
   <h3 class="ticket-edit-page-title">Edit Ticket</h3>
   
   <form class="edit-ticket-form shadow">
@@ -77,7 +77,7 @@
 <div class="comments shadow">
   <h4>Discussion ({{ticket.comments.length}})</h4>
   {{#ifOpen ticket.status}}
-  
+
   <form class="comment-form">
     <div>
       <textarea name="comment-body"></textarea>

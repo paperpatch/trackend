@@ -112,7 +112,7 @@ nav a img {
   line-height: 150%;
 }
 
-/* Ticket Detail Section */
+/* Ticket Detail and Edit Section */
 
 .ticket-detail-page-title, .ticket-edit-page-title {
   margin: 1%;
@@ -121,7 +121,11 @@ nav a img {
   font-weight: bold;
 }
 
-.ticket-detail-section .container, .edit-ticket-form .container {
+.ticket-edit-section {
+  margin: 1%;
+}
+
+.ticket-detail-section .container, .ticket-edit-section .container {
   margin: 0;
 }
 
@@ -146,6 +150,11 @@ nav a img {
   color: black;
   font-weight: normal;
   font-size: 14px;
+}
+
+.ticket-edit-page-back {
+  margin: 1%;
+  font-size: 16px;
 }
 
 .article, .edit-ticket-form, .comments {
@@ -174,7 +183,7 @@ nav a img {
   opacity: .6;
 }
 
-/* Single, Create, and Edit Ticket Section */
+/* Single, Create, Edit Continued Section */
 
 .new-ticket-form input {
   width: 300px;
