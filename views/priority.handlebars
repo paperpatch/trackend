@@ -1,59 +1,31 @@
-{{!-- <table>
-  <thead>
-    <tr>
-      <h2>Priority Tickets</h2>
-      {{#each tickets.[0]}}
-        <th>{{@key}}</th>
-      {{/each}}
-    </tr>
-  </thead>
+<h2>{{tickets.[0].priority.level}} Priority Tickets</h2>
 
-  <tbody>
-    {{#each tickets}}
-      <tr>
-        {{#each this}}
-          <td>{{this}}</td>
-        {{/each}}
-      </tr>
-    {{/each}}
-  </tbody>
-</table> --}}
+<div class="fresh-table toolbar-color-azure">
+  <!--
+    Available colors for the full background: full-color-blue, full-color-azure, full-color-green, full-color-red, full-color-orange
+    Available colors only for the toolbar: toolbar-color-blue, toolbar-color-azure, toolbar-color-green, toolbar-color-red, toolbar-color-orange
+  -->
 
-<section class="dashboard">
-  <h2>{{tickets.[0].priority.level}} Priority Tickets</h2>
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        Status:
-      </div>
-      <div class="col">
-        Title:
-      </div>
-      <div class="col-3">
-        Description:
-      </div>
-      <div class="col">
-        Level:
-      </div>
-      <div class="col">
-        Latest:
-      </div>
-      <div class="col">
-        Username:
-      </div>
-      <div class="col">
-        Issued:
-      </div>
-      <div class="col">
-        Comments:
-      </div>
-    </div>
+  <div class="toolbar">
+    <button id="alertBtn" class="btn btn-default">Create Ticket</button>
   </div>
-  <ol class="ticket-list">
-    {{#each tickets as |ticket|}}
-    <li>
-      {{> ticket-list}}
-    </li>
-    {{/each}}
-  </ol>
-</section>
+
+  <table class="table select-table">
+    <thead>
+      <th data-field="status" data-sortable="true">Status</th>
+      <th data-field="id" data-sortable="true">ID</th>
+      <th data-field="title" data-sortable="true">Title</th>
+      <th data-field="type" data-sortable="true">Type</th>
+      <th data-field="priority" data-sortable="true">Priority</th>
+      <th data-field="assigned" data-sortable="true">Assigned To</th>
+      <th data-field="due" data-sortable="true">Due By</th>
+      <th data-field="edit">Edit</th>
+      {{!-- <th data-field="actions" data-formatter="operateFormatter" data-events="operateEvents">Actions</th> --}}
+    </thead>
+    <tbody>
+      {{#each tickets as |ticket|}}
+        {{>ticket-info}}
+      {{/each}}
+    </tbody>
+  </table>
+</div>
