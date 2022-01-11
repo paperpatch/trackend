@@ -1,5 +1,5 @@
 <article class="ticket-edit-section">
-  <a class="ticket-edit-page-back" href="/ticket/{{ticket.id}}"><i class="bi bi-arrow-return-left"></i> Back to Ticket Detail</a>
+  <a class="ticket-edit-page-back" href="/ticket/{{ticket.[0].id}}"><i class="bi bi-arrow-return-left"></i> Back to Ticket Detail</a>
   <h3 class="ticket-edit-page-title">Edit Ticket</h3>
   
   <form class="edit-ticket-form shadow">
@@ -14,7 +14,7 @@
       </div>
 
       <div class="row">
-        <div class="id col ticket-edit-keytext">Ticket ID:<br/><label class="ticket-edit-text">{{ticket.id}}</label></div>
+        <div class="id col ticket-edit-keytext">Ticket ID:<br/><label class="ticket-edit-text">{{ticket.[0].id}}</label></div>
         <div class="col">
           <label class="ticket-edit-keytext" for="edit-type">Edit Type</label>
           <select name="edit-type" id="edit-type">
@@ -31,9 +31,10 @@
         <div class="col ticket-edit-keytext">Created By:<br/><label class="ticket-edit-text">{{ticket.user.username}}</label></div>
         <div class="col">
           <label class="ticket-edit-keytext" for="edit-assigned">Edit Assigned</label>
+          {{ticket.assign.username}}
           <select name="edit-assigned" id="edit-assigned">
-            {{#each ticket as |user|}}
-            <option value='{{user.id}}'>{{user.username}}</option>
+            {{#each ticket}}
+            <option value='{{ticket.assign.id}}'>{{ticket.assign.username}}</option>
             {{/each}}
           </select>
         </div>
@@ -96,3 +97,4 @@
 <script src="/javascript/edit-ticket.js"></script>
 <script src="/javascript/delete-ticket.js"></script>
 <script src="/javascript/comment.js"></script>
+<script></script>

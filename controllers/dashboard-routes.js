@@ -65,8 +65,16 @@ router.get('/', withAuth, (req, res) => {
     ]
   })
     .then(dbTicketData => {
-      const tickets = dbTicketData.map(ticket => ticket.get({ plain: true }));
-      res.render('dashboard', { tickets, loggedIn: true, user_username: req.session.username });
+      if (dbTicketData) {
+        const tickets = dbTicketData.map(ticket => ticket.get({ plain: true }));
+        res.render('dashboard', {
+        tickets,
+        loggedIn: true,
+        user_username: req.session.username
+      });
+      } else {
+        res.status(404).end();
+      }
     })
     .catch(err => {
       console.log(err);
@@ -75,7 +83,26 @@ router.get('/', withAuth, (req, res) => {
 });
 
 router.get('/edit/:id', withAuth, (req, res) => {
-  Ticket.findByPk(req.params.id, {
+  console.log('======================');
+  console.log(req.session);
+  console.log('======================')
+  console.log(req.session.id);
+  console.log('======================')
+  console.log(req.params);
+  console.log('======================')
+  console.log(req.params.id);
+  console.log('======================')
+  // User.findAll()
+  // Ticket.findByPk(req.params.id, {
+  // Ticket.findOne({
+  //   where: {
+  //     id: req.params.id
+  //   },
+  
+  Ticket.findAll({
+    where: {
+      id: req.params.id
+    },
     attributes: [
       'id',
       'ticket_text',
@@ -131,11 +158,10 @@ router.get('/edit/:id', withAuth, (req, res) => {
   })
     .then(dbTicketData => {
       if (dbTicketData) {
-        const ticket = dbTicketData.get({ plain: true });
-        
+        // const ticket = dbTicketData.get({ plain: true });
+        const ticket = dbTicketData.map(ticket => ticket.get({ plain: true }));
         res.render('edit-ticket', {
           ticket,
-          users,
           loggedIn: true,
           user_username: req.session.username
         });

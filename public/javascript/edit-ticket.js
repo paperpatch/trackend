@@ -34,6 +34,4 @@ async function editFormHandler(event) {
   }
 }
 
-
-
 document.querySelector('.edit-ticket-form').addEventListener('submit', editFormHandler);
