@@ -43,7 +43,7 @@ async function signupFormHandler(event) {
 		if (response.ok) {
 			document.location.replace('/');
 		} else {
-			alert(response.statusText);
+			alert(`Username either taken or password 4 characters or greater. ${response.statusText}`);
 		}	
 	}
 }
@@ -53,6 +53,30 @@ async function loginGuestHandler(event) {
 
   const username = 'guest';
   const password = 'guest';
+
+  if (username && password) {
+    const response = await fetch('/api/users/login', {
+      method: 'post',
+      body: JSON.stringify({
+        username,
+        password
+      }),
+      headers: { 'Content-Type': 'application/json' }
+    });
+
+    if (response.ok) {
+      document.location.replace('/');
+    } else {
+      alert(response.statusText);
+    }
+  }
+}
+
+async function loginAdminHandler(event) {
+  event.preventDefault();
+
+  const username = 'admin';
+  const password = 'admin';
 
   if (username && password) {
     const response = await fetch('/api/users/login', {
@@ -87,4 +111,5 @@ togglePassword2.addEventListener('click', function(e) {
 });
 
 document.querySelector('.signup-form').addEventListener('submit',  signupFormHandler);
-document.querySelector('.login-misc').addEventListener('submit', loginGuestHandler);
+document.querySelector('.login-guest').addEventListener('submit', loginGuestHandler);
+document.querySelector('.login-admin').addEventListener('submit', loginAdminHandler);

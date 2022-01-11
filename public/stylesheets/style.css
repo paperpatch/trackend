@@ -45,7 +45,7 @@ main {
   height: 4rem;
 }
 
-.login-misc {
+.login-guest, .login-admin {
   margin: 0 auto;
 }
 
@@ -397,13 +397,14 @@ button:hover {
   background-color: #3486eb;
 }
 
-.btn-guest {
+.btn-guest, .btn-admin {
   color: #225ca3;
   background-color: transparent;
-  padding: 0%;
+  padding: 0;
+  margin: 0;
 }
 
-.btn-guest:hover {
+.btn-guest:hover, .btn-admin:hover {
   color: #3486eb;
   background-color: transparent;
 }
