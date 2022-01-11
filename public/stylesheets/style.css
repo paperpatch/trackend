@@ -112,15 +112,44 @@ nav a img {
   line-height: 150%;
 }
 
-.edit-link {
-  display: inline;
-  margin: 0 0 3% 1%;
-  padding-left: 1%;
+/* Ticket Detail Section */
+
+.ticket-detail-page-title {
+  margin: 1%;
+  padding: 1%;
+  font-family: 'lato', sans-serif;
+  font-weight: bold;
 }
 
-.article, .comment {
+.ticket-detail-section .container {
+  margin: 0;
+}
+
+.ticket-detail-section .row {
+  padding: 16px 10px;
+}
+
+.ticket-detail-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.ticket-detail-keytext {
+  font-family: 'arial', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: grey;
+  line-height: 1.8;
+}
+
+.ticket-detail-text {
+  color: black;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.article, .comments {
   background-color: white;
-  box-shadow: 3px 4px 15px -2px rgb(219, 219, 219);
   border-radius: 5px;
 }
 
@@ -132,7 +161,6 @@ nav a img {
 .comment-form {
   margin: 1%;
   padding: 1%;
-  margin-bottom: 5%;
 }
 
 .comment {
@@ -146,12 +174,31 @@ nav a img {
   opacity: .6;
 }
 
+/* Single, Create, and Edit Ticket Section */
+
 .new-ticket-form input {
   width: 300px;
 }
 
+.edit-link {
+  color: white;
+}
+
+.edit-link:hover {
+  color: white;
+  text-decoration: none;
+}
+
 .edit-ticket-form {
   margin-bottom: 5%;
+}
+
+.edit-ticket-btn, .close-ticket-btn, .reopen-ticket-btn {
+  margin-left: 2%;
+}
+
+#statusDiv {
+  display: none;
 }
 
 form > div {
@@ -259,10 +306,4 @@ button:hover {
 
 .delete-ticket-btn:hover {
   background-color: #ff643d;
-}
-
-/* Edit Page */
-#statusDiv {
-
-display: none;
 }
