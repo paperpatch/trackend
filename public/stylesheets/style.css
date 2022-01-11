@@ -21,6 +21,48 @@ main {
   flex: 1;
 }
 
+/* Login and Signup Section */
+
+.login-signup-page {
+  margin-bottom: 15rem;
+  padding: 5rem;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.login-signup-page h1 {
+  font-weight: bold;
+  color: var(--theme-bg-color);
+  margin: 5rem 5rem 0 5rem;
+}
+
+.login-signup-page h4 {
+  margin-bottom: 3rem;
+}
+
+.front-btn {
+  font-size: 16px;
+  height: 4rem;
+}
+
+.login-misc {
+  margin: 0 auto;
+}
+
+.github {
+  margin-top: 3rem;
+  font-size: 3rem;
+}
+.github a {
+  color: black;
+  text-decoration: none;
+  transition: all 0.3s ease-out;
+}
+
+.github a:hover{
+  color: var(--theme-bg-color);
+}
+
 /* Header & Navigation Section */
 
 .wrapper {
@@ -40,17 +82,17 @@ header {
   background-color: var(--theme-bg-color);
 }
 
-h1 {
+header h1 {
   margin: 0;
   text-shadow: 0 0 5px black;
 }
 
-h1 a {
+header h1 a {
   color: white;
   text-decoration: none;
 }
 
-h1 a:hover {
+header h1 a:hover {
   color: white;
   text-decoration: none;
 }
@@ -89,13 +131,67 @@ nav a img {
   font-weight: bold;
 }
 
-/* Pages Section */
+/* Home Page Section */
+
+.homepage, .container {
+  margin: 15px;
+}
 
 .page-title {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: bold;
   font-family: 'open sans', sans-serif;
+  margin-left: 5%;
 }
+
+.summary-list {
+  margin: 2% 5%;
+  padding: 1%;
+}
+
+.card {
+  background-color: white;
+  border-radius: 5px;
+  margin: 1%;
+  padding: 5%;
+}
+
+.summary-card {
+  font-size: 17px;
+  margin: 15px;
+}
+
+.summary-number {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.recent-ticket-section {
+  background-color: white;
+  border-radius: 5px;
+  margin: 3% 1%;
+  padding: 2% 3%;
+}
+
+.recent-title {
+  font-size: 18px;
+  line-height: 2;
+  font-family: 'roboto', 'sans-serif';
+}
+
+.recent-text {
+  font-size: 15px;
+}
+
+.recent-footer {
+  margin-top: 1rem;
+}
+
+.summary-border {
+  border-left: 1px solid black;
+}
+
+/* Dashboard Section */
 
 .dashboard, .dashboard-create, .dashboard h2 {
   margin: 1%;
@@ -112,29 +208,33 @@ nav a img {
   line-height: 150%;
 }
 
-/* Ticket Detail Section */
+/* Ticket Detail and Edit Section */
 
-.ticket-detail-page-title {
+.ticket-detail-page-title, .ticket-edit-page-title {
   margin: 1%;
   padding: 1%;
   font-family: 'lato', sans-serif;
   font-weight: bold;
 }
 
-.ticket-detail-section .container {
+.ticket-edit-section {
+  margin: 1%;
+}
+
+.ticket-detail-section .container, .ticket-edit-section .container {
   margin: 0;
 }
 
-.ticket-detail-section .row {
+.ticket-detail-section .row, .ticket-edit-section .row {
   padding: 16px 10px;
 }
 
-.ticket-detail-title {
+.ticket-detail-title, .ticket-edit-title {
   font-size: 18px;
   font-weight: bold;
 }
 
-.ticket-detail-keytext {
+.ticket-detail-keytext, .ticket-edit-keytext {
   font-family: 'arial', sans-serif;
   font-size: 14px;
   font-weight: bold;
@@ -142,13 +242,18 @@ nav a img {
   line-height: 1.8;
 }
 
-.ticket-detail-text {
+.ticket-detail-text, .ticket-edit-text {
   color: black;
   font-weight: normal;
   font-size: 14px;
 }
 
-.article, .comments {
+.ticket-edit-page-back {
+  margin: 1%;
+  font-size: 16px;
+}
+
+.article, .edit-ticket-form, .comments {
   background-color: white;
   border-radius: 5px;
 }
@@ -174,10 +279,15 @@ nav a img {
   opacity: .6;
 }
 
-/* Single, Create, and Edit Ticket Section */
+/* Single, Create, Edit Continued Section */
 
 .new-ticket-form input {
   width: 300px;
+}
+
+.ticket-edit-page-back {
+  text-decoration: none;
+  color: black;
 }
 
 .edit-link {
@@ -193,7 +303,7 @@ nav a img {
   margin-bottom: 5%;
 }
 
-.edit-ticket-btn, .close-ticket-btn, .reopen-ticket-btn {
+.edit-ticket-btn, .close-ticket-btn, .reopen-ticket-btn, .save-ticket-btn, .delete-ticket-btn {
   margin-left: 2%;
 }
 

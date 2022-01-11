@@ -1,79 +1,97 @@
-<article>
-  <a href="/dashboard"> &larr; Back to dashboard</a>
-<div class="statusDiv">
-  <select name="status" id="status">
-    <option value="true">Open</option>
-    <option value="false">Closed</option>
-  </select>
-</div>
-  <h4>
-    Edit Ticket
-  </h4>
+<article class="ticket-edit-section">
+  <a class="ticket-edit-page-back" href="/ticket/{{ticket.id}}"><i class="bi bi-arrow-return-left"></i> Back to Ticket Detail</a>
+  <h3 class="ticket-edit-page-title">Edit Ticket</h3>
   
-  <form class="edit-ticket-form">
-    <div>
-      <input name="ticket-title" type="text" value="{{ticket.title}}" />
+  <form class="edit-ticket-form shadow">
+    <div class="container">
+
+      <div class="row">
+        <div class="col">
+          <div>
+            <input name="ticket-title" type="text" value="{{ticket.title}}" />
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="id col ticket-edit-keytext">Ticket ID:<br/><label class="ticket-edit-text">{{ticket.id}}</label></div>
+        <div class="col">
+          <label class="ticket-edit-keytext" for="edit-type">Edit Type</label>
+          <select name="edit-type" id="edit-type">
+            <option value="1">Bug</option>
+            <option value="2">IT</option>
+            <option value="3">Security</option>
+            <option value="4">Server</option>
+            <option value="5">Other</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col ticket-edit-keytext">Created By:<br/><label class="ticket-edit-text">{{ticket.user.username}}</label></div>
+        <div class="col">
+          <label class="ticket-edit-keytext" for="edit-assigned">Edit Assigned</label>
+          <select name="edit-assigned" id="edit-assigned">
+            {{#each ticket as |user|}}
+            <option value='{{user.id}}'>{{user.username}}</option>
+            {{/each}}
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col ticket-edit-keytext">Created On:<br/><label class="ticket-edit-text">{{format_date ticket.created_at}}</label></div>
+        <div class="col ticket-edit-keytext">Due Date:<br/><label class="ticket-edit-text">{{format_date ticket.due_date}}</label></div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <label class="ticket-edit-keytext" for="edit-status" id="edit status">Edit Status</label>
+          <select name="edit-status" id="edit-status">
+            <option value="true">Open</option>
+            <option value="false">Closed</option>
+          </select>
+        </div>
+        <div class="col ticket-edit-keytext">
+          <label for="edit-priority">Edit Priority</label>
+          <select name="edit-priority" id="edit-priority">
+            <option value="1">Critical</option>
+            <option value="2">High</option>
+            <option value="3">Moderate</option>
+            <option value="4">Low</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col ticket-edit-keytext">Overview:<br/><textarea class="ticket-edit-text shadow" name="ticket-text">{{ticket.ticket_text}}</textarea></div>
+      </div>
+
     </div>
-    <div>
-      <label for="edit-status" id="edit status">Edit Status</label>
-      <select name="edit-status" id="edit-status">
-        <option value="true">Open</option>
-        <option value="false">Closed</option>
-      </select>
-    </div>
-    <div>
-      <textarea name="ticket-text">{{ticket.ticket_text}}</textarea>
-    </div>
-    <div>
-      <label for="edit-priority">Edit Priority</label>
-      <select name="edit-priority" id="edit-priority">
-        <option value="1">Critical</option>
-        <option value="2">High</option>
-        <option value="3">Moderate</option>
-        <option value="4">Low</option>
-      </select>
-    </div>
-    <div>
-      <label for="edit-type">Edit Type</label>
-      <select name="edit-type" id="edit-type">
-        <option value="1">Bug</option>
-        <option value="2">IT</option>
-        <option value="3">Security</option>
-        <option value="4">Server</option>
-        <option value="5">Other</option>
-      </select>
-    </div>
-    <div>
-      <label for="edit-assigned">Edit Assigned</label>
-      {{ticket.assign.username}}
-      <br/>
-      <select name="edit-assigned" id="edit-assigned">
-        {{#each ticket as |user|}}
-        <option value='{{user.id}}'>{{user.username}}</option>
-        {{/each}}
-      </select>
-    </div>
-    <div>
-      Created by you on {{format_date ticket.created_at}}
-      |
-      <a href="/ticket/{{ticket.id}}">{{ticket.comments.length}} {{format_plural "comment" ticket.comments.length}}</a>
-    </div>
-    <button type="submit" id="saveBtn">Save Ticket</button>
+
+    <button type="submit" class="save-ticket-btn" id="saveBtn">Save Ticket</button>
     <button type="button" class="delete-ticket-btn" id='deleteBtn'>Delete ticket</button>
   </form>
 </article>
 
-<form class="comment-form">
-  <div>
-    <textarea name="comment-body"></textarea>
-  </div>
+<div class="comments shadow">
+  <h4>Discussion ({{ticket.comments.length}})</h4>
+  {{#ifOpen ticket.status}}
 
-  <div>
-    <button type="submit">Add Comment</button>
-  </div>
-</form>
+  <form class="comment-form">
+    <div>
+      <textarea name="comment-body"></textarea>
+    </div>
 
-{{> comments ticket.comments}}
+    <div>
+      <button type="submit">Add Comment</button>
+    </div>
+  </form>
+  {{/ifOpen}}
+
+  {{> comments ticket.comments}}
+
+</div>
 
 <script src="/javascript/edit-ticket.js"></script>
 <script src="/javascript/delete-ticket.js"></script>

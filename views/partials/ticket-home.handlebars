@@ -1,0 +1,10 @@
+<article class="recent-ticket-section shadow">
+  <div>Status: {{#if status}}OPEN{{else}}CLOSED{{/if}}</div>
+  <div class="recent-title"><a href="/ticket/{{id}}">{{title}}</a></div>
+  <div class="recent-text">{{ticket_text}}</div>
+  <div class="meta recent-footer">
+    Created by {{user.username}} on {{format_date created_at}}
+    |
+    <a href="/ticket/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+  </div>
+</article>

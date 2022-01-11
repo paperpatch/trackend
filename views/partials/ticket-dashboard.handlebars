@@ -1,7 +1,10 @@
-<article class="container">
+<article class="ticket-detail-section article shadow">
+  
+ 
 
   <div class="row">
-    <div class="col ticket-detail-title">{{title}}</div>
+    <div class="col ticket-detail-title"><a href="/ticket/{{id}}">{{title}}</a> - <small><a class="meta" href="/ticket/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a></small></div>
+     <div class="col"><button class="edit-ticket-btn"><a href="/dashboard/edit/{{ticket.id}}" class="edit-link">Edit ticket</a></button></div>
   </div>
 
   <div class="row">
@@ -27,5 +30,4 @@
   <div class="row">
     <div class="col ticket-detail-keytext">Overview:<br/><span class="ticket-detail-text">{{ticket_text}}</span></div>
   </div>
-
 </article>
