@@ -68,63 +68,80 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-  Ticket.findByPk(req.params.id, {
+  User.findAll({
+    // where: {
+    //   user_id: req.session.user_id
+    // },
     attributes: [
       'id',
-      'ticket_text',
-      'title',
-      'status',
-      'priority_id',
-      'status_change_id',
-      'created_at',
-      'due_date',
+      'username'
     ],
-    include: [
-      {
-        model: Comment,
-        attributes: ['id', 'comment_text', 'ticket_id', 'user_id', 'created_at'],
-        include: {
+    include: {
+      model: Ticket,
+      // where: req.params.id,
+      attributes: [
+        'id',
+        'ticket_text',
+        'title',
+        'status',
+        'priority_id',
+        'status_change_id',
+        'type_id',
+        'assigned_id',
+        'created_at',
+        'due_date',
+      ],
+      include: [{
+          model: Comment,
+          attributes: ['id', 'comment_text', 'ticket_id', 'user_id', 'created_at'],
+          include: {
+            model: User,
+            attributes: ['username', 'role_id'],
+            include: {
+              model: Role,
+              attributes: ['role']
+            },
+          },
+        },
+        {
           model: User,
-          attributes: ['username', 'role_id'],
+          as: 'user',
+          attributes: ['username', 'role_id', ],
           include: {
             model: Role,
             attributes: ['role']
-          },
+          }
         },
-      },
-      {
-        model: User,
-        as: 'user',
-        attributes: ['username', 'role_id'],
-        include: {
-          model: Role,
-          attributes: ['role']
-        }
-      },
-      {
-        model: User,
-        as: 'assign',
-        attributes: ['username'],
-      },
-      {
-        model: Priority,
-        attributes: ['level']
-      },
-      {
-        model: StatusChange,
-        attributes: ['statusChange']
-      },
-      {
-        model: Type,
-        attributes: ['type']
-      },
-    ]
+        {
+          model: User,
+          as: 'assign',
+          attributes: ['username'],
+        },
+        {
+          model: Priority,
+          attributes: ['level']
+        },
+        {
+          model: StatusChange,
+          attributes: ['statusChange']
+        },
+        {
+          model: Type,
+          attributes: ['type']
+        },
+      ]
+    }
   })
     .then(dbTicketData => {
       if (!dbTicketData) {
         res.status(404).json({ message: 'No ticket found with this id' });
         return;
       }
+      const users = dbTicketData.map(user => user.get({plain:true}));
+      const user = users.find(user => user.id === 2);
+      const ticket = user.tickets.find(ticket => ticket.id === 2);
+      console.log(ticket);
+      console.log(users);
       res.json(dbTicketData);
     })
     .catch(err => {
