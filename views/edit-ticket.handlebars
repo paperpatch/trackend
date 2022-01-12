@@ -45,8 +45,13 @@
         <div class="col">
           <label class="ticket-edit-keytext" for="edit-status" id="edit status">Edit Status</label>
           <select name="edit-status" id="edit-status">
+            {{#if ticket.status}}
             <option value="true">Open</option>
             <option value="false">Closed</option>
+            {{else}}
+            <option value="false">Closed</option>
+            <option value="true">Open</option>
+            {{/if}}
           </select>
         </div>
         <div class="col ticket-edit-keytext">
