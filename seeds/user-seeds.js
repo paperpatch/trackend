@@ -14,38 +14,50 @@ const userdata = [
     password: 'guest'
   },
   {
-    username: 'simple',
-    email: 'simple@simple.com',
+    username: 'BDavidson',
+    email: 'bill.davidson@email.com',
     role_id: 2,
     password: 'password123'
   },
   {
-    username: 'random',
-    email: 'random@random.com',
+    username: 'Philip1983',
+    email: 'philip.jackson@email.com',
     role_id: 2,
     password: 'password123'
   },
   {
-    username: 'secret',
-    email: 'secret@secret.com',
+    username: 'princessamy',
+    email: 'amy.riley@email.com',
     role_id: 2,
     password: 'password123'
   },
   {
-    username: 'someone',
-    email: 'someone@someone.com',
+    username: 'UncleFreddy',
+    email: 'fred.randall.@email.com',
     role_id: 2,
     password: 'password123'
   },
   {
-    username: 'food',
-    email: 'food@food.com',
+    username: 'lisa1234',
+    email: 'lisa.devries.@email.com',
     role_id: 2,
     password: 'password123'
   },
   {
-    username: 'mouse',
-    email: 'mouse@mouse.com',
+    username: 'Jimmythekid',
+    email: 'james.feldman@email.com',
+    role_id: 2,
+    password: 'password123'
+  },
+  {
+    username: 'BobbyB',
+    email: 'robert.bradford@email.com',
+    role_id: 2,
+    password: 'password123'
+  },
+  {
+    username: 'Cindy1975',
+    email: 'cindy.smith@email.com',
     role_id: 2,
     password: 'password123'
   },
