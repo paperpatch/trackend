@@ -138,10 +138,10 @@ router.get('/:id', (req, res) => {
         return;
       }
       const users = dbTicketData.map(user => user.get({plain:true}));
-      const user = users.find(user => user.id === 2);
-      const ticket = user.tickets.find(ticket => ticket.id === 2);
-      console.log(ticket);
-      console.log(users);
+      // const user = users.find(user => user.id === 2);
+      // const ticket = user.tickets.find(ticket => ticket.id === 2);
+      // console.log(ticket);
+      // console.log(users);
       res.json(dbTicketData);
     })
     .catch(err => {

@@ -98,8 +98,10 @@ router.get('/edit/:id', withAuth, (req, res) => {
     ],
     include: {
       model: Ticket,
-      // where: req.params.id,
-      attributes: [
+      where: {
+        id: req.params.id,
+      },
+        attributes: [
         'id',
         'ticket_text',
         'title',
@@ -156,14 +158,14 @@ router.get('/edit/:id', withAuth, (req, res) => {
       if (dbTicketData) {
         console.log('===========================================');
         const users = dbTicketData.map(user => user.get({plain:true}));
-        const user = users.find(user => {user.id === req.session.user_id});
-        const ticket = user.tickets.find(ticket => ticket.id === req.params.id);
+        // const user = users.find(user => {user.id === req.session.user_id});
+        // const ticket = user.tickets.find(ticket => ticket.id === req.params.id);
         // console.log(users);
         // console.log(user);
         // console.log(ticket);
         res.render('edit-ticket', {
           users,
-          ticket,
+          // ticket,
           loggedIn: true,
           user_username: req.session.username
         });
