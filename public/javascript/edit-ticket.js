@@ -1,28 +1,28 @@
 // const { get } = require("../../controllers/dashboard-routes");
 
-function getUsers() {
-  fetch('/api/users', {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  })
-  .then(response => {
-    return response.json();
-  })
-  .then(data => {
-    let users = data;
-    const userSelect = document.getElementById('edit-assigned');
-    for (i=0; i < data.length; i++) {
-      const userOption = document.createElement('option');
-      userOption.textContent = users[i].username;
-      userOption.setAttribute('value', users[i].id);
-      userSelect.appendChild(userOption);
-    }
-  })
-};
+// function getUsers() {
+//   fetch('/api/users', {
+//     method: 'GET',
+//     headers: {
+//       'Content-Type': 'application/json'
+//     }
+//   })
+//   .then(response => {
+//     return response.json();
+//   })
+//   .then(data => {
+//     let users = data;
+//     const userSelect = document.getElementById('edit-assigned');
+//     for (i=0; i < data.length; i++) {
+//       const userOption = document.createElement('option');
+//       userOption.textContent = users[i].username;
+//       userOption.setAttribute('value', users[i].id);
+//       userSelect.appendChild(userOption);
+//     }
+//   })
+// };
 
-getUsers();
+// getUsers();
 
 async function editFormHandler(event) {
   event.preventDefault();
