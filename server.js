@@ -24,9 +24,31 @@ app.use(session(sess));
 const helpers = require('./utils/helpers');
 
 const hbs = exphbs.create({ helpers });
+const Handlebars = require('handlebars');
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+
+Handlebars.registerHelper('ifGuest', function(input, options) {
+  if(input === 'Guest' || input === 'guest') {
+    return options.inverse(this);
+  }
+  return options.fn(this);
+});
+
+Handlebars.registerHelper('ifAdmin', function(input, options) {
+  if(input === 'Admin' || input === 'admin') {
+    return options.fn(this);
+  }
+  return options.inverse(this);
+});
+
+Handlebars.registerHelper('ifOpen', function(input, options) {
+  if(input === 'true' || input === true) {
+    return options.fn(this);
+  }
+  return options.inverse(this);
+});
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

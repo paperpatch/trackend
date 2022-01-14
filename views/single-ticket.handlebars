@@ -1,23 +1,36 @@
-{{> ticket-info ticket}}
+<h3 class="ticket-detail-page-title">Ticket Detail</h3>
 
-{{#if loggedIn}}
-<form class="comment-form">
-  <div>
-    <textarea name="comment-body"></textarea>
-  </div>
+<section class="ticket-detail-section article shadow">
+  {{> ticket-single ticket}}
+</section>
 
-  <div>
-    <button type="submit">Add Comment</button>
-  </div>
-
+{{#ifOpen ticket.status}}
+<button class="edit-ticket-btn"><a href="/dashboard/edit/{{ticket.id}}" class="edit-link">Edit ticket</a></button>
+<button type="button" class="close-ticket-btn" id="closeBtn" onclick="closeTicket()">Close Ticket</button>
 {{else}}
-  <div class="want">Want to comment? <a href="/login">Login</a></div>
-</form>
-{{/if}}
+<button type="button" class="reopen-ticket-btn" id="reopenBtn" onclick="reopenTicket()">Open Ticket</button>
+{{/ifOpen}}
 
-{{> comments ticket.comments}}
 
-{{#if loggedIn}}
+<div class="comments shadow">
+  <h4>Discussion ({{ticket.comments.length}})</h4>
+  {{#ifOpen ticket.status}}
+  
+  <form class="comment-form">
+    <div>
+      <textarea name="comment-body"></textarea>
+    </div>
+
+    <div>
+      <button type="submit">Add Comment</button>
+    </div>
+  </form>
+  {{/ifOpen}}
+
+  {{> comments ticket.comments}}
+
+</div>
+
 <script src="/javascript/comment.js"></script>
-<script src="/javascript/upvote.js"></script>
-{{/if}}
+<script src="/javascript/close-ticket.js"></script>
+<script src="/javascript/reopen-ticket.js"></script>

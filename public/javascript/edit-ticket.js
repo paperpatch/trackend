@@ -3,6 +3,10 @@ async function editFormHandler(event) {
 
   const title = document.querySelector('input[name="ticket-title"]').value.trim();
   const ticket_text = document.querySelector('textarea[name="ticket-text"]').value;
+  const status = JSON.parse(document.getElementById('edit-status').value);
+  const priority_id = JSON.parse(document.getElementById('edit-priority').value);
+  const type_id = JSON.parse(document.getElementById('edit-type').value);
+  const assigned_id = JSON.parse(document.getElementById('edit-assigned').value);
   
   const id = window.location.toString().split('/')[
     window.location.toString().split('/').length - 1
@@ -12,7 +16,11 @@ async function editFormHandler(event) {
     method: 'PUT',
     body: JSON.stringify({
       title,
-      ticket_text
+      ticket_text,
+      status,
+      priority_id,
+      type_id,
+      assigned_id,
     }),
     headers: {
       'Content-Type': 'application/json'
@@ -20,7 +28,7 @@ async function editFormHandler(event) {
   });
 
   if (response.ok) {
-    document.location.replace('/dashboard/');
+    document.location.replace('/dashboard');
   } else {
     alert(response.statusText);
   }

@@ -1,50 +1,54 @@
-<div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 min-vh-100 border">
-    <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-decoration-none">
-        <span class="fs-5 d-none d-sm-inline">Menu</span>
-    </a>
-    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-        <li class="nav-item">
+<div class="d-flex flex-column align-items-center px-3 pt-5 min-vh-100">
+    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start w-100" id="menu">
+        <span class="roboto w-100">NAVIGATION</span>
+        <li class="nav-item my-1 w-100">
             <a href="/" class="nav-link align-middle px-0">
-                <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
+                <i class="ps-3 bi-house fa-lg"></i> <span class="ms-2 d-none d-sm-inline">Home</span>
             </a>
         </li>
-        <li>
+        <li class="my-1 w-100">
             <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Tickets</span></a>
-                <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+                <i class="ps-3 bi-grid fa-lg"></i> <span class="ms-2 d-none d-sm-inline">Tickets </span><i class="ms-3 bi bi-chevron-down"></i></a>
+                <ul class="collapse nav flex-column ms-2" id="submenu1" data-bs-parent="#menu">
+                    <li>
+                        <a href="/create-ticket" class="nav-link px-0"><span class="ps-3 d-none d-sm-inline">Create Ticket</span></a>
+                    </li>
                     <li class="w-100">
-                        <a href="/dashboard" class="nav-link px-0"> <span class="d-none d-sm-inline">My Tickets</span></a>
+                        <a href="/dashboard" class="nav-link px-0"><span class="ps-3 d-none d-sm-inline">My Tickets</span></a>
                     </li>
                     <li>
-                        <a href="/" class="nav-link px-0"> <span class="d-none d-sm-inline">All Tickets</span></a>
+                        <a href="/all" class="nav-link px-0"><span class="ps-3 d-none d-sm-inline">All Tickets</span></a>
                     </li>
                 </ul>
         </li>
-        <li>
+        <li class="my-1 w-100">
             <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                <i class="fs-4 bi-layers"></i> <span class="ms-1 d-none d-sm-inline">Priority</span> </a>
-                <ul class="collapse show nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+                <i class="ps-3 bi-layers fa-lg"></i> <span class="ms-2 d-none d-sm-inline">Priority </span><i class="ms-3 bi bi-chevron-down"></i></a>
+                <ul class="collapse nav flex-column ms-2" id="submenu2" data-bs-parent="#menu">
                     <li class="w-100">
-                        <a href="/priority/1" class="nav-link px-0"> <span class="d-none d-sm-inline">Critical</span></a>
+                        <a href="/priority/1" class="nav-link px-0"><span class="ps-3 d-none d-sm-inline">Critical</span></a>
                     </li>
                     <li>
-                        <a href="/priority/2" class="nav-link px-0"> <span class="d-none d-sm-inline">High</span></a>
+                        <a href="/priority/2" class="nav-link px-0"><span class="ps-3 d-none d-sm-inline">High</span></a>
                     </li>
                     <li>
-                        <a href="/priority/3" class="nav-link px-0"> <span class="d-none d-sm-inline">Moderate</span></a>
+                        <a href="/priority/3" class="nav-link px-0"><span class="ps-3 d-none d-sm-inline">Moderate</span></a>
                     </li>
                     <li>
-                        <a href="/priority/4" class="nav-link px-0"> <span class="d-none d-sm-inline">Low</span></a>
+                        <a href="/priority/4" class="nav-link px-0"><span class="ps-3 d-none d-sm-inline">Low</span></a>
                     </li>
                 </ul>
         </li>
-        <li>
-            <a href="/dashboard/" class="nav-link px-0 align-middle">
-                <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Manage Users</span> </a>
+        <span class="roboto w-100">ACCOUNT</span>
+        {{#ifAdmin user_username}}
+          <li class="my-1 w-100">
+            <a href="/manageusers" class="nav-link px-0 align-middle">
+                <i class="ps-3 bi-people fa-lg"></i> <span class="ms-2 d-none d-sm-inline">Manage Users</span> </a>
         </li>
-        <li>
-            <a href="/dashboard/" class="nav-link px-0 align-middle">
-                <i class="fs-4 bi-gear"></i> <span class="ms-1 d-none d-sm-inline">Profile Settings</span> </a>
+        {{/ifAdmin}}
+        <li class="my-1 w-100">
+            <a href="/profile/" class="nav-link px-0 align-middle">
+                <i class="ps-3 bi bi-person fa-lg"></i> <span class="ms-2 d-none d-sm-inline">Profile</span> </a>
         </li>
     </ul>
     <hr>

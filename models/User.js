@@ -40,6 +40,14 @@ User.init(
       validate: {
         len: [4]
       }
+    },
+    role_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 2,
+      validate: {
+        len: [1]
+      }
     }
   },
   {

@@ -1,23 +1,32 @@
-<div class="">
-  <h1>Trackend Login</h1>
-  <form class="login-form">
-    <div>
-      <label for="username-login">Username:</label>
-      <input type="text" id="username-login" />
-    </div>
-    <div>
-      <label for="password-login">Password:</label>
-      <input type="password" id="password-login" />
-    </div>
-    <div>
-      <button type="submit">Login</button>
-    </div>
-  </form>
+<div class="d-flex flex-column align-items-center justify-content-center center flex-fill">
+  <div class="login-signup-page shadow">
+    <h1><big>T</big>RACKEND</h1>
+    <h4 class="text-center">LOGIN</h4>
+    <form class="login-form">
+      <div>
+        <label for="username-login">Username:</label>
+        <input class="w-100" type="text" id="username-login" />
+      </div>
+      <div class="mt-4">
+        <label for="password-login">Password:</label>
+        <input class="w-100" type="password" id="password-login" /> <i class="bi bi-eye-slash" id="togglePassword"></i>
+      </div>
+      <div class="mt-5 d-flex flex-column align-items-center">
+        <button class="front-btn w-100" type="submit">Login</button>
+      </div>
+    </form>
+
+    {{!-- <div>Forgot your <a href="/signup">Password?</a></div> --}}
+    <div class="mb-2">Don't Have an Account? <a href="/signup">Sign Up</a></div>
+
+    <form class="login-guest">
+      <div>Sign in as a <button class="btn-guest" type="submit">Guest</button></div>
+    </form>
+    <form class="login-admin">
+      <div>Sign in as an <button class="btn-admin" type="submit">Administrator</button></div>
+    </form>
+    <div class="github text-end"><a href="https://github.com/paperpatch/trackend"><i class="bi bi-github"></i></a></div>
+  </div>
 </div>
-
-
-<div>Forgot your <a href="/signup">Password?</a></div>
-<div>Create an Account? <a href="/signup">Sign Up</a></div>
-<div>Sign in as a <a href="/signup">Demo User</a></div>
 
 <script src="/javascript/login.js"></script>

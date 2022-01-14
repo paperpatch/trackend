@@ -1,9 +1,9 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const { Ticket, User, Comment, Priority, StatusChange} = require('../../models');
+const { Ticket, User, Comment, Priority, StatusChange, Type, Role } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// get all users
+// get api tickets
 router.get('/', (req, res) => {
   console.log('======================');
   Ticket.findAll({
@@ -14,7 +14,10 @@ router.get('/', (req, res) => {
       'status',
       'priority_id',
       'status_change_id',
+      'type_id',
+      'assigned_id',
       'created_at',
+      'due_date',
     ],
     include: [
       {
@@ -22,20 +25,38 @@ router.get('/', (req, res) => {
         attributes: ['id', 'comment_text', 'ticket_id', 'user_id', 'created_at'],
         include: {
           model: User,
-          attributes: ['username']
+          attributes: ['username', 'role_id'],
+          include: {
+            model: Role,
+            attributes: ['role']
+          },
+        },
+      },
+      {
+        model: User,
+        as: 'user',
+        attributes: ['username', 'role_id'],
+        include: {
+          model: Role,
+          attributes: ['role']
         }
       },
       {
         model: User,
-        attributes: ['username']
+        as: 'assign',
+        attributes: ['username'],
       },
       {
-        mode: Priority,
+        model: Priority,
         attributes: ['level']
       },
       {
-        mode: StatusChange,
+        model: StatusChange,
         attributes: ['statusChange']
+      },
+      {
+        model: Type,
+        attributes: ['type'],
       },
     ]
   })
@@ -47,10 +68,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-  Ticket.findOne({
-    where: {
-      id: req.params.id
-    },
+  Ticket.findByPk(req.params.id, {
     attributes: [
       'id',
       'ticket_text',
@@ -59,6 +77,7 @@ router.get('/:id', (req, res) => {
       'priority_id',
       'status_change_id',
       'created_at',
+      'due_date',
     ],
     include: [
       {
@@ -66,20 +85,38 @@ router.get('/:id', (req, res) => {
         attributes: ['id', 'comment_text', 'ticket_id', 'user_id', 'created_at'],
         include: {
           model: User,
-          attributes: ['username']
+          attributes: ['username', 'role_id'],
+          include: {
+            model: Role,
+            attributes: ['role']
+          },
+        },
+      },
+      {
+        model: User,
+        as: 'user',
+        attributes: ['username', 'role_id'],
+        include: {
+          model: Role,
+          attributes: ['role']
         }
       },
       {
         model: User,
-        attributes: ['username']
+        as: 'assign',
+        attributes: ['username'],
       },
       {
-        mode: Priority,
+        model: Priority,
         attributes: ['level']
       },
       {
-        mode: StatusChange,
+        model: StatusChange,
         attributes: ['statusChange']
+      },
+      {
+        model: Type,
+        attributes: ['type']
       },
     ]
   })
@@ -100,7 +137,12 @@ router.post('/', withAuth, (req, res) => {
   Ticket.create({
     title: req.body.title,
     ticket_text: req.body.ticket_text,
-    user_id: req.session.user_id
+    status: true,
+    user_id: req.session.user_id,
+    priority_id: req.body.priority_id,
+    status_change_id: 1,
+    type_id: req.body.type_id,
+    assigned_id: req.body.assigned_id
   })
     .then(dbTicketData => res.json(dbTicketData))
     .catch(err => {
@@ -113,7 +155,13 @@ router.put('/:id', withAuth, (req, res) => {
   Ticket.update(
     {
       title: req.body.title,
-      ticket_text: req.body.ticket_text
+      ticket_text: req.body.ticket_text,
+      status: req.body.status,
+      user_id: req.session.user_id,
+      priority_id: req.body.priority_id,
+      status_change_id: 2,
+      type_id: req.body.type_id,
+      assigned_id: req.body.assigned_id
     },
     {
       where: {

@@ -1,11 +1,10 @@
-<article class="ticket article">
-  <div class="title">
-    <a href="/ticket/{{id}}">{{title}}</a>
-  </div>
-  <span class="ticket-text">{{ticket_text}}</span>
-  <div class="meta">
-    Created by {{user.username}} on {{format_date created_at}}
-    |
-    <a href="/ticket/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
-  </div>
-</article>
+<tr>
+  <td>{{#if status}}Open{{else}}Closed{{/if}}</td>
+  <td><a href="/ticket/{{id}}">{{id}}</a></td>
+  <td><a href="/ticket/{{id}}">{{title}}</a></td>
+  <td>{{type.type}}</td>
+  <td>{{priority.level}}</td>
+  <td>{{assign.username}}</td>
+  <td>{{due_date}}</td>
+  <td><a href="/dashboard/edit/{{id}}" class="edit-link">Edit</a></td>
+</tr>

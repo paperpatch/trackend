@@ -22,7 +22,7 @@ router.get('/:id', (req, res) => {
     include: [
       {
         model: Ticket,
-        attributes: ['id', 'title', 'ticket_text', 'created_at']
+        attributes: ['id', 'title', 'ticket_text', 'created_at', 'due_date']
       },
       {
         model: Comment,
@@ -31,14 +31,6 @@ router.get('/:id', (req, res) => {
           model: Ticket,
           attributes: ['title']
         }
-      },
-      {
-        mode: Priority,
-        attributes: ['level']
-      },
-      {
-        mode: StatusChange,
-        attributes: ['statusChange']
       },
     ]
   })
@@ -59,7 +51,9 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
   User.create({
     username: req.body.username,
-    password: req.body.password
+    email: req.body.email,
+    password: req.body.password,
+    role_id: req.body.role_id
   })
     .then(dbUserData => {
       req.session.save(() => {

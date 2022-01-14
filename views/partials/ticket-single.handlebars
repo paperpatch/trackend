@@ -1,0 +1,31 @@
+<article class="container">
+
+  <div class="row">
+    <div class="col ticket-detail-title">{{title}}</div>
+  </div>
+
+  <div class="row">
+    <div class="id col ticket-detail-keytext">Ticket ID:<br/><span class="ticket-detail-text">{{id}}</span></div>
+    <div class="col ticket-detail-keytext">Ticket Type:<br/><span class="ticket-detail-text">{{type.type}}</span></div>
+  </div>
+
+  <div class="row">
+    <div class="col ticket-detail-keytext">Created By:<br/><span class="ticket-detail-text">{{user.username}}</span></div>
+    <div class="col ticket-detail-keytext">Assigned To:<br/><span class="ticket-detail-text">{{assign.username}}</span></div>
+  </div>
+
+  <div class="row">
+    <div class="col ticket-detail-keytext">Created On:<br/><span class="ticket-detail-text">{{format_date created_at}}</span></div>
+    <div class="col ticket-detail-keytext">Due Date:<br/><span class="ticket-detail-text">{{format_date due_date}}</span></div>
+  </div>
+
+  <div class="row">
+    <div class="col ticket-detail-keytext">Status:<br/><option name="status" value="{{#if status}}true{{else}}false{{/if}}"><span class="ticket-detail-text">{{#if status}}Open{{else}}Closed{{/if}}</span></option></div>
+    <div class="col ticket-detail-keytext">Priority:<br/><span class="ticket-detail-text">{{priority.level}}</span></div>
+  </div>
+  
+  <div class="row">
+    <div class="col ticket-detail-keytext">Overview:<br/><span class="ticket-detail-text">{{ticket_text}}</span></div>
+  </div>
+
+</article>

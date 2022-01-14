@@ -1,40 +1,64 @@
-const { User} = require('../models');
+const { User } = require('../models');
 
 const userdata = [
   {
-    username: 'simple',
-    email: 'simple@simple.com',
-    role: 'admin',
+    username: 'admin',
+    email: 'admin@admin.com',
+    role_id: 1,
+    password: 'admin'
+  },
+  {
+    username: 'guest',
+    email: 'guest@guest.com',
+    role_id: 3,
+    password: 'guest'
+  },
+  {
+    username: 'BDavidson',
+    email: 'bill.davidson@email.com',
+    role_id: 2,
     password: 'password123'
   },
   {
-    username: 'random',
-    email: 'random@random.com',
-    role: 'admin',
+    username: 'Philip1983',
+    email: 'philip.jackson@email.com',
+    role_id: 2,
     password: 'password123'
   },
   {
-    username: 'secret',
-    email: 'secret@secret.com',
-    role: 'member',
+    username: 'princessamy',
+    email: 'amy.riley@email.com',
+    role_id: 2,
     password: 'password123'
   },
   {
-    username: 'someone',
-    email: 'someone@someone.com',
-    role: 'member',
+    username: 'UncleFreddy',
+    email: 'fred.randall.@email.com',
+    role_id: 2,
     password: 'password123'
   },
   {
-    username: 'food',
-    email: 'food@food.com',
-    role: 'member',
+    username: 'lisa1234',
+    email: 'lisa.devries.@email.com',
+    role_id: 2,
     password: 'password123'
   },
   {
-    username: 'mouse',
-    email: 'mouse@mouse.com',
-    role: 'member',
+    username: 'Jimmythekid',
+    email: 'james.feldman@email.com',
+    role_id: 2,
+    password: 'password123'
+  },
+  {
+    username: 'BobbyB',
+    email: 'robert.bradford@email.com',
+    role_id: 2,
+    password: 'password123'
+  },
+  {
+    username: 'Cindy1975',
+    email: 'cindy.smith@email.com',
+    role_id: 2,
     password: 'password123'
   },
 ];

@@ -1,12 +1,16 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Ticket, User, Comment, Priority, StatusChange} = require('../models');
+const { Ticket, User, Comment, Priority, StatusChange, Type, Role} = require('../models');
 const withAuth = require('../utils/auth');
 
 // get all Tickets for homepage
 router.get('/', withAuth, (req, res) => {
   console.log('======================');
   Ticket.findAll({
+    where: {
+      status: true,
+    },
+    limit: 8,
     attributes: [
       'id',
       'ticket_text',
@@ -14,11 +18,18 @@ router.get('/', withAuth, (req, res) => {
       'status',
       'priority_id',
       'status_change_id',
+      'type_id',
+      'assigned_id',
       'created_at',
+      'due_date',
       [sequelize.literal('(SELECT COUNT(*) FROM ticket WHERE ticket.priority_id = 1)'), 'critical_count'],
       [sequelize.literal('(SELECT COUNT(*) FROM ticket WHERE ticket.priority_id = 2)'), 'high_count'],
       [sequelize.literal('(SELECT COUNT(*) FROM ticket WHERE ticket.priority_id = 3)'), 'moderate_count'],
       [sequelize.literal('(SELECT COUNT(*) FROM ticket WHERE ticket.priority_id = 4)'), 'low_count'],
+      [sequelize.literal('(SELECT COUNT(*) FROM ticket WHERE ticket.status = true)'), 'open_tickets'],
+      [sequelize.literal('(SELECT COUNT(*) FROM ticket WHERE ticket.status = false)'), 'closed_tickets'],
+      [sequelize.literal('(SELECT COUNT(*) FROM ticket)'), 'total_tickets'],
+      [sequelize.literal('(SELECT COUNT(*) FROM user)'), 'total_users'],
     ],
     order: [['created_at', 'DESC']],
     include: [
@@ -27,12 +38,26 @@ router.get('/', withAuth, (req, res) => {
         attributes: ['id', 'comment_text', 'ticket_id', 'user_id', 'created_at'],
         include: {
           model: User,
-          attributes: ['username']
+          attributes: ['username', 'role_id'],
+          include: {
+            model: Role,
+            attributes: ['role']
+          },
+        },
+      },
+      {
+        model: User,
+        as: 'user',
+        attributes: ['username', 'role_id'],
+        include: {
+          model: Role,
+          attributes: ['role']
         }
       },
       {
         model: User,
-        attributes: ['username']
+        as: 'assign',
+        attributes: ['username'],
       },
       {
         model: Priority,
@@ -42,14 +67,19 @@ router.get('/', withAuth, (req, res) => {
         model: StatusChange,
         attributes: ['statusChange']
       },
+      {
+        model: Type,
+        attributes: ['type']
+      },
     ]
   })
     .then(dbTicketData => {
       const tickets = dbTicketData.map(ticket => ticket.get({ plain: true }));
 
       res.render('homepage', {
-        tickets,
-        loggedIn: req.session.loggedIn
+        tickets, 
+        loggedIn: req.session.loggedIn,
+        user_username: req.session.username
       });
     })
     .catch(err => {
@@ -71,7 +101,10 @@ router.get('/ticket/:id', withAuth, (req, res) => {
       'status',
       'priority_id',
       'status_change_id',
+      'type_id',
+      'assigned_id',
       'created_at',
+      'due_date',
     ],
     include: [
       {
@@ -79,12 +112,26 @@ router.get('/ticket/:id', withAuth, (req, res) => {
         attributes: ['id', 'comment_text', 'ticket_id', 'user_id', 'created_at'],
         include: {
           model: User,
-          attributes: ['username']
+          attributes: ['username'],
+          include: {
+            model: Role,
+            attributes: ['role']
+          },
+        },
+      },
+      {
+        model: User,
+        as: 'user',
+        attributes: ['username', 'role_id',],
+        include: {
+          model: Role,
+          attributes: ['role']
         }
       },
       {
         model: User,
-        attributes: ['username']
+        as: 'assign',
+        attributes: ['username'],
       },
       {
         model: Priority,
@@ -93,6 +140,10 @@ router.get('/ticket/:id', withAuth, (req, res) => {
       {
         model: StatusChange,
         attributes: ['statusChange']
+      },
+      {
+        model: Type,
+        attributes: ['type']
       },
     ]
   })
@@ -106,7 +157,8 @@ router.get('/ticket/:id', withAuth, (req, res) => {
 
       res.render('single-ticket', {
         ticket,
-        loggedIn: req.session.loggedIn
+        loggedIn: req.session.loggedIn,
+        user_username: req.session.username
       });
     })
     .catch(err => {
