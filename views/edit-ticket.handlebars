@@ -32,6 +32,9 @@
         <div class="col">
           <label class="ticket-edit-keytext" for="edit-assigned">Edit Assigned</label>
           <select name="edit-assigned" id="edit-assigned">
+            {{#each users as |user|}}
+            <option value='{{user.id}}'>{{user.username}}</option>
+            {{/each}}
           </select>
         </div>
       </div>
