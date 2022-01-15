@@ -7,6 +7,7 @@ async function editFormHandler(event) {
   const priority_id = JSON.parse(document.getElementById('edit-priority').value);
   const type_id = JSON.parse(document.getElementById('edit-type').value);
   const assigned_id = JSON.parse(document.getElementById('edit-assigned').value);
+  const due_date = document.getElementById('due-date').value;
   
   const id = window.location.toString().split('/')[
     window.location.toString().split('/').length - 1
@@ -21,6 +22,7 @@ async function editFormHandler(event) {
       priority_id,
       type_id,
       assigned_id,
+      due_date
     }),
     headers: {
       'Content-Type': 'application/json'
