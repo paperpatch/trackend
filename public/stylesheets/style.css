@@ -2,7 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --theme-bg-color: #3d5974;
+  --theme-bg-color: #003049;
+  --bg-color: #eae2b7;
+  --body-color: #d62828;
+  --body-color-2: #f77f00;
+  --body-color-3: #fcbf49;
 }
 
 * {
@@ -14,7 +18,9 @@ body, html {
   padding: 0;
   margin: 0;
   font-family: sans-serif;
-  background-color: #f7f7f7;
+  background: linear-gradient(#f7f7f7, var(--bg-color));
+  background-size: 100% 100%;
+  background-attachment: fixed;
 }
 
 main {
@@ -26,7 +32,9 @@ main {
 .login-signup-page {
   margin-bottom: 15rem;
   padding: 5rem;
-  background-color: white;
+  background: linear-gradient(#f7f7f7, var(--bg-color));
+  background-size: 100% 100%;
+  background-attachment: fixed;
   border-radius: 5px;
 }
 
@@ -74,7 +82,7 @@ main {
 }
 
 header {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--body-color-2);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -112,7 +120,7 @@ nav a img {
   font-family: 'Spline Sans', sans-serif;
   font-size: 15px;
   font-weight: bold;
-  border-right: 0.5px solid #DCDCDC;
+  border-right: 0.5px solid var(--body-color-3);
   
 }
 
@@ -333,7 +341,7 @@ textarea, input {
 
 textarea:focus, input:focus {
   outline: none;
-  border: 1px solid #3486eb;
+  border: 1px solid var(--body-color-3);
 }
 
 textarea {
@@ -383,7 +391,7 @@ textarea {
 /* Utility Section */
 
 button {
-  background-color: #225ca3;
+  background-color: var(--body-color-2);
   border: 0;
   padding: 1%;
   color: white;
@@ -394,27 +402,27 @@ button {
 }
 
 button:hover {
-  background-color: #3486eb;
+  background-color: var(--body-color-3);
 }
 
 .btn-guest, .btn-admin {
-  color: #225ca3;
+  color: var(--body-color-2);
   background-color: transparent;
   padding: 0;
   margin: 0;
 }
 
 .btn-guest:hover, .btn-admin:hover {
-  color: #3486eb;
+  color: var(--body-color-3);
   background-color: transparent;
 }
 
 .delete-ticket-btn {
-  background-color: #d41414;
+  background-color: var(--body-color);
   margin: 0 0 3% 1%;
   padding-left: 1%;
 }
 
 .delete-ticket-btn:hover {
-  background-color: #ff643d;
+  background-color: var(--body-color-2);
 }
