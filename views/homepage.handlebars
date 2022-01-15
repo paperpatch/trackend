@@ -1,6 +1,17 @@
 <div class="homepage grid">
   <div class="row">
-    <div class="col-md-8">
+            {{!--<div class="col-lg-4 card summary-card text-end shadow"><span class="summary-number">{{tickets.[0].total_tickets}}</span>Total Tickets</div>
+             <div class="col-lg-4 card summary-card text-end shadow"><span class="summary-number">{{tickets.[0].open_tickets}}</span>Open Tickets</div>
+             <div class="col-lg-4 card summary-card text-end shadow"><span class="summary-number">{{tickets.[0].closed_tickets}}</span>Closed Tickets</div> 
+            <div class="col-lg-4 card summary-card text-end shadow"><span class="summary-number">{{tickets.[0].total_users}}</span>Total Users</div>--}}
+            <div class="col-sm card summary-card text-end shadow"><span class="summary-number text-danger">{{tickets.[0].critical_count}}</span>Critical Priority Tickets</div>
+            <div class="col-sm card summary-card text-end shadow"><span class="summary-number text-warning">{{tickets.[0].high_count}}</span>High Priority Tickets</div>
+            <div class="col-sm card summary-card text-end shadow"><span class="summary-number text-primary">{{tickets.[0].moderate_count}}</span>Moderate Priority Tickets</div>
+            <div class="col-sm card summary-card text-end shadow"><span class="summary-number text-success">{{tickets.[0].low_count}}</span>Low Priority Tickets</div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
       <h4 class="page-title">Recent Updates:</h4>
       <ol class="ticket-list">
         {{#each tickets as |ticket|}}
@@ -9,24 +20,6 @@
         </li>
         {{/each}}
       </ol>
-    </div>
-
-    <div class="col summary-border">
-      <h4 class="page-title">Summary:</h4>
-      <div class="summary-list">
-        <div class="grid">
-          <div class="row">
-            <div class="col-lg-4 card summary-card text-end shadow"><span class="summary-number">{{tickets.[0].total_tickets}}</span>Total Tickets</div>
-            {{!-- <div class="col-lg-4 card summary-card text-end shadow"><span class="summary-number">{{tickets.[0].open_tickets}}</span>Open Tickets</div> --}}
-            {{!-- <div class="col-lg-4 card summary-card text-end shadow"><span class="summary-number">{{tickets.[0].closed_tickets}}</span>Closed Tickets</div> --}}
-            <div class="col-lg-4 card summary-card text-end shadow"><span class="summary-number">{{tickets.[0].total_users}}</span>Total Users</div>
-            <div class="col-lg-4 card summary-card text-end shadow"><span class="summary-number text-danger">{{tickets.[0].critical_count}}</span>Critical Priority Tickets</div>
-            <div class="col-lg-4 card summary-card text-end shadow"><span class="summary-number text-warning">{{tickets.[0].high_count}}</span>High Priority Tickets</div>
-            <div class="col-lg-4 card summary-card text-end shadow"><span class="summary-number text-primary">{{tickets.[0].moderate_count}}</span>Moderate Priority Tickets</div>
-            <div class="col-lg-4 card summary-card text-end shadow"><span class="summary-number text-success">{{tickets.[0].low_count}}</span>Low Priority Tickets</div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </div>

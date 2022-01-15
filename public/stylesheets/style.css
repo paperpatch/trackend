@@ -1,5 +1,5 @@
 /* Google Family Font Import*/
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Open+Sans:wght@300;400&family=Roboto:wght@100;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&display=swap');
 
 :root {
   --theme-bg-color: #3d5974;
@@ -109,7 +109,7 @@ nav a img {
 .navigation {
   background-color: white;
   width: 24rem;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Spline Sans', sans-serif;
   font-size: 15px;
   font-weight: bold;
   border-right: 0.5px solid #DCDCDC;
@@ -125,7 +125,7 @@ nav a img {
 }
 
 .roboto {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Spline Sans', sans-serif;
   margin: 5px 0 5px 5px;
   font-size: 11px;
   font-weight: bold;
@@ -176,7 +176,7 @@ nav a img {
 .recent-title {
   font-size: 18px;
   line-height: 2;
-  font-family: 'roboto', 'sans-serif';
+  font-family: 'Spline Sans', sans-serif;
 }
 
 .recent-text {
@@ -213,7 +213,7 @@ nav a img {
 .ticket-detail-page-title, .ticket-edit-page-title {
   margin: 1%;
   padding: 1%;
-  font-family: 'lato', sans-serif;
+  font-family: 'Spline Sans', sans-serif;
   font-weight: bold;
 }
 
