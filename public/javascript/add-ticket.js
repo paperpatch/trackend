@@ -6,6 +6,7 @@ async function newFormHandler(event) {
   const priority_id = JSON.parse(document.getElementById('ticket-priority').value);
   const type_id = JSON.parse(document.getElementById('ticket-type').value);
   const assigned_id = JSON.parse(document.getElementById('assigned').value);
+  const due_date = JSON.parse(document.getElementById('due-date').value);
 
   const response = await fetch(`/api/tickets`, {
     method: 'POST',
@@ -15,6 +16,7 @@ async function newFormHandler(event) {
       priority_id,
       type_id,
       assigned_id,
+      due_date
     }),
     headers: {
       'Content-Type': 'application/json'
