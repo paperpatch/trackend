@@ -1,4 +1,5 @@
 var $table = $('.select-table')
+var $alertBtn = $('#alertBtn')
 
 window.operateEvents = {
   'click .like': function (e, value, row, index) {
@@ -52,5 +53,9 @@ $(function () {
     formatRecordsPerPage: function (pageNumber) {
       return pageNumber + ' rows visible'
     }
+  })
+
+  $alertBtn.click(function () {
+    alert('You pressed on Alert')
   })
 })

@@ -180,7 +180,7 @@
 .bootstrap-table .fixed-table-container .fixed-table-body {
   overflow-x: auto;
   overflow-y: auto;
-  height: auto;
+  height: 100%;
 }
 .bootstrap-table .fixed-table-container .fixed-table-body .fixed-table-loading {
   align-items: center;
