@@ -355,7 +355,7 @@ textarea {
   color: white;
   font-family: 'open sans', sans-serif;
   font-size: 20px;
-  margin: 2rem 0 0 5rem;
+  margin: 2rem 0 0 3rem;
   padding: 20px;
 }
 
@@ -364,7 +364,7 @@ textarea {
   position: absolute;
   top: 100px;
 
-  width: 75rem;
+  width: 70rem;
   background-color: white;
   margin: 3rem;
   padding: 50px 5px 30px 5px;
