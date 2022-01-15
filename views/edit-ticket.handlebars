@@ -43,13 +43,12 @@
       </div>
 
       <div class="row">
-        <div class="col ticket-edit-keytext">Created On:<br /><label class="ticket-edit-text">{{format_date
-            ticket.created_at}}</label></div>
-        {{!-- <div class="col ticket-edit-keytext">Due Date:<br /><label class="ticket-edit-text">{{format_date
-            ticket.due_date}}</label></div> --}}
+        <div class="col ticket-edit-keytext">Created On:<br />
+          <label class="ticket-edit-text">{{format_date ticket.created_at}}</label>
+        </div>
         <div class="col ticket-edit-keytext">
           <label class="ticket-edit-text" for="due-date">Due Date</label>
-          <input type="date" id="due-date" name="due-date" placeholder=`{{format_date ticket.due_date}}`>
+          <input type="date" id="due-date" name="due-date" value="{{ticket.due_date}}">
         </div>
       </div>
 
