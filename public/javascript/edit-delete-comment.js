@@ -6,13 +6,10 @@ async function editComment(event) {
                     window.location.toString().split('/').length - 1
                     ];
 
-    comment_text = 
-  
-   
     console.log(comment_text);
   
     if (comment_text) {
-      const response = await fetch('/api/comments', {
+      const response = await fetch(`/api/comments/${id}`, {
         method: 'PUT',
         body: JSON.stringify({
           ticket_id,
@@ -29,8 +26,26 @@ async function editComment(event) {
         alert(response.statusText);
       }
     }
+};
+
+async function deleteComment(event) {
+    event.preventDefault();
+  
+    const id = window.location.toString().split('/')[
+      window.location.toString().split('/').length - 1
+    ];
+    const response = await fetch(`/api/comments/${id}`, {
+      method: 'DELETE'
+    });
+  
+    if (response.ok) {
+      document.location.reload();
+    } else {
+      alert(response.statusText);
+    }
 }
+  
+document.querySelector('.deleteButton').addEventListener('click', deleteComment);
+  
 
 document.querySelector('.editSave').addEventListener('click', editComment);
-
-  
