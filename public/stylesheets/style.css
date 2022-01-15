@@ -168,6 +168,23 @@ nav a img {
   padding: 5%;
 }
 
+.card-critical{
+  background-color: var(--body-color);
+}
+
+.card-high{
+  background-color: var(--body-color-2);
+}
+
+.card-moderate{
+  background-color: var(--body-color-3);
+}
+
+.card-low{
+  background-color: var(--bg-color);
+}
+
+
 .summary-card {
   font-size: 17px;
   margin: 15px;
