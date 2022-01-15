@@ -5,11 +5,27 @@
   </div>
   <div class="text" id="comment-text">
     {{comment_text}}
-  <div class="edit-delete">
-    <button type="button" class="editButton btn-sm">Edit Comment</button>
+    <div class="edit-delete">
+        <button type="button" class="btn-sm" data-toggle="modal" data-target=".bd-example-modal-sm">Edit Comment</button>
+
+          <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+              <div class="modal-content">
+                <div class="meta" id="comment-meta">
+                  {{user.username}} on {{format_date created_at}}
+                </div>
+                <div class="text" id="comment-text">
+                  {{comment_text}}
+                </div>
+              </div>
+            </div>
+          </div>
+      
+
+
     <button type="button" class="deleteButton btn-sm btn-danger">Delete Comment</button>
-  </div>
-  </div>
+  
+</div>
 </section>
 {{/each}}
 
