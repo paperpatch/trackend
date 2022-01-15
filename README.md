@@ -3,9 +3,9 @@
 
 Built a CMS (Content Management System) style [Issue Tracker](https://trackend-project.herokuapp.com/) that tracks bugs and issues through a ticketing system. Users can submit and comment on tickets while Administrators can manage user database. Uses MVC (Model-View-Controller) paradigm, using `Handlebars.js` as template, `Sequelize` as ORM, and `Express-Session` npm (node package manager) for authentication.
 
-![Screenshot](#)
-![Screenshot](#)
-![Screenshot](#)
+![Screenshot](./public/images/screenshots/trackend-login.png)
+![Screenshot](./public/images/screenshots/trackend-screenshot.png)
+![Screenshot](./public/images/screenshots/trackend-ticket-detail.png)
 
 ## Table of Contents
 
