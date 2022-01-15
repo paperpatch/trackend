@@ -136,6 +136,11 @@ nav a img {
   color: #191919;
 }
 
+/* Style the hamburger menu */
+.topnav a.icon {
+  display: none;
+}
+
 .roboto {
   font-family: 'Spline Sans', sans-serif;
   margin: 5px 0 5px 5px;
@@ -448,6 +453,8 @@ button:hover {
   background-color: var(--body-color-2);
 }
 
+
 @media screen and (max-width: 575px) {
   .card{display: none;}
+
 }
