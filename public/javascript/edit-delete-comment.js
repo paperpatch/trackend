@@ -1,25 +1,15 @@
-// let modal = document.getElementById("myModal");
-// let btn = document.getElementById("editButton");
-
-// btn.onclick = function() {
-//     modal.style.display = "block";
-// };
-
-// window.onclick = function(event) {
-//     if (event.target == modal) {
-//       modal.style.display = "none";
-//     }
-// };
-
-
-
 async function editComment(event) {
     event.preventDefault();
-  
-    const comment_text = document.querySelector('textarea[name="comment-body"]').value.trim();
+
+    let comment_text = document.querySelector('textarea[name="comment-body"]').value.trim();
     const ticket_id = window.location.toString().split('/')[
-      window.location.toString().split('/').length - 1
-    ];
+                    window.location.toString().split('/').length - 1
+                    ];
+
+    comment_text = 
+  
+   
+    console.log(comment_text);
   
     if (comment_text) {
       const response = await fetch('/api/comments', {
@@ -41,5 +31,6 @@ async function editComment(event) {
     }
 }
 
+document.querySelector('.editSave').addEventListener('click', editComment);
 
   

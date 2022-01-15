@@ -11,6 +11,15 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get('/:id', (req, res) => {
+  Comment.findOne()
+  .then(dbCommentData => res.json(dbCommentData))
+  .catch(err => {
+  console.log(err);
+  res.status(500).json(err);
+  });
+});
+
 router.post('/', withAuth, (req, res) => {
   Comment.create({
     comment_text: req.body.comment_text,
@@ -18,6 +27,18 @@ router.post('/', withAuth, (req, res) => {
     ticket_id: req.body.ticket_id
   })
     .then(dbCommentData => res.json(dbCommentData))
+    .catch(err => {
+      console.log(err);
+      res.status(400).json(err);
+    });
+});
+
+router.put('/', withAuth, (req, res) => {
+  Comment.update({
+    comment_text: req.body.comment_text,
+    user_id: req.session.user_id,
+    ticket_id: req.body.ticket_id
+  }).then(dbCommentData => res.json(dbCommentData))
     .catch(err => {
       console.log(err);
       res.status(400).json(err);
