@@ -1,8 +1,12 @@
 /* Google Family Font Import*/
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Open+Sans:wght@300;400&family=Roboto:wght@100;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --theme-bg-color: #3d5974;
+  --theme-bg-color: #003049;
+  --bg-color: #eae2b7;
+  --body-color: #d62828;
+  --body-color-2: #f77f00;
+  --body-color-3: #fcbf49;
 }
 
 * {
@@ -14,11 +18,17 @@ body, html {
   padding: 0;
   margin: 0;
   font-family: sans-serif;
-  background-color: #f7f7f7;
+  background: linear-gradient(#f7f7f7, var(--bg-color));
+  background-size: 100% 100%;
+  background-attachment: fixed;
 }
 
 main {
   flex: 1;
+}
+
+a{
+  color: var(--body-color-2);
 }
 
 /* Login and Signup Section */
@@ -26,7 +36,9 @@ main {
 .login-signup-page {
   margin-bottom: 15rem;
   padding: 5rem;
-  background-color: white;
+  background: linear-gradient(#f7f7f7, var(--bg-color));
+  background-size: 100% 100%;
+  background-attachment: fixed;
   border-radius: 5px;
 }
 
@@ -74,7 +86,7 @@ main {
 }
 
 header {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--body-color-2);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -107,12 +119,12 @@ nav a img {
 }
 
 .navigation {
-  background-color: white;
-  width: 24rem;
-  font-family: 'Lato', sans-serif;
+  background-color: var(--bg-color);
+  width: 20rem;
+  font-family: 'Spline Sans', sans-serif;
   font-size: 15px;
   font-weight: bold;
-  border-right: 0.5px solid #DCDCDC;
+  border-right: 0.5px solid var(--body-color-3);
   
 }
 
@@ -124,8 +136,13 @@ nav a img {
   color: #191919;
 }
 
+/* Style the hamburger menu */
+.topnav a.icon {
+  display: none;
+}
+
 .roboto {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Spline Sans', sans-serif;
   margin: 5px 0 5px 5px;
   font-size: 11px;
   font-weight: bold;
@@ -156,6 +173,23 @@ nav a img {
   padding: 5%;
 }
 
+.card-critical{
+  background-color: var(--body-color);
+}
+
+.card-high{
+  background-color: var(--body-color-2);
+}
+
+.card-moderate{
+  background-color: var(--body-color-3);
+}
+
+.card-low{
+  background-color: var(--bg-color);
+}
+
+
 .summary-card {
   font-size: 17px;
   margin: 15px;
@@ -176,7 +210,7 @@ nav a img {
 .recent-title {
   font-size: 18px;
   line-height: 2;
-  font-family: 'roboto', 'sans-serif';
+  font-family: 'Spline Sans', sans-serif;
 }
 
 .recent-text {
@@ -213,7 +247,7 @@ nav a img {
 .ticket-detail-page-title, .ticket-edit-page-title {
   margin: 1%;
   padding: 1%;
-  font-family: 'lato', sans-serif;
+  font-family: 'Spline Sans', sans-serif;
   font-weight: bold;
 }
 
@@ -333,7 +367,7 @@ textarea, input {
 
 textarea:focus, input:focus {
   outline: none;
-  border: 1px solid #3486eb;
+  border: 1px solid var(--body-color-3);
 }
 
 textarea {
@@ -383,7 +417,7 @@ textarea {
 /* Utility Section */
 
 button {
-  background-color: #225ca3;
+  background-color: var(--body-color-2);
   border: 0;
   padding: 1%;
   color: white;
@@ -394,23 +428,23 @@ button {
 }
 
 button:hover {
-  background-color: #3486eb;
+  background-color: var(--body-color-3);
 }
 
 .btn-guest, .btn-admin {
-  color: #225ca3;
+  color: var(--body-color-2);
   background-color: transparent;
   padding: 0;
   margin: 0;
 }
 
 .btn-guest:hover, .btn-admin:hover {
-  color: #3486eb;
+  color: var(--body-color-3);
   background-color: transparent;
 }
 
 .delete-ticket-btn {
-  background-color: #d41414;
+  background-color: var(--body-color);
   margin: 0 0 3% 1%;
   padding-left: 1%;
 }
