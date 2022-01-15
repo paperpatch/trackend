@@ -5,7 +5,7 @@
   	</div>
   	<div class="text" id="comment-text">
     	{{comment_text}}
-	</div>	
+		
 		<div class="edit-delete">
 			<button type="button" class="btn-sm editCommentBtn" data-toggle="modal" data-target="#editModal" data-backdrop="false" >Edit Comment</button>
 			<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
@@ -13,14 +13,17 @@
 					<div class="modal-content">
 						<div class="modal-header">
 							<h3 class="modal-title" id="editModalLabel">Edit Comment</h3>
+							<span id="commentId"></span>
 						</div>
 						<div class="modal-body">
+							
 							<div class="meta" id="comment-meta">
 								{{user.username}} on {{format_date created_at}}
 							</div>
 							<div class="edit-text" id="comment-text">
 								<textarea class="edit-comment-text shadow" name="comment-text">{{comment_text}}</textarea>
-							</div>  
+							</div>
+							
 						</div>	
 							<div class="modal-footer">
 								<button type="button" class="btn-secondary btn-sm" data-dismiss="modal">Close</button>
@@ -30,10 +33,13 @@
 					</div>	
 				</div>
 			</div>
-		
 			<button type="button" class="deleteButton btn-sm btn-danger">Delete Comment</button>
+	</div>	
+			
 	
 		</div>
 </section>
 {{/each}}
+
+
 

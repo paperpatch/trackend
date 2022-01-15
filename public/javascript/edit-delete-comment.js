@@ -1,7 +1,7 @@
 async function editComment(event) {
     event.preventDefault();
 
-    let comment_text = document.querySelector('textarea[name="comment-body"]').value.trim();
+    const comment_text = document.querySelector('textarea[name="comment-body"]').value.trim();
     const ticket_id = window.location.toString().split('/')[
                     window.location.toString().split('/').length - 1
                     ];
@@ -44,8 +44,7 @@ async function deleteComment(event) {
       alert(response.statusText);
     }
 }
-  
-document.querySelector('.deleteButton').addEventListener('click', deleteComment);
-  
 
+
+document.querySelector('.deleteButton').addEventListener('click', deleteComment);
 document.querySelector('.editSave').addEventListener('click', editComment);
