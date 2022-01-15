@@ -447,3 +447,7 @@ button:hover {
 .delete-ticket-btn:hover {
   background-color: var(--body-color-2);
 }
+
+@media screen and (max-width: 575px) {
+  .card{display: none;}
+}
