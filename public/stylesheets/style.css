@@ -273,6 +273,14 @@ nav a img {
   line-height: 150%;
 }
 
+/* Create Section */
+
+.dashboard-create {
+  background-color: white;
+  border-radius: 5px;
+  padding: 2% 3%;
+}
+
 /* Ticket Detail and Edit Section */
 
 .ticket-detail-page-title, .ticket-edit-page-title {
