@@ -1,8 +1,15 @@
 /* Google Family Font Import*/
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Open+Sans:wght@300;400&family=Roboto:wght@100;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=Open+Sans:wght@300;400;500;600&family=Roboto:wght@100;300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --theme-bg-color: #3d5974;
+  --theme-bg-color: #003049;
+  --theme-text-color: #126D80;
+  --bg-color: #f5faff;
+  --color-critical: #d62828;
+  --color-high: #f77f00;
+  --color-moderate: #1EB7D6;
+  --color-low: #54cd8a;
 }
 
 * {
@@ -14,11 +21,20 @@ body, html {
   padding: 0;
   margin: 0;
   font-family: sans-serif;
-  background-color: #f7f7f7;
 }
 
 main {
   flex: 1;
+}
+
+.body-background {
+  background: linear-gradient(#f7f7f7, var(--bg-color));
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+
+a{
+  color: var(--theme-text-color);
 }
 
 /* Login and Signup Section */
@@ -26,8 +42,8 @@ main {
 .login-signup-page {
   margin-bottom: 15rem;
   padding: 5rem;
-  background-color: white;
   border-radius: 5px;
+  background-color: white;
 }
 
 .login-signup-page h1 {
@@ -74,7 +90,7 @@ main {
 }
 
 header {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--theme-text-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -107,9 +123,7 @@ nav a img {
 }
 
 .navigation {
-  background-color: white;
-  width: 24rem;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Spline Sans', sans-serif;
   font-size: 15px;
   font-weight: bold;
   border-right: 0.5px solid #DCDCDC;
@@ -124,8 +138,13 @@ nav a img {
   color: #191919;
 }
 
+/* Style the hamburger menu */
+.topnav a.icon {
+  display: none;
+}
+
 .roboto {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Spline Sans', sans-serif;
   margin: 5px 0 5px 5px;
   font-size: 11px;
   font-weight: bold;
@@ -156,14 +175,60 @@ nav a img {
   padding: 5%;
 }
 
+.card-critical{
+  background-color: var(--color-critical);
+}
+
+.card-high{
+  background-color: var(--color-high);
+}
+
+.card-moderate{
+  background-color: var(--color-moderate);
+}
+
+.card-low{
+  background-color: var(--color-low);
+}
+
 .summary-card {
-  font-size: 17px;
+  font-weight: bold;
   margin: 15px;
+  padding: 1%;
+  /* padding: 3%; */
 }
 
 .summary-number {
-  font-size: 28px;
-  font-weight: bold;
+  font-size: 30px;
+}
+
+.summary-text {
+  font-size: 17px;
+}
+
+.summary-icon {
+  color: black;
+  opacity: 30%;
+  font-size: 750%;
+}
+
+.summary-link {
+  background-color: white;
+  color: black;
+  opacity: 30%;
+  margin: 0;
+  padding: 1%;
+  border-radius: 5px;
+  transition: all 0.3s ease-out;
+}
+
+.summary-link a {
+  text-decoration: none;
+}
+
+.summary-link:hover {
+  color: white;
+  opacity: 70%;
 }
 
 .recent-ticket-section {
@@ -176,7 +241,7 @@ nav a img {
 .recent-title {
   font-size: 18px;
   line-height: 2;
-  font-family: 'roboto', 'sans-serif';
+  font-family: 'Spline Sans', sans-serif;
 }
 
 .recent-text {
@@ -208,12 +273,20 @@ nav a img {
   line-height: 150%;
 }
 
+/* Create Section */
+
+.dashboard-create {
+  background-color: white;
+  border-radius: 5px;
+  padding: 2% 3%;
+}
+
 /* Ticket Detail and Edit Section */
 
 .ticket-detail-page-title, .ticket-edit-page-title {
   margin: 1%;
   padding: 1%;
-  font-family: 'lato', sans-serif;
+  font-family: 'Spline Sans', sans-serif;
   font-weight: bold;
 }
 
@@ -333,7 +406,7 @@ textarea, input {
 
 textarea:focus, input:focus {
   outline: none;
-  border: 1px solid #3486eb;
+  border: 1px solid var(--theme-text-color);
 }
 
 textarea {
@@ -355,7 +428,7 @@ textarea {
   color: white;
   font-family: 'open sans', sans-serif;
   font-size: 20px;
-  margin: 2rem 0 0 5rem;
+  margin: 2rem 0 0 3rem;
   padding: 20px;
 }
 
@@ -364,7 +437,7 @@ textarea {
   position: absolute;
   top: 100px;
 
-  width: 75rem;
+  width: 70rem;
   background-color: white;
   margin: 3rem;
   padding: 50px 5px 30px 5px;
@@ -383,7 +456,7 @@ textarea {
 /* Utility Section */
 
 button {
-  background-color: #225ca3;
+  background-color: var(--theme-bg-color);
   border: 0;
   padding: 1%;
   color: white;
@@ -394,27 +467,33 @@ button {
 }
 
 button:hover {
-  background-color: #3486eb;
+  background-color: var(--color-moderate);
 }
 
 .btn-guest, .btn-admin {
-  color: #225ca3;
+  color: var(--theme-text-color);
   background-color: transparent;
   padding: 0;
   margin: 0;
 }
 
 .btn-guest:hover, .btn-admin:hover {
-  color: #3486eb;
+  color: var(--color-moderate);
   background-color: transparent;
 }
 
 .delete-ticket-btn {
-  background-color: #d41414;
+  background-color: var(--color-critical);
   margin: 0 0 3% 1%;
   padding-left: 1%;
 }
 
 .delete-ticket-btn:hover {
-  background-color: #ff643d;
+  background-color: var(--color-high);
+}
+
+
+@media screen and (max-width: 575px) {
+  .card{display: none;}
+
 }

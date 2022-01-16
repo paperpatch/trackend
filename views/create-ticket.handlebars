@@ -1,4 +1,4 @@
-<section class="dashboard-create">
+<section class="dashboard-create shadow">
   <h2>Create New Ticket</h2>
 
   <form class="new-ticket-form">
@@ -43,6 +43,10 @@
         <option value='{{user.id}}'>{{user.username}}</option>
         {{/each}}
       </select>
+    </div>
+    <div>
+      <label for="due-date">Due Date</label>
+      <input type="date" id="due-date" name="due-date">
     </div>
     <button type="submit">Create</button>
   </form>

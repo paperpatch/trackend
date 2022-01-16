@@ -1,9 +1,12 @@
 # Trackend
 ![Github license](http://img.shields.io/badge/license-MIT-blue.svg)
 
-Built a CMS (Content Management System) style [Issue Tracker](#) that tracks bugs and issues through a ticketing system. Users can submit and comment on tickets while Administrators can manage user database. Uses MVC (Model-View-Controller) paradigm, using `Handlebars.js` as template, `Sequelize` as ORM, and `Express-Session` npm (node package manager) for authentication.
+Built a CMS (Content Management System) style [Issue Tracker](https://trackend-project.herokuapp.com/) that tracks bugs and issues through a ticketing system. Users can submit and comment on tickets while Administrators can manage user database. Uses MVC (Model-View-Controller) paradigm, using `Handlebars.js` as template, `Sequelize` as ORM, and `Express-Session` npm (node package manager) for authentication.
 
-![Screenshot](#)
+![Screenshot](./public/images/screenshots/trackend-login.png)
+![Screenshot](./public/images/screenshots/trackend-home.png)
+![Screenshot](./public/images/screenshots/trackend-all.png)
+![Screenshot](./public/images/screenshots/trackend-ticket-detail.png)
 
 ## Table of Contents
 
@@ -57,21 +60,20 @@ This repository uses the following server:
 
 :computer:
 
-Go to [Trackend site](#) and navigate through seeded tickets and comments. Login to be able to post and comment on issue tickets. Users are able to anonymously login through the `Guest` link.
+Go to [Trackend site](https://trackend-project.herokuapp.com/) and navigate through seeded tickets and comments. Login to be able to view, post and comment on issue tickets. Users are able to anonymously login through the `Guest` or `Administrator` link. Signing up will auto-assign you as `User`.
 
 Guest Access:
-- Create a new account to post their own tickets and links to a website.
+- Cannot view their own email and password.
+
+User Access:
+- Create a new account to post their own tickets and comments.
 - Edit, comment and delete their own posts.
 - Comment on other posted tickets.
 - View their own profile.
 
-User Access:
-- Everything a guest can do.
-- View their own email and password.
-
 Administrative Access:
-- Everything a user can do
-- See the tab `Manage Users` on the navigation bar.
+- Has User privileges
+- See the tab `Manage Users` on the navigation bar and view user profiles.
 
 If you cloned or copied the repository, ensure that you `npm install` to download the packages and create an `.env` file in your local repository with similar text below:
 ```js
@@ -81,13 +83,15 @@ DB_PW='your-password'
 ```
 Note that this is related to your SQL database.
 
-Seed your database by typing `node seeds` in the command line. Feel free to change the seeds data as desired.
+Seed your database by typing `node seeds` in the terminal. Feel free to change the seeds data as desired.
 
 Start the server by typing `npm start`.
 
 ## Deployment
 
-[Deployed link to Trackend](#)
+Server is deployed on Heroku. See deployed link to experience Trackend.
+
+[Deployed link to Trackend](https://trackend-project.herokuapp.com/)
 
 ## Contributing
 

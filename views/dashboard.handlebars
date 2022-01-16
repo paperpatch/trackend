@@ -1,7 +1,32 @@
-<h3 class="ticket-detail-page-title">My Tickets</h3>
+<h2>My Tickets</h2>
 
-{{#each tickets as |ticket|}}
-  
-  {{> ticket-dashboard ticket}}
+<div class="fresh-table toolbar-color-green">
+  <!--
+    Available colors for the full background: full-color-blue, full-color-azure, full-color-green, full-color-red, full-color-orange
+    Available colors only for the toolbar: toolbar-color-blue, toolbar-color-azure, toolbar-color-green, toolbar-color-red, toolbar-color-orange
+  -->
 
-{{/each}}
+  <div class="toolbar">
+    <a href="/create-ticket"><button class="btn btn-default">Create Ticket</button></a>
+  </div>
+
+  <table class="table select-table">
+    <thead>
+      <th data-field="status" data-sortable="true">Status</th>
+      <th data-field="id" data-sortable="true">ID</th>
+      <th data-field="title" data-sortable="true">Title</th>
+      <th data-field="type" data-sortable="true">Type</th>
+      <th data-field="priority" data-sortable="true">Priority</th>
+      <th data-field="assigned" data-sortable="true">Assigned To</th>
+      <th data-field="due" data-sortable="true">Due By</th>
+      <th data-field="edit">Edit</th>
+    </thead>
+    <tbody>
+      {{#each tickets as |ticket|}}
+
+      {{> ticket-dashboard ticket}}
+
+      {{/each}}
+    </tbody>
+  </table>
+</div>

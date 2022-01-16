@@ -142,7 +142,8 @@ router.post('/', withAuth, (req, res) => {
     priority_id: req.body.priority_id,
     status_change_id: 1,
     type_id: req.body.type_id,
-    assigned_id: req.body.assigned_id
+    assigned_id: req.body.assigned_id,
+    due_date: req.body.due_date
   })
     .then(dbTicketData => res.json(dbTicketData))
     .catch(err => {
@@ -161,7 +162,8 @@ router.put('/:id', withAuth, (req, res) => {
       priority_id: req.body.priority_id,
       status_change_id: 2,
       type_id: req.body.type_id,
-      assigned_id: req.body.assigned_id
+      assigned_id: req.body.assigned_id,
+      due_date: req.body.due_date
     },
     {
       where: {

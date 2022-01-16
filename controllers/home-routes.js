@@ -10,7 +10,7 @@ router.get('/', withAuth, (req, res) => {
     where: {
       status: true,
     },
-    limit: 8,
+    limit: 5,
     attributes: [
       'id',
       'ticket_text',
