@@ -194,7 +194,8 @@ nav a img {
 .summary-card {
   font-weight: bold;
   margin: 15px;
-  padding: 3%;
+  padding: 1%;
+  /* padding: 3%; */
 }
 
 .summary-number {
@@ -203,6 +204,31 @@ nav a img {
 
 .summary-text {
   font-size: 17px;
+}
+
+.summary-icon {
+  color: black;
+  opacity: 30%;
+  font-size: 750%;
+}
+
+.summary-link {
+  background-color: white;
+  color: black;
+  opacity: 30%;
+  margin: 0;
+  padding: 1%;
+  border-radius: 5px;
+  transition: all 0.3s ease-out;
+}
+
+.summary-link a {
+  text-decoration: none;
+}
+
+.summary-link:hover {
+  color: white;
+  opacity: 70%;
 }
 
 .recent-ticket-section {
