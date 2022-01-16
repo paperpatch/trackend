@@ -72,7 +72,7 @@ User Access:
 - View their own profile.
 
 Administrative Access:
-- Has User privileges
+- Has User privileges.
 - See the tab `Manage Users` on the navigation bar and view user profiles.
 
 If you cloned or copied the repository, ensure that you `npm install` to download the packages and create an `.env` file in your local repository with similar text below:
