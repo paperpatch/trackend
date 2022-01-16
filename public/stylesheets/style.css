@@ -1,12 +1,15 @@
 /* Google Family Font Import*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=Open+Sans:wght@300;400;500;600&family=Roboto:wght@100;300;400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&display=swap');
 
 :root {
   --theme-bg-color: #003049;
-  --bg-color: #eae2b7;
-  --body-color: #d62828;
-  --body-color-2: #f77f00;
-  --body-color-3: #fcbf49;
+  --theme-text-color: #126D80;
+  --bg-color: #f5faff;
+  --color-critical: #d62828;
+  --color-high: #f77f00;
+  --color-moderate: #1EB7D6;
+  --color-low: #54cd8a;
 }
 
 * {
@@ -18,17 +21,20 @@ body, html {
   padding: 0;
   margin: 0;
   font-family: sans-serif;
-  background: linear-gradient(#f7f7f7, var(--bg-color));
-  background-size: 100% 100%;
-  background-attachment: fixed;
 }
 
 main {
   flex: 1;
 }
 
+.body-background {
+  background: linear-gradient(#f7f7f7, var(--bg-color));
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+
 a{
-  color: var(--body-color-2);
+  color: var(--theme-text-color);
 }
 
 /* Login and Signup Section */
@@ -36,10 +42,8 @@ a{
 .login-signup-page {
   margin-bottom: 15rem;
   padding: 5rem;
-  background: linear-gradient(#f7f7f7, var(--bg-color));
-  background-size: 100% 100%;
-  background-attachment: fixed;
   border-radius: 5px;
+  background-color: white;
 }
 
 .login-signup-page h1 {
@@ -86,7 +90,7 @@ a{
 }
 
 header {
-  border-bottom: 1px solid var(--body-color-2);
+  border-bottom: 1px solid var(--theme-text-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -119,12 +123,10 @@ nav a img {
 }
 
 .navigation {
-  background-color: var(--bg-color);
-  width: 20rem;
   font-family: 'Spline Sans', sans-serif;
   font-size: 15px;
   font-weight: bold;
-  border-right: 0.5px solid var(--body-color-3);
+  border-right: 0.5px solid #DCDCDC;
   
 }
 
@@ -174,30 +176,59 @@ nav a img {
 }
 
 .card-critical{
-  background-color: var(--body-color);
+  background-color: var(--color-critical);
 }
 
 .card-high{
-  background-color: var(--body-color-2);
+  background-color: var(--color-high);
 }
 
 .card-moderate{
-  background-color: var(--body-color-3);
+  background-color: var(--color-moderate);
 }
 
 .card-low{
-  background-color: var(--bg-color);
+  background-color: var(--color-low);
 }
 
-
 .summary-card {
-  font-size: 17px;
+  font-weight: bold;
   margin: 15px;
+  padding: 1%;
+  /* padding: 3%; */
 }
 
 .summary-number {
-  font-size: 28px;
-  font-weight: bold;
+  font-size: 30px;
+}
+
+.summary-text {
+  font-size: 17px;
+}
+
+.summary-icon {
+  color: black;
+  opacity: 30%;
+  font-size: 750%;
+}
+
+.summary-link {
+  background-color: white;
+  color: black;
+  opacity: 30%;
+  margin: 0;
+  padding: 1%;
+  border-radius: 5px;
+  transition: all 0.3s ease-out;
+}
+
+.summary-link a {
+  text-decoration: none;
+}
+
+.summary-link:hover {
+  color: white;
+  opacity: 70%;
 }
 
 .recent-ticket-section {
@@ -240,6 +271,14 @@ nav a img {
 
 .ticket {
   line-height: 150%;
+}
+
+/* Create Section */
+
+.dashboard-create {
+  background-color: white;
+  border-radius: 5px;
+  padding: 2% 3%;
 }
 
 /* Ticket Detail and Edit Section */
@@ -367,7 +406,7 @@ textarea, input {
 
 textarea:focus, input:focus {
   outline: none;
-  border: 1px solid var(--body-color-3);
+  border: 1px solid var(--theme-text-color);
 }
 
 textarea {
@@ -417,7 +456,7 @@ textarea {
 /* Utility Section */
 
 button {
-  background-color: var(--body-color-2);
+  background-color: var(--theme-bg-color);
   border: 0;
   padding: 1%;
   color: white;
@@ -428,29 +467,29 @@ button {
 }
 
 button:hover {
-  background-color: var(--body-color-3);
+  background-color: var(--color-moderate);
 }
 
 .btn-guest, .btn-admin {
-  color: var(--body-color-2);
+  color: var(--theme-text-color);
   background-color: transparent;
   padding: 0;
   margin: 0;
 }
 
 .btn-guest:hover, .btn-admin:hover {
-  color: var(--body-color-3);
+  color: var(--color-moderate);
   background-color: transparent;
 }
 
 .delete-ticket-btn {
-  background-color: var(--body-color);
+  background-color: var(--color-critical);
   margin: 0 0 3% 1%;
   padding-left: 1%;
 }
 
 .delete-ticket-btn:hover {
-  background-color: var(--body-color-2);
+  background-color: var(--color-high);
 }
 
 

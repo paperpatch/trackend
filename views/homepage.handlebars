@@ -1,13 +1,65 @@
 <div class="homepage grid">
   <div class="row">
-            {{!--<div class="col-lg-4 card summary-card text-end shadow"><span class="summary-number">{{tickets.[0].total_tickets}}</span>Total Tickets</div>
-             <div class="col-lg-4 card summary-card text-end shadow"><span class="summary-number">{{tickets.[0].open_tickets}}</span>Open Tickets</div>
-             <div class="col-lg-4 card summary-card text-end shadow"><span class="summary-number">{{tickets.[0].closed_tickets}}</span>Closed Tickets</div> 
-            <div class="col-lg-4 card summary-card text-end shadow"><span class="summary-number">{{tickets.[0].total_users}}</span>Total Users</div>--}}
-            <div class="col-sm card card-critical summary-card text-end shadow text-light"><span class="summary-number text-light">{{tickets.[0].critical_count}}</span>Critical Priority Tickets</div>
-            <div class="col-sm card card-high summary-card text-end shadow text-light"><span class="summary-number text-light">{{tickets.[0].high_count}}</span>High Priority Tickets</div>
-            <div class="col-sm card card-moderate summary-card text-end shadow text-light"><span class="summary-number text-light">{{tickets.[0].moderate_count}}</span>Moderate Priority Tickets</div>
-            <div class="col-sm card card-low summary-card text-end shadow text-dark"><span class="summary-number text-dark">{{tickets.[0].low_count}}</span>Low Priority Tickets</div>
+    {{!--<div class="col-lg-4 card summary-card text-start shadow"><div class="summary-number">{{tickets.[0].total_tickets}}</div>Total Tickets</div>
+      <div class="col-lg-4 card summary-card text-start shadow"><div class="summary-number">{{tickets.[0].open_tickets}}</div>Open Tickets</div>
+      <div class="col-lg-4 card summary-card text-start shadow"><div class="summary-number">{{tickets.[0].closed_tickets}}</div>Closed Tickets</div> 
+    <div class="col-lg-4 card summary-card text-start shadow"><div class="summary-number">{{tickets.[0].total_users}}</div>Total Users</div>--}}
+    <div class="col-sm card card-critical summary-card shadow text-light">
+      <div class="row px-3 text-start">
+        <div class="col">
+          <div class="summary-number text-light">{{tickets.[0].critical_count}}</div>
+          <div class="summary-text">Critical Priority Tickets</div>
+        </div>
+        <div class="col text-center">
+          <i class="bi bi-pencil-square summary-icon"></i>
+        </div>
+        <div class="row mt-3 summary-link">
+          <a href="/priority/1" class="text-center">View All</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm card card-high summary-card shadow text-light">
+      <div class="row px-3 text-start">
+        <div class="col">
+          <div class="summary-number text-light">{{tickets.[0].high_count}}</div>
+          <div class="summary-text">High Priority Tickets</div>
+        </div>
+        <div class="col text-center">
+          <i class="bi bi-card-list summary-icon"></i>
+        </div>
+        <div class="row mt-3 summary-link">
+          <a href="/priority/2" class="text-center">View All</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm card card-moderate summary-card shadow text-light">
+      <div class="row px-3 text-start">
+        <div class="col">
+          <div class="summary-number text-light">{{tickets.[0].moderate_count}}</div>
+          <div class="summary-text">Moderate Priority Tickets</div>
+        </div>
+        <div class="col text-center">
+          <i class="bi bi-file-earmark-text summary-icon"></i>
+        </div>
+        <div class="row mt-3 summary-link">
+          <a href="/priority/3" class="text-center">View All</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm card card-low summary-card shadow text-light">
+      <div class="row px-3 text-start">
+        <div class="col">
+          <div class="summary-number text-light">{{tickets.[0].low_count}}</div>
+          <div class="summary-text">Low Priority Tickets</div>
+        </div>
+        <div class="col text-center">
+          <i class="bi bi-clipboard-check summary-icon"></i>
+        </div>
+        <div class="row mt-3 summary-link">
+          <a href="/priority/4" class="text-center">View All</a>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="row">
@@ -23,4 +75,3 @@
     </div>
   </div>
 </div>
-
