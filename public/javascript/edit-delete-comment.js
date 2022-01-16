@@ -1,32 +1,32 @@
-async function editComment(event) {
-    event.preventDefault();
+// async function editComment(event) {
+//     event.preventDefault();
 
-    const comment_text = document.querySelector('textarea[name="comment-text"]').value.trim();
-    const ticket_id = window.location.toString().split('/')[
-                    window.location.toString().split('/').length - 1
-                    ];
+//     const comment_text = document.querySelector('textarea[name="comment-text"]').value.trim();
+//     const ticket_id = window.location.toString().split('/')[
+//                     window.location.toString().split('/').length - 1
+//                     ];
 
-    console.log(comment_text);
+//     console.log(comment_text);
   
-    if (comment_text) {
-      const response = await fetch(`/api/comments/${id}`, {
-        method: 'PUT',
-        body: JSON.stringify({
-          ticket_id,
-          comment_text
-        }),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
+//     if (comment_text) {
+//       const response = await fetch(`/api/comments/${id}`, {
+//         method: 'PUT',
+//         body: JSON.stringify({
+//           ticket_id,
+//           comment_text
+//         }),
+//         headers: {
+//           'Content-Type': 'application/json'
+//         }
+//       });
   
-      if (response.ok) {
-        document.location.reload();
-      } else {
-        alert(response.statusText);
-      }
-    }
-};
+//       if (response.ok) {
+//         document.location.reload();
+//       } else {
+//         alert(response.statusText);
+//       }
+//     }
+// };
 
 async function deleteComment(event) {
     event.preventDefault();
@@ -46,5 +46,5 @@ async function deleteComment(event) {
 }
 
 
-document.querySelector('.deleteButton').addEventListener('click', deleteComment);
-document.querySelector('.editSave').addEventListener('click', editComment);
+// document.querySelector('deleteButton').addEventListener('click', deleteComment);
+// document.querySelector('.editSave').addEventListener('click', editComment);
