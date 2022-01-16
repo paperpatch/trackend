@@ -63,10 +63,10 @@
       <main>
         <div class="container-fluid">
           <div class="row flex-nowrap">
-            <nav class="navigation shadow col-auto">
+            <nav class="navigation shadow-lg col-auto">
               {{> navigation}}
             </nav>
-            <div class="col py-3">
+            <div class="col p-5 body-background">
               {{{body}}}
             </div>
           </div>
@@ -74,7 +74,9 @@
       </main>
     </div>
     {{else}}
-    {{{body}}}
+    <body class="body-background">
+      {{{body}}}
+    </body>
     {{/if}}
 
     <div id="aboutModal" class="modal" tabindex="-1">
